@@ -21,6 +21,332 @@ app.get('/api/stats', (c) => {
   })
 })
 
+// About route
+app.get('/about', (c) => {
+  return c.html(`
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>À propos - OBLINK</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  'oblink-orange': '#FF6600',
+                  'oblink-blue': '#62929E',
+                  'oblink-violet': '#9A48D0',
+                  'oblink-gray': '#303030',
+                }
+              }
+            }
+          }
+        </script>
+    </head>
+    <body class="bg-gradient-to-br from-slate-50 via-blue-50 to-violet-50">
+        <!-- Navbar -->
+        <nav class="bg-white/90 backdrop-blur-lg shadow-lg fixed top-0 left-0 right-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-gradient-to-br from-oblink-orange to-oblink-violet rounded-xl flex items-center justify-center">
+                            <i class="fas fa-glasses text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-oblink-orange to-oblink-violet bg-clip-text text-transparent">OBLINK</span>
+                    </a>
+                    <a href="/" class="text-oblink-gray hover:text-oblink-orange transition">
+                        <i class="fas fa-arrow-left mr-2"></i>Retour à l'accueil
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="max-w-4xl mx-auto px-4 py-32">
+            <h1 class="text-5xl font-bold text-oblink-gray mb-6" style="font-family: 'Montserrat', sans-serif;">
+                À propos d'<span class="text-oblink-orange">OBLINK</span>
+            </h1>
+            
+            <div class="prose prose-lg max-w-none">
+                <p class="text-xl text-oblink-gray/80 mb-8">
+                    OBLINK est la première plateforme de mise en relation spécialisée dans le secteur de l'optique en France.
+                </p>
+
+                <div class="glass-card p-8 mb-8">
+                    <h2 class="text-2xl font-bold text-oblink-gray mb-4">Notre Mission</h2>
+                    <p class="text-oblink-gray/80">
+                        Connecter instantanément les opticiens et vendeurs indépendants aux magasins et entreprises d'optique. 
+                        Nous croyons en un secteur où la flexibilité, la confiance et la simplicité sont les maîtres mots.
+                    </p>
+                </div>
+
+                <h2 class="text-3xl font-bold text-oblink-gray mb-4">Notre Histoire</h2>
+                <p class="text-oblink-gray/80 mb-6">
+                    L'idée d'OBLINK est née d'une observation simple : la mise en relation entre opticiens et entreprises reste archaïque dans un secteur pourtant moderne. 
+                    Après avoir observé les difficultés des opticiens indépendants à trouver des missions et des magasins à recruter rapidement, 
+                    nous avons décidé de créer la solution qui manquait au marché.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 my-12">
+                    <div class="glass-card p-6 text-center border-2 border-oblink-orange">
+                        <div class="text-4xl font-bold text-oblink-orange mb-2">2025</div>
+                        <div class="text-oblink-gray/70">Année de création</div>
+                    </div>
+                    <div class="glass-card p-6 text-center border-2 border-oblink-blue">
+                        <div class="text-4xl font-bold text-oblink-blue mb-2">500+</div>
+                        <div class="text-oblink-gray/70">Opticiens actifs</div>
+                    </div>
+                    <div class="glass-card p-6 text-center border-2 border-oblink-violet">
+                        <div class="text-4xl font-bold text-oblink-violet mb-2">200+</div>
+                        <div class="text-oblink-gray/70">Entreprises partenaires</div>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-oblink-gray mb-4">Nos Valeurs</h2>
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-start glass-card p-6">
+                        <i class="fas fa-bolt text-oblink-orange text-3xl mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Rapidité</h3>
+                            <p class="text-oblink-gray/80">Une mise en relation instantanée, des réponses en moins de 48h</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start glass-card p-6">
+                        <i class="fas fa-shield-alt text-oblink-blue text-3xl mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Confiance</h3>
+                            <p class="text-oblink-gray/80">Validation rigoureuse en 4 étapes, profils vérifiés et authentifiés</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start glass-card p-6">
+                        <i class="fas fa-hands-helping text-oblink-violet text-3xl mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Transparence</h3>
+                            <p class="text-oblink-gray/80">Tarification claire, pas de frais cachés, rémunération équitable</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 text-center">
+                    <h2 class="text-2xl font-bold text-oblink-gray mb-4">Rejoignez l'aventure !</h2>
+                    <p class="text-oblink-gray/80 mb-6">Que vous soyez opticien ou entreprise, OBLINK vous accompagne</p>
+                    <div class="flex gap-4 justify-center flex-wrap">
+                        <a href="/register/opticien" class="px-6 py-3 bg-oblink-orange text-white rounded-lg font-semibold hover:bg-oblink-orange/90 transition">
+                            Je suis opticien
+                        </a>
+                        <a href="/register/entreprise" class="px-6 py-3 bg-oblink-violet text-white rounded-lg font-semibold hover:bg-oblink-violet/90 transition">
+                            Je suis une entreprise
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+  `)
+})
+
+// Register Opticien route
+app.get('/register/opticien', (c) => {
+  return c.html(`
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inscription Opticien - OBLINK</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+    </head>
+    <body class="bg-gradient-to-br from-slate-50 via-blue-50 to-violet-50 min-h-screen">
+        <nav class="bg-white/90 backdrop-blur-lg shadow-lg fixed top-0 left-0 right-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+                <a href="/" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-oblink-orange to-oblink-violet rounded-xl flex items-center justify-center">
+                        <i class="fas fa-glasses text-white"></i>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-oblink-orange to-oblink-violet bg-clip-text text-transparent">OBLINK</span>
+                </a>
+                <a href="/" class="text-gray-600 hover:text-oblink-orange transition"><i class="fas fa-arrow-left mr-2"></i>Retour</a>
+            </div>
+        </nav>
+        
+        <div class="max-w-2xl mx-auto px-4 py-32">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Inscription Opticien</h1>
+                <p class="text-gray-600">Rejoignez OBLINK et trouvez des missions partout en France</p>
+            </div>
+            
+            <form class="glass-card p-8 space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Prénom *</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Nom *</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                    <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Téléphone *</label>
+                    <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Diplôme *</label>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                        <option value="">Sélectionnez votre diplôme</option>
+                        <option>BTS Opticien-Lunetier</option>
+                        <option>Licence Professionnelle d'Optique</option>
+                        <option>Master en Sciences de la Vision</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Années d'expérience *</label>
+                    <input type="number" min="0" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Ville *</label>
+                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                </div>
+                
+                <div>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 text-oblink-orange border-gray-300 rounded focus:ring-oblink-orange" required>
+                        <span class="ml-2 text-sm text-gray-700">J'accepte les <a href="/cgu" class="text-oblink-orange hover:underline">conditions générales</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-oblink-orange to-oblink-violet text-white font-semibold rounded-lg hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-check-circle mr-2"></i>Créer mon compte
+                </button>
+            </form>
+            
+            <p class="text-center mt-6 text-gray-600">
+                Déjà inscrit ? <a href="/login" class="text-oblink-orange font-semibold hover:underline">Se connecter</a>
+            </p>
+        </div>
+    </body>
+    </html>
+  `)
+})
+
+// Register Entreprise route
+app.get('/register/entreprise', (c) => {
+  return c.html(`
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inscription Entreprise - OBLINK</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+    </head>
+    <body class="bg-gradient-to-br from-slate-50 via-blue-50 to-violet-50 min-h-screen">
+        <nav class="bg-white/90 backdrop-blur-lg shadow-lg fixed top-0 left-0 right-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+                <a href="/" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-oblink-orange to-oblink-violet rounded-xl flex items-center justify-center">
+                        <i class="fas fa-glasses text-white"></i>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-oblink-orange to-oblink-violet bg-clip-text text-transparent">OBLINK</span>
+                </a>
+                <a href="/" class="text-gray-600 hover:text-oblink-orange transition"><i class="fas fa-arrow-left mr-2"></i>Retour</a>
+            </div>
+        </nav>
+        
+        <div class="max-w-2xl mx-auto px-4 py-32">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Inscription Entreprise</h1>
+                <p class="text-gray-600">Recrutez des opticiens qualifiés en un clin d'œil</p>
+            </div>
+            
+            <form class="glass-card p-8 space-y-6">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Nom de l'entreprise *</label>
+                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">SIRET *</label>
+                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Prénom du contact *</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Nom du contact *</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email professionnel *</label>
+                    <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Téléphone *</label>
+                    <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Adresse du magasin *</label>
+                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Code postal *</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Ville *</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-oblink-orange focus:border-transparent" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 text-oblink-orange border-gray-300 rounded focus:ring-oblink-orange" required>
+                        <span class="ml-2 text-sm text-gray-700">J'accepte les <a href="/cgu" class="text-oblink-orange hover:underline">conditions générales</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-oblink-orange to-oblink-violet text-white font-semibold rounded-lg hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-check-circle mr-2"></i>Créer mon compte entreprise
+                </button>
+            </form>
+            
+            <p class="text-center mt-6 text-gray-600">
+                Déjà inscrit ? <a href="/login" class="text-oblink-orange font-semibold hover:underline">Se connecter</a>
+            </p>
+        </div>
+    </body>
+    </html>
+  `)
+})
+
 // Blog route
 app.get('/blog', (c) => {
   return c.html(`
