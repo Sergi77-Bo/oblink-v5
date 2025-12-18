@@ -162,33 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
       resetAutoRotate();
     }
   });
-  
-  // Touch/Swipe support
-  let touchStartX = 0;
-  let touchEndX = 0;
-  
-  if (carousel) {
-    carousel.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-    
-    carousel.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    });
-  }
-  
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    if (touchEndX < touchStartX - swipeThreshold) {
-      nextSlide();
-      resetAutoRotate();
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-      prevSlide();
-      resetAutoRotate();
-    }
-  }
 
   // Touch/Swipe support
   let touchStartX = 0;
