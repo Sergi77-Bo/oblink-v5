@@ -1,14 +1,15 @@
 # OBLINK - Un opticien en un clin d'œil
 
-## 🎨 Version Glassmorphism v3.0 - Style Apple Vision Pro
+## 🎨 Version Glassmorphism v3.1 - Style Apple Vision Pro + Carrousel 3D
 
-Site web avec design glassmorphism moderne connectant opticiens indépendants et magasins d'optique.
+Site web avec design glassmorphism moderne et carrousel 3D interactif connectant opticiens indépendants et magasins d'optique.
 
 ## 🌐 URLs
 
 - **Production**: https://3000-irjt648qgg0138ma6lxyd-02b9cc79.sandbox.novita.ai
 - **API Stats**: https://3000-irjt648qgg0138ma6lxyd-02b9cc79.sandbox.novita.ai/api/stats
-- **Backup**: https://www.genspark.ai/api/files/s/IVWOebc1
+- **Backup v3.1**: https://www.genspark.ai/api/files/s/8fd8RIpF
+- **Backup v3.0**: https://www.genspark.ai/api/files/s/Fd9zviqy
 
 ## ✨ Design System - Glassmorphism
 
