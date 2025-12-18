@@ -1,7 +1,156 @@
 // OBLINK Advanced Frontend JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('🚀 OBLINK Enhanced v2.0 initialized');
+  console.log('🚀 OBLINK Glassmorphism v3.0 with 3D Carousel initialized');
+
+  // ===== 3D CAROUSEL =====
+  const carousel = document.getElementById('processCarousel');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const indicators = document.querySelectorAll('.carousel-indicator');
+  const items = document.querySelectorAll('.carousel-3d-item');
+  
+  let currentIndex = 0;
+  let autoRotateInterval;
+  const totalItems = items.length;
+
+  function updateCarousel() {
+    items.forEach((item, index) => {
+      item.classList.remove('active', 'prev', 'next');
+      
+      if (index === currentIndex) {
+        item.classList.add('active');
+      } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
+        item.classList.add('prev');
+      } else if (index === (currentIndex + 1) % totalItems) {
+        item.classList.add('next');
+      }
+    });
+
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+      if (index === currentIndex) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateCarousel();
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  // Event listeners
+  if (nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoRotate();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoRotate();
+    });
+  }
+
+  // Indicator clicks
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      goToSlide(index);
+      resetAutoRotate();
+    });
+  });
+
+  // Auto rotate
+  function startAutoRotate() {
+    autoRotateInterval = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoRotate() {
+    if (autoRotateInterval) {
+      clearInterval(autoRotateInterval);
+    }
+  }
+
+  function resetAutoRotate() {
+    stopAutoRotate();
+    startAutoRotate();
+  }
+
+  // Start auto-rotation when carousel is visible
+  const carouselObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startAutoRotate();
+      } else {
+        stopAutoRotate();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if (carousel) {
+    carouselObserver.observe(carousel);
+  }
+
+  // Pause on hover
+  if (carousel) {
+    carousel.addEventListener('mouseenter', stopAutoRotate);
+    carousel.addEventListener('mouseleave', startAutoRotate);
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+      resetAutoRotate();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+      resetAutoRotate();
+    }
+  });
+
+  // Touch/Swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (carousel) {
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe left - next
+        nextSlide();
+      } else {
+        // Swipe right - prev
+        prevSlide();
+      }
+      resetAutoRotate();
+    }
+  }
 
   // ===== MOBILE MENU =====
   const mobileMenuButton = document.getElementById('mobile-menu-button');

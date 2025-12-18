@@ -298,8 +298,52 @@ body {
   display: inline-block;
 }
 
-/* ===== PROCESS CARDS ===== */
+/* ===== 3D CAROUSEL ===== */
 
+.carousel-3d-container {
+  perspective: 1200px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-3d-item {
+  position: absolute;
+  width: 350px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.4;
+}
+
+.carousel-3d-item.active {
+  opacity: 1;
+  z-index: 3;
+}
+
+.carousel-3d-item.prev {
+  transform: translate(-50%, -50%) translateX(-400px) translateZ(-200px) rotateY(25deg);
+  z-index: 2;
+}
+
+.carousel-3d-item.next {
+  transform: translate(-50%, -50%) translateX(400px) translateZ(-200px) rotateY(-25deg);
+  z-index: 2;
+}
+
+/* Process Card for Carousel */
 .process-card-glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
@@ -310,6 +354,11 @@ body {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .process-card-glass::before {
@@ -328,15 +377,15 @@ body {
   opacity: 0;
 }
 
-.process-card-glass:hover::before {
+.carousel-3d-item.active .process-card-glass::before {
   opacity: 1;
   transform: rotate(45deg) translate(50%, 50%);
 }
 
-.process-card-glass:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 20px 60px rgba(255, 102, 0, 0.15);
+.carousel-3d-item.active .process-card-glass {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 30px 80px rgba(255, 102, 0, 0.2);
+  transform: scale(1.05);
 }
 
 .process-number {
@@ -369,8 +418,105 @@ body {
   transition: opacity 0.4s;
 }
 
-.process-card-glass:hover .process-number::before {
+.carousel-3d-item.active .process-number::before {
   opacity: 0.3;
+  animation: spin 3s linear infinite;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.carousel-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #FF6600;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+  background: #FF6600;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(255, 102, 0, 0.3);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 102, 0, 0.3);
+  border: 2px solid rgba(255, 102, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-indicator.active {
+  background: #FF6600;
+  transform: scale(1.3);
+}
+
+.carousel-indicator:hover {
+  background: #FF6600;
+  transform: scale(1.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .carousel-3d-container {
+    height: 450px;
+  }
+  
+  .carousel-3d-item {
+    width: 280px;
+  }
+  
+  .carousel-3d-item.prev,
+  .carousel-3d-item.next {
+    transform: translate(-50%, -50%) translateX(0) translateZ(-300px) rotateY(0deg);
+    opacity: 0;
+  }
+  
+  .carousel-controls {
+    bottom: -50px;
+  }
+  
+  .carousel-indicators {
+    bottom: -85px;
+  }
 }
 
 /* ===== FEATURE SECTIONS ===== */

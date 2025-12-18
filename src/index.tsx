@@ -187,8 +187,8 @@ app.get('/', (c) => {
             </div>
         </section>
 
-        <!-- How it works with Glassmorphism -->
-        <section id="comment-ca-marche" class="py-24 relative">
+        <!-- How it works with 3D Carousel -->
+        <section id="comment-ca-marche" class="py-24 pb-40 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16 animate-fade-in">
                     <h2 class="text-5xl font-bold text-oblink-gray mb-4" style="font-family: 'Montserrat', sans-serif;">
@@ -197,29 +197,58 @@ app.get('/', (c) => {
                     <p class="text-xl text-oblink-gray/70">Simple, rapide, efficace</p>
                 </div>
                 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="process-card-glass animate-fade-in-up" style="animation-delay: 0.1s">
-                        <div class="process-number">
-                            <span class="text-oblink-orange">1</span>
+                <!-- 3D Carousel Container -->
+                <div class="carousel-3d-container">
+                    <div class="carousel-3d" id="processCarousel">
+                        <!-- Slide 1 -->
+                        <div class="carousel-3d-item active" data-index="0">
+                            <div class="process-card-glass">
+                                <div class="process-number">
+                                    <span class="text-oblink-orange">1</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Créez votre profil</h3>
+                                <p class="text-oblink-gray/80 leading-relaxed">Inscrivez-vous en quelques minutes et complétez votre profil professionnel avec vos diplômes, expériences et disponibilités.</p>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Créez votre profil</h3>
-                        <p class="text-oblink-gray/80 leading-relaxed">Inscrivez-vous en quelques minutes et complétez votre profil professionnel avec vos diplômes, expériences et disponibilités.</p>
+                        
+                        <!-- Slide 2 -->
+                        <div class="carousel-3d-item next" data-index="1">
+                            <div class="process-card-glass">
+                                <div class="process-number">
+                                    <span class="text-oblink-blue">2</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Validation 4 étapes</h3>
+                                <p class="text-oblink-gray/80 leading-relaxed">Votre profil est validé par notre équipe : diplômes, expérience, test de connaissances et entretien vidéo.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="carousel-3d-item prev" data-index="2">
+                            <div class="process-card-glass">
+                                <div class="process-number">
+                                    <span class="text-oblink-violet">3</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Connectez & Travaillez</h3>
+                                <p class="text-oblink-gray/80 leading-relaxed">Recevez des propositions de missions adaptées ou postulez directement. Gérez tout depuis votre dashboard.</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="process-card-glass animate-fade-in-up" style="animation-delay: 0.3s">
-                        <div class="process-number">
-                            <span class="text-oblink-blue">2</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Validation 4 étapes</h3>
-                        <p class="text-oblink-gray/80 leading-relaxed">Votre profil est validé par notre équipe : diplômes, expérience, test de connaissances et entretien vidéo.</p>
+                    <!-- Navigation Controls -->
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="carousel-prev" aria-label="Précédent">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn" id="carousel-next" aria-label="Suivant">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                     
-                    <div class="process-card-glass animate-fade-in-up" style="animation-delay: 0.5s">
-                        <div class="process-number">
-                            <span class="text-oblink-violet">3</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Connectez & Travaillez</h3>
-                        <p class="text-oblink-gray/80 leading-relaxed">Recevez des propositions de missions adaptées ou postulez directement. Gérez tout depuis votre dashboard.</p>
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <div class="carousel-indicator active" data-slide="0"></div>
+                        <div class="carousel-indicator" data-slide="1"></div>
+                        <div class="carousel-indicator" data-slide="2"></div>
                     </div>
                 </div>
             </div>
