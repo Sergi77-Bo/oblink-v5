@@ -234,6 +234,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // ===== LIQUID GLASS PARTICLES =====
+  function createParticles(containerId, count = 20) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    for (let i = 0; i < count; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 15 + 's';
+      particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+      container.appendChild(particle);
+    }
+  }
+  
+  // Create particles for testimonials section
+  createParticles('particles-testimonials', 15);
+  
+  // ===== LIQUID GLASS CARD ANIMATIONS =====
+  const liquidCards = document.querySelectorAll('.service-card-liquid, .testimonial-card-liquid');
+  liquidCards.forEach((card, index) => {
+    const delay = card.getAttribute('data-delay') || (index * 0.1);
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s`;
+  });
+
   // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
   const observerOptions = {
     threshold: 0.1,
@@ -249,6 +277,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }, observerOptions);
+  
+  // Observe liquid cards
+  liquidCards.forEach(card => fadeInObserver.observe(card));
 
   // Observe sections for fade-in
   document.querySelectorAll('section').forEach(section => {

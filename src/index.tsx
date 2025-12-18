@@ -790,108 +790,116 @@ app.get('/', (c) => {
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-oblink-gray mb-4" style="font-family: 'Montserrat', sans-serif;">
-                        Un écosystème <span class="text-oblink-orange">complet</span>
+        <!-- Services Section - Compact Liquid Glass -->
+        <section class="py-12 bg-gradient-to-br from-slate-50 via-blue-50 to-violet-50 relative overflow-hidden">
+            <!-- Liquid Glass Background Effects -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="liquid-glass-blob blob-1"></div>
+                <div class="liquid-glass-blob blob-2"></div>
+                <div class="liquid-glass-blob blob-3"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-oblink-gray mb-2" style="font-family: 'Montserrat', sans-serif;">
+                        Écosystème <span class="text-transparent bg-clip-text bg-gradient-to-r from-oblink-orange to-oblink-violet">360°</span>
                     </h2>
-                    <p class="text-lg text-oblink-gray/70">Bien plus qu'une simple mise en relation</p>
+                    <p class="text-sm text-oblink-gray/70">Plus qu'une plateforme, un accompagnement complet</p>
                 </div>
                 
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.1s">
-                        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Assurance RC Pro</h3>
-                        <p class="text-oblink-gray/70">Protection adaptée aux missions en optique</p>
+                <!-- Grid horizontal scrollable mobile -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="service-card-liquid group" data-delay="0.1">
+                        <div class="service-icon-mini"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="text-sm font-bold text-oblink-gray">RC Pro</h3>
                     </div>
                     
-                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.2s">
-                        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Portage salarial</h3>
-                        <p class="text-oblink-gray/70">Travaillez sans auto-entreprise</p>
+                    <div class="service-card-liquid group" data-delay="0.2">
+                        <div class="service-icon-mini"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="text-sm font-bold text-oblink-gray">Portage</h3>
                     </div>
                     
-                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.3s">
-                        <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Formations continues</h3>
-                        <p class="text-oblink-gray/70">Webinaires et modules de formation</p>
+                    <div class="service-card-liquid group" data-delay="0.3">
+                        <div class="service-icon-mini"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="text-sm font-bold text-oblink-gray">Formation</h3>
                     </div>
                     
-                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.4s">
-                        <div class="service-icon"><i class="fas fa-gavel"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Assistance juridique</h3>
-                        <p class="text-oblink-gray/70">Support pour contrats et questions fiscales</p>
+                    <div class="service-card-liquid group" data-delay="0.4">
+                        <div class="service-icon-mini"><i class="fas fa-gavel"></i></div>
+                        <h3 class="text-sm font-bold text-oblink-gray">Juridique</h3>
                     </div>
                     
-                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.5s">
-                        <div class="service-icon"><i class="fas fa-file-invoice"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Facturation simplifiée</h3>
-                        <p class="text-oblink-gray/70">Outils de gestion administrative</p>
+                    <div class="service-card-liquid group" data-delay="0.5">
+                        <div class="service-icon-mini"><i class="fas fa-file-invoice"></i></div>
+                        <h3 class="text-sm font-bold text-oblink-gray">Facturation</h3>
                     </div>
                     
-                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.6s">
-                        <div class="service-icon"><i class="fas fa-users"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Communauté active</h3>
-                        <p class="text-oblink-gray/70">Forum d'échange entre professionnels</p>
+                    <div class="service-card-liquid group" data-delay="0.6">
+                        <div class="service-icon-mini"><i class="fas fa-users"></i></div>
+                        <h3 class="text-sm font-bold text-oblink-gray">Communauté</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="py-20 bg-gradient-to-br from-oblink-orange/5 to-oblink-violet/5">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-oblink-gray mb-4" style="font-family: 'Montserrat', sans-serif;">
-                        Ils nous font confiance
+        <!-- Testimonials - Compact Liquid Glass -->
+        <section class="py-12 bg-white relative overflow-hidden">
+            <!-- Animated particles background -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="particle-container" id="particles-testimonials"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-oblink-gray" style="font-family: 'Montserrat', sans-serif;">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-oblink-orange via-oblink-violet to-oblink-blue">4.9/5</span> sur 180+ avis
                     </h2>
                 </div>
                 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="testimonial-card-glass animate-fade-in-up" style="animation-delay: 0.2s">
-                        <div class="flex items-center mb-6 relative z-10">
-                            <div class="testimonial-avatar">
-                                <i class="fas fa-user text-oblink-blue"></i>
+                <!-- Horizontal scroll on mobile, grid on desktop -->
+                <div class="flex md:grid md:grid-cols-2 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 -mx-4 px-4 md:mx-0">
+                    <div class="testimonial-card-liquid snap-center flex-shrink-0 w-[85vw] md:w-auto" data-delay="0.2">
+                        <div class="flex items-center mb-3">
+                            <div class="testimonial-avatar-mini">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-oblink-gray">Sarah D.</h4>
-                                <p class="text-sm text-oblink-gray/70">Opticienne freelance</p>
+                            <div class="ml-3">
+                                <h4 class="font-bold text-oblink-gray text-sm">Sarah D.</h4>
+                                <p class="text-xs text-oblink-gray/70">Opticienne freelance</p>
+                            </div>
+                            <div class="flex text-yellow-400 text-xs ml-auto">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <p class="text-oblink-gray/80 leading-relaxed mb-4 relative z-10">
-                            "OBLINK m'a permis de franchir le pas vers l'indépendance en toute sérénité. J'ai trouvé mes premières missions en moins d'une semaine et l'accompagnement administratif est vraiment précieux."
+                        <p class="text-oblink-gray/80 text-sm leading-relaxed">
+                            "J'ai trouvé mes premières missions en moins d'une semaine. L'accompagnement administratif est vraiment précieux."
                         </p>
-                        <div class="flex text-yellow-400 relative z-10">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
                     </div>
                     
-                    <div class="testimonial-card-glass animate-fade-in-up" style="animation-delay: 0.4s">
-                        <div class="flex items-center mb-6 relative z-10">
-                            <div class="testimonial-avatar">
-                                <i class="fas fa-store text-oblink-orange"></i>
+                    <div class="testimonial-card-liquid snap-center flex-shrink-0 w-[85vw] md:w-auto" data-delay="0.4">
+                        <div class="flex items-center mb-3">
+                            <div class="testimonial-avatar-mini">
+                                <i class="fas fa-store"></i>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-oblink-gray">Pierre M.</h4>
-                                <p class="text-sm text-oblink-gray/70">Gérant magasin optique</p>
+                            <div class="ml-3">
+                                <h4 class="font-bold text-oblink-gray text-sm">Pierre M.</h4>
+                                <p class="text-xs text-oblink-gray/70">Gérant magasin</p>
+                            </div>
+                            <div class="flex text-yellow-400 text-xs ml-auto">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <p class="text-oblink-gray/80 leading-relaxed mb-4 relative z-10">
-                            "Plus besoin de payer des fortunes en intérim ! OBLINK me permet de trouver des remplaçants qualifiés en 48h maximum. Les profils sont validés et la plateforme est très simple à utiliser."
+                        <p class="text-oblink-gray/80 text-sm leading-relaxed">
+                            "Profils validés, réponse en 48h max. Économies importantes par rapport aux agences d'intérim."
                         </p>
-                        <div class="flex text-yellow-400 relative z-10">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
                     </div>
                 </div>
             </div>
