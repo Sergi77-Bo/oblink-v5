@@ -92,15 +92,13 @@ app.get('/', (c) => {
             </div>
         </nav>
 
-        <!-- Hero Section with Parallax -->
-        <section class="pt-32 pb-20 bg-gradient-to-br from-oblink-orange/5 to-oblink-violet/5 relative overflow-hidden" id="hero">
-            <!-- Animated background elements -->
-            <div class="absolute inset-0 overflow-hidden">
-                <div class="floating-shape shape-1"></div>
-                <div class="floating-shape shape-2"></div>
-                <div class="floating-shape shape-3"></div>
-                <div class="floating-shape shape-4"></div>
-            </div>
+        <!-- Hero Section with Glassmorphism -->
+        <section class="pt-32 pb-20 relative overflow-hidden" id="hero">
+            <!-- Background gradient orbs -->
+            <div class="hero-bg"></div>
+            <div class="hero-gradient-orb orb-1"></div>
+            <div class="hero-gradient-orb orb-2"></div>
+            <div class="hero-gradient-orb orb-3"></div>
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center">
@@ -117,41 +115,47 @@ app.get('/', (c) => {
                         Simple, rapide, fiable.
                     </p>
                     
-                    <!-- Double CTA with animated cards -->
-                    <div class="flex flex-col md:flex-row gap-6 justify-center items-center max-w-4xl mx-auto">
-                        <a href="/opticiens" class="cta-card cta-card-optician group w-full md:w-auto">
-                            <div class="cta-card-front">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        <i class="fas fa-glasses mr-4 text-3xl text-oblink-blue"></i>
-                                        <div class="text-left">
-                                            <div class="font-semibold text-lg">Je suis Opticien</div>
-                                            <div class="text-sm opacity-75">Trouver des missions</div>
-                                        </div>
+                    <!-- CTA Cards with Glassmorphism and Characters -->
+                    <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch max-w-6xl mx-auto">
+                        <a href="/opticiens" class="cta-card-glass group w-full md:w-1/2 animate-scale-in" style="animation-delay: 0.2s">
+                            <div class="cta-card-content flex-col md:flex-row">
+                                <img src="/images/optician.png" alt="Opticien" class="cta-character animate-float">
+                                <div class="cta-info">
+                                    <span class="cta-badge cta-badge-optician">
+                                        <i class="fas fa-glasses mr-2"></i>OPTICIEN
+                                    </span>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-oblink-gray mb-3">
+                                        Je cherche des missions
+                                    </h3>
+                                    <p class="text-oblink-gray/70 mb-6">
+                                        Accédez à des missions qualifiées partout en France. Liberté et accompagnement.
+                                    </p>
+                                    <div class="flex items-center text-oblink-blue font-semibold">
+                                        Créer mon profil
+                                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                                     </div>
-                                    <i class="fas fa-arrow-right ml-4 group-hover:translate-x-2 transition-transform"></i>
                                 </div>
-                            </div>
-                            <div class="cta-card-back">
-                                <div class="character-illustration optician-illustration"></div>
                             </div>
                         </a>
                         
-                        <a href="/entreprises" class="cta-card cta-card-company group w-full md:w-auto">
-                            <div class="cta-card-front">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        <i class="fas fa-store mr-4 text-3xl text-white"></i>
-                                        <div class="text-left">
-                                            <div class="font-semibold text-lg">Je suis Entreprise</div>
-                                            <div class="text-sm opacity-90">Recruter des talents</div>
-                                        </div>
+                        <a href="/entreprises" class="cta-card-glass group w-full md:w-1/2 animate-scale-in" style="animation-delay: 0.4s">
+                            <div class="cta-card-content flex-col md:flex-row">
+                                <img src="/images/company.png" alt="Entreprise" class="cta-character animate-float" style="animation-delay: 1s">
+                                <div class="cta-info">
+                                    <span class="cta-badge cta-badge-company">
+                                        <i class="fas fa-store mr-2"></i>ENTREPRISE
+                                    </span>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-oblink-gray mb-3">
+                                        Je recrute des talents
+                                    </h3>
+                                    <p class="text-oblink-gray/70 mb-6">
+                                        Trouvez rapidement des opticiens qualifiés et pré-validés. Économisez jusqu'à 40%.
+                                    </p>
+                                    <div class="flex items-center text-oblink-orange font-semibold">
+                                        Publier une offre
+                                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                                     </div>
-                                    <i class="fas fa-arrow-right ml-4 group-hover:translate-x-2 transition-transform"></i>
                                 </div>
-                            </div>
-                            <div class="cta-card-back">
-                                <div class="character-illustration company-illustration"></div>
                             </div>
                         </a>
                     </div>
@@ -159,63 +163,63 @@ app.get('/', (c) => {
             </div>
         </section>
 
-        <!-- Stats Section with Animation -->
-        <section class="py-16 bg-white">
+        <!-- Stats Section with Glassmorphism -->
+        <section class="py-20 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center stat-card">
-                        <div class="text-4xl font-bold text-oblink-orange mb-2 counter" data-target="8.3">0</div>
-                        <div class="text-sm text-oblink-gray/70">Marché optique français (Md€)</div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="stat-card-glass text-center animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="stat-number counter" data-target="8.3">0</div>
+                        <div class="text-sm text-oblink-gray/70 font-medium">Marché optique français (Md€)</div>
                     </div>
-                    <div class="text-center stat-card">
-                        <div class="text-4xl font-bold text-oblink-blue mb-2 counter" data-target="13300">0</div>
-                        <div class="text-sm text-oblink-gray/70">Magasins d'optique</div>
+                    <div class="stat-card-glass text-center animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="stat-number counter" data-target="13300">0</div>
+                        <div class="text-sm text-oblink-gray/70 font-medium">Magasins d'optique</div>
                     </div>
-                    <div class="text-center stat-card">
-                        <div class="text-4xl font-bold text-oblink-violet mb-2 counter" data-target="44000">0</div>
-                        <div class="text-sm text-oblink-gray/70">Opticiens diplômés</div>
+                    <div class="stat-card-glass text-center animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="stat-number counter" data-target="44000">0</div>
+                        <div class="text-sm text-oblink-gray/70 font-medium">Opticiens diplômés</div>
                     </div>
-                    <div class="text-center stat-card">
-                        <div class="text-4xl font-bold text-oblink-pink mb-2">+15%</div>
-                        <div class="text-sm text-oblink-gray/70">Croissance freelancing</div>
+                    <div class="stat-card-glass text-center animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="stat-number">+15%</div>
+                        <div class="text-sm text-oblink-gray/70 font-medium">Croissance freelancing</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- How it works -->
-        <section id="comment-ca-marche" class="py-20 bg-oblink-beige/30">
+        <!-- How it works with Glassmorphism -->
+        <section id="comment-ca-marche" class="py-24 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-oblink-gray mb-4" style="font-family: 'Montserrat', sans-serif;">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="text-5xl font-bold text-oblink-gray mb-4" style="font-family: 'Montserrat', sans-serif;">
                         Comment ça marche ?
                     </h2>
-                    <p class="text-lg text-oblink-gray/70">Simple, rapide, efficace</p>
+                    <p class="text-xl text-oblink-gray/70">Simple, rapide, efficace</p>
                 </div>
                 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="process-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
-                        <div class="step-number mb-6">
-                            <span class="text-3xl font-bold text-oblink-orange">1</span>
+                    <div class="process-card-glass animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="process-number">
+                            <span class="text-oblink-orange">1</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-oblink-gray">Créez votre profil</h3>
-                        <p class="text-oblink-gray/70">Inscrivez-vous en quelques minutes et complétez votre profil professionnel avec vos diplômes, expériences et disponibilités.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Créez votre profil</h3>
+                        <p class="text-oblink-gray/80 leading-relaxed">Inscrivez-vous en quelques minutes et complétez votre profil professionnel avec vos diplômes, expériences et disponibilités.</p>
                     </div>
                     
-                    <div class="process-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2" style="animation-delay: 0.1s;">
-                        <div class="step-number mb-6">
-                            <span class="text-3xl font-bold text-oblink-blue">2</span>
+                    <div class="process-card-glass animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="process-number">
+                            <span class="text-oblink-blue">2</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-oblink-gray">Validation 4 étapes</h3>
-                        <p class="text-oblink-gray/70">Votre profil est validé par notre équipe : diplômes, expérience, test de connaissances et entretien vidéo.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Validation 4 étapes</h3>
+                        <p class="text-oblink-gray/80 leading-relaxed">Votre profil est validé par notre équipe : diplômes, expérience, test de connaissances et entretien vidéo.</p>
                     </div>
                     
-                    <div class="process-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2" style="animation-delay: 0.2s;">
-                        <div class="step-number mb-6">
-                            <span class="text-3xl font-bold text-oblink-violet">3</span>
+                    <div class="process-card-glass animate-fade-in-up" style="animation-delay: 0.5s">
+                        <div class="process-number">
+                            <span class="text-oblink-violet">3</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-4 text-oblink-gray">Connectez & Travaillez</h3>
-                        <p class="text-oblink-gray/70">Recevez des propositions de missions adaptées ou postulez directement. Gérez tout depuis votre dashboard.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Connectez & Travaillez</h3>
+                        <p class="text-oblink-gray/80 leading-relaxed">Recevez des propositions de missions adaptées ou postulez directement. Gérez tout depuis votre dashboard.</p>
                     </div>
                 </div>
             </div>
@@ -265,11 +269,9 @@ app.get('/', (c) => {
                         </a>
                     </div>
                     
-                    <div class="relative">
-                        <div class="image-card">
-                            <div class="image-placeholder optician-feature">
-                                <div class="tech-grid"></div>
-                            </div>
+                    <div class="relative animate-scale-in" style="animation-delay: 0.3s">
+                        <div class="feature-image-wrapper">
+                            <img src="/images/optician.png" alt="Opticien professionnel" class="feature-character">
                         </div>
                     </div>
                 </div>
@@ -280,11 +282,9 @@ app.get('/', (c) => {
         <section id="pour-entreprises" class="py-20 bg-oblink-beige/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="relative order-2 md:order-1">
-                        <div class="image-card">
-                            <div class="image-placeholder company-feature">
-                                <div class="tech-grid"></div>
-                            </div>
+                    <div class="relative order-2 md:order-1 animate-scale-in" style="animation-delay: 0.3s">
+                        <div class="feature-image-wrapper">
+                            <img src="/images/company.png" alt="Gestionnaire entreprise" class="feature-character" style="animation-delay: 1s">
                         </div>
                     </div>
                     
@@ -341,40 +341,40 @@ app.get('/', (c) => {
                     <p class="text-lg text-oblink-gray/70">Bien plus qu'une simple mise en relation</p>
                 </div>
                 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="service-card">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.1s">
                         <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="text-xl font-bold mb-3">Assurance RC Pro</h3>
+                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Assurance RC Pro</h3>
                         <p class="text-oblink-gray/70">Protection adaptée aux missions en optique</p>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.2s">
                         <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-                        <h3 class="text-xl font-bold mb-3">Portage salarial</h3>
+                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Portage salarial</h3>
                         <p class="text-oblink-gray/70">Travaillez sans auto-entreprise</p>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.3s">
                         <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <h3 class="text-xl font-bold mb-3">Formations continues</h3>
+                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Formations continues</h3>
                         <p class="text-oblink-gray/70">Webinaires et modules de formation</p>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.4s">
                         <div class="service-icon"><i class="fas fa-gavel"></i></div>
-                        <h3 class="text-xl font-bold mb-3">Assistance juridique</h3>
+                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Assistance juridique</h3>
                         <p class="text-oblink-gray/70">Support pour contrats et questions fiscales</p>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.5s">
                         <div class="service-icon"><i class="fas fa-file-invoice"></i></div>
-                        <h3 class="text-xl font-bold mb-3">Facturation simplifiée</h3>
+                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Facturation simplifiée</h3>
                         <p class="text-oblink-gray/70">Outils de gestion administrative</p>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card-glass animate-fade-in-up" style="animation-delay: 0.6s">
                         <div class="service-icon"><i class="fas fa-users"></i></div>
-                        <h3 class="text-xl font-bold mb-3">Communauté active</h3>
+                        <h3 class="text-xl font-bold mb-3 text-oblink-gray">Communauté active</h3>
                         <p class="text-oblink-gray/70">Forum d'échange entre professionnels</p>
                     </div>
                 </div>
@@ -391,18 +391,20 @@ app.get('/', (c) => {
                 </div>
                 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="testimonial-card">
-                        <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-oblink-blue/10 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-user text-2xl text-oblink-blue"></i>
+                    <div class="testimonial-card-glass animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="flex items-center mb-6 relative z-10">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user text-oblink-blue"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold">Sarah D.</h4>
+                                <h4 class="font-bold text-oblink-gray">Sarah D.</h4>
                                 <p class="text-sm text-oblink-gray/70">Opticienne freelance</p>
                             </div>
                         </div>
-                        <p class="text-oblink-gray/70 italic">"OBLINK m'a permis de franchir le pas vers l'indépendance en toute sérénité. J'ai trouvé mes premières missions en moins d'une semaine et l'accompagnement administratif est vraiment précieux."</p>
-                        <div class="flex text-yellow-400 mt-4">
+                        <p class="text-oblink-gray/80 leading-relaxed mb-4 relative z-10">
+                            "OBLINK m'a permis de franchir le pas vers l'indépendance en toute sérénité. J'ai trouvé mes premières missions en moins d'une semaine et l'accompagnement administratif est vraiment précieux."
+                        </p>
+                        <div class="flex text-yellow-400 relative z-10">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -411,18 +413,20 @@ app.get('/', (c) => {
                         </div>
                     </div>
                     
-                    <div class="testimonial-card">
-                        <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-oblink-orange/10 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-store text-2xl text-oblink-orange"></i>
+                    <div class="testimonial-card-glass animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="flex items-center mb-6 relative z-10">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-store text-oblink-orange"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold">Pierre M.</h4>
+                                <h4 class="font-bold text-oblink-gray">Pierre M.</h4>
                                 <p class="text-sm text-oblink-gray/70">Gérant magasin optique</p>
                             </div>
                         </div>
-                        <p class="text-oblink-gray/70 italic">"Plus besoin de payer des fortunes en intérim ! OBLINK me permet de trouver des remplaçants qualifiés en 48h maximum. Les profils sont validés et la plateforme est très simple à utiliser."</p>
-                        <div class="flex text-yellow-400 mt-4">
+                        <p class="text-oblink-gray/80 leading-relaxed mb-4 relative z-10">
+                            "Plus besoin de payer des fortunes en intérim ! OBLINK me permet de trouver des remplaçants qualifiés en 48h maximum. Les profils sont validés et la plateforme est très simple à utiliser."
+                        </p>
+                        <div class="flex text-yellow-400 relative z-10">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
