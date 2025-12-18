@@ -617,129 +617,68 @@ app.get('/', (c) => {
             </div>
         </section>
 
-        <!-- How it works - Compact & UX-Optimized -->
-        <section id="comment-ca-marche" class="py-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
-            <!-- Animated background -->
-            <div class="absolute inset-0 pointer-events-none opacity-30">
-                <div class="liquid-glass-blob blob-1" style="animation-duration: 20s;"></div>
-                <div class="liquid-glass-blob blob-2" style="animation-duration: 25s;"></div>
-            </div>
-            
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <!-- Compact Header -->
-                <div class="text-center mb-8 animate-fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold text-oblink-gray mb-2" style="font-family: 'Montserrat', sans-serif;">
+        <!-- How it works with 3D Carousel - Optimized -->
+        <section id="comment-ca-marche" class="py-20 pb-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 animate-fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold text-oblink-gray mb-4" style="font-family: 'Montserrat', sans-serif;">
                         Comment ça marche ?
                     </h2>
-                    <p class="text-sm text-oblink-gray/70">3 étapes pour démarrer</p>
+                    <p class="text-xl text-oblink-gray/70">Simple, rapide, efficace</p>
                 </div>
                 
-                <!-- Compact Carousel Container -->
-                <div class="carousel-compact-container">
-                    <!-- Progress Bar -->
-                    <div class="carousel-progress-bar mb-6">
-                        <div class="progress-track">
-                            <div class="progress-fill" id="carousel-progress"></div>
-                        </div>
-                        <div class="progress-steps">
-                            <div class="progress-step active" data-step="0">
-                                <div class="step-dot"></div>
-                                <span class="step-label">Profil</span>
-                            </div>
-                            <div class="progress-step" data-step="1">
-                                <div class="step-dot"></div>
-                                <span class="step-label">Validation</span>
-                            </div>
-                            <div class="progress-step" data-step="2">
-                                <div class="step-dot"></div>
-                                <span class="step-label">Mission</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carousel with Swipe Support -->
-                    <div class="carousel-3d-compact" id="processCarousel">
+                <!-- 3D Carousel Container -->
+                <div class="carousel-3d-container">
+                    <div class="carousel-3d" id="processCarousel">
                         <!-- Slide 1 -->
-                        <div class="carousel-compact-item active" data-index="0">
-                            <div class="process-card-compact">
-                                <div class="flex items-start gap-4">
-                                    <div class="process-icon-compact">
-                                        <i class="fas fa-user-plus"></i>
-                                    </div>
-                                    <div class="flex-1">
-                                        <div class="flex items-center gap-2 mb-2">
-                                            <span class="process-badge orange">Étape 1</span>
-                                            <span class="text-xs text-oblink-gray/50">2 min</span>
-                                        </div>
-                                        <h3 class="text-xl md:text-2xl font-bold mb-2 text-oblink-gray">Créez votre profil</h3>
-                                        <p class="text-sm text-oblink-gray/70 leading-relaxed">Inscription rapide avec vos diplômes, expériences et disponibilités</p>
-                                    </div>
+                        <div class="carousel-3d-item active" data-index="0">
+                            <div class="process-card-glass">
+                                <div class="process-number">
+                                    <span class="text-oblink-orange">1</span>
                                 </div>
+                                <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Créez votre profil</h3>
+                                <p class="text-oblink-gray/80 leading-relaxed">Inscrivez-vous en quelques minutes et complétez votre profil professionnel avec vos diplômes, expériences et disponibilités.</p>
                             </div>
                         </div>
                         
                         <!-- Slide 2 -->
-                        <div class="carousel-compact-item next" data-index="1">
-                            <div class="process-card-compact">
-                                <div class="flex items-start gap-4">
-                                    <div class="process-icon-compact">
-                                        <i class="fas fa-check-circle"></i>
-                                    </div>
-                                    <div class="flex-1">
-                                        <div class="flex items-center gap-2 mb-2">
-                                            <span class="process-badge blue">Étape 2</span>
-                                            <span class="text-xs text-oblink-gray/50">24-48h</span>
-                                        </div>
-                                        <h3 class="text-xl md:text-2xl font-bold mb-2 text-oblink-gray">Validation 4 étapes</h3>
-                                        <p class="text-sm text-oblink-gray/70 leading-relaxed">Diplômes, expérience, test et entretien vidéo pour garantir la qualité</p>
-                                    </div>
+                        <div class="carousel-3d-item next" data-index="1">
+                            <div class="process-card-glass">
+                                <div class="process-number">
+                                    <span class="text-oblink-blue">2</span>
                                 </div>
+                                <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Validation 4 étapes</h3>
+                                <p class="text-oblink-gray/80 leading-relaxed">Votre profil est validé par notre équipe : diplômes, expérience, test de connaissances et entretien vidéo.</p>
                             </div>
                         </div>
                         
                         <!-- Slide 3 -->
-                        <div class="carousel-compact-item prev" data-index="2">
-                            <div class="process-card-compact">
-                                <div class="flex items-start gap-4">
-                                    <div class="process-icon-compact">
-                                        <i class="fas fa-briefcase"></i>
-                                    </div>
-                                    <div class="flex-1">
-                                        <div class="flex items-center gap-2 mb-2">
-                                            <span class="process-badge violet">Étape 3</span>
-                                            <span class="text-xs text-oblink-gray/50">Immédiat</span>
-                                        </div>
-                                        <h3 class="text-xl md:text-2xl font-bold mb-2 text-oblink-gray">Connectez & Travaillez</h3>
-                                        <p class="text-sm text-oblink-gray/70 leading-relaxed">Recevez des missions adaptées et gérez tout depuis votre dashboard</p>
-                                    </div>
+                        <div class="carousel-3d-item prev" data-index="2">
+                            <div class="process-card-glass">
+                                <div class="process-number">
+                                    <span class="text-oblink-violet">3</span>
                                 </div>
+                                <h3 class="text-2xl font-bold mb-4 text-oblink-gray">Connectez & Travaillez</h3>
+                                <p class="text-oblink-gray/80 leading-relaxed">Recevez des propositions de missions adaptées ou postulez directement. Gérez tout depuis votre dashboard.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Enhanced Navigation -->
-                    <div class="carousel-nav-compact">
-                        <button class="carousel-btn-compact" id="carousel-prev" aria-label="Étape précédente">
+                    <!-- Navigation Controls -->
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="carousel-prev" aria-label="Précédent">
                             <i class="fas fa-chevron-left"></i>
                         </button>
-                        
-                        <div class="carousel-counter">
-                            <span class="current-slide">1</span>
-                            <span class="slide-separator">/</span>
-                            <span class="total-slides">3</span>
-                        </div>
-                        
-                        <button class="carousel-btn-compact" id="carousel-next" aria-label="Étape suivante">
+                        <button class="carousel-btn" id="carousel-next" aria-label="Suivant">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
                     
-                    <!-- Auto-play indicator -->
-                    <div class="text-center mt-4">
-                        <button class="autoplay-toggle" id="carousel-autoplay">
-                            <i class="fas fa-pause text-xs"></i>
-                            <span class="text-xs ml-1">Auto</span>
-                        </button>
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <div class="carousel-indicator active" data-slide="0"></div>
+                        <div class="carousel-indicator" data-slide="1"></div>
+                        <div class="carousel-indicator" data-slide="2"></div>
                     </div>
                 </div>
             </div>
