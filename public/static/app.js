@@ -1,7 +1,49 @@
 // OBLINK Advanced Frontend JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('🚀 OBLINK Glassmorphism v3.0 with 3D Carousel initialized');
+  console.log('🚀 OBLINK Glassmorphism v3.1 with Blog initialized');
+
+  // ===== BLOG FILTERS =====
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const articleCards = document.querySelectorAll('.article-card');
+
+  if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.classList.remove('bg-gradient-to-r', 'from-oblink-orange', 'to-oblink-violet', 'text-white');
+          btn.classList.add('bg-white/60', 'backdrop-blur-xl', 'border', 'border-white/40', 'text-oblink-gray');
+        });
+        
+        this.classList.add('active');
+        this.classList.remove('bg-white/60', 'backdrop-blur-xl', 'border', 'border-white/40', 'text-oblink-gray');
+        this.classList.add('bg-gradient-to-r', 'from-oblink-orange', 'to-oblink-violet', 'text-white');
+        
+        // Filter articles
+        articleCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          
+          if (category === 'all' || cardCategory === category) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  }
 
   // ===== 3D CAROUSEL =====
   const carousel = document.getElementById('processCarousel');
