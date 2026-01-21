@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/">
+	
+<channel>
+	<title>Blog OBLINK</title>
+	<description>Articles pour opticiens indépendants</description>
+	<language>fr-FR</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	
+	<!-- CATÉGORIES -->
+	<wp:category>
+		<wp:term_id>1</wp:term_id>
+		<wp:category_nicename>temoignages</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Témoignages]]></wp:cat_name>
+	</wp:category>
+	
+	<wp:category>
+		<wp:term_id>2</wp:term_id>
+		<wp:category_nicename>juridique</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Juridique]]></wp:cat_name>
+	</wp:category>
+	
+	<wp:category>
+		<wp:term_id>3</wp:term_id>
+		<wp:category_nicename>finance</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Finance]]></wp:cat_name>
+	</wp:category>
+	
+	<wp:category>
+		<wp:term_id>4</wp:term_id>
+		<wp:category_nicename>formation</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Formation]]></wp:cat_name>
+	</wp:category>
+	
+	<wp:category>
+		<wp:term_id>5</wp:term_id>
+		<wp:category_nicename>conseils</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Conseils]]></wp:cat_name>
+	</wp:category>
+	
+	<wp:category>
+		<wp:term_id>6</wp:term_id>
+		<wp:category_nicename>outils</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Outils]]></wp:cat_name>
+	</wp:category>
+
+	<!-- ARTICLE 1 : Témoignage Marion -->
+	<item>
+		<title>Témoignage : « J'ai quitté mon CDI pour devenir opticienne freelance »</title>
+		<pubDate>Mon, 13 Jan 2026 09:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="temoignages"><![CDATA[Témoignages]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>Marion, 32 ans et diplômée depuis 8 ans, travaillait pour une grande enseigne nationale. Après plusieurs années de routine, elle a décidé de devenir <strong>opticienne freelance</strong>.</p>
+
+<h2>Pourquoi ce choix ?</h2>
+<p>« J'avais besoin de liberté. Je voulais choisir mes missions, gérer mon emploi du temps et surtout être mieux rémunérée pour mes compétences. En CDI, je gagnais environ 2 100 € net. Aujourd'hui, avec 15 jours de mission par mois, je dépasse facilement les 3 500 € net. »</p>
+
+<p>Selon les données du marché, un opticien salarié gagne en moyenne entre 2 200 € et 2 800 € net/mois, tandis qu'un freelance peut facturer entre 250 € et 350 € par jour selon l'expérience et la zone géographique.<sup><a href="https://ensao.fr/salaire-opticien-2025/" target="_blank" rel="noopener">1</a></sup></p>
+
+<h2>Les premières semaines</h2>
+<p>Marion avoue avoir eu peur au début : « J'ai mis 3 mois à me lancer administrativement. La crainte de l'URSSAF et des démarches me paralysait. »</p>
+
+<p>La création d'une micro-entreprise est pourtant gratuite et rapide (en ligne sur le site de l'URSSAF), avec des charges sociales de 21,2 % du chiffre d'affaires pour les prestations de services.<sup><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">2</a></sup></p>
+
+<blockquote>
+« La première mission à Marseille m'a convaincue. Le magasin était ravi, j'ai été payée sous 48h, et j'ai reçu plusieurs nouvelles demandes la semaine suivante. »
+</blockquote>
+
+<h2>Ses conseils pour se lancer</h2>
+<ul>
+<li><strong>Ne pas avoir peur de l'administratif</strong> : c'est plus simple qu'on ne le croit avec les bons outils.</li>
+<li><strong>Commencer avec 2-3 missions par mois</strong> pour tester sans pression.</li>
+<li><strong>Avoir un matelas de sécurité</strong> : 3 mois de dépenses en épargne avant de se lancer.</li>
+<li><strong>Utiliser une plateforme de gestion</strong> pour automatiser facturation et suivi.</li>
+</ul>
+
+<p><em>Aujourd'hui, Marion travaille 18 jours par mois et gagne plus qu'en CDI, tout en profitant d'une vraie flexibilité.</em></p>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://ensao.fr/salaire-opticien-2025/" target="_blank" rel="noopener">ENSAO – Salaire des opticiens en 2025</a></li>
+<li><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">Service-Public – Cotisations sociales micro-entrepreneur</a></li>
+</ol>
+
+<div style="background: #E8F5E9; padding: 20px; border-left: 4px solid #4CAF50; margin: 20px 0;">
+<strong>💡 À retenir</strong>
+<ul style="margin: 10px 0;">
+<li>✅ Le statut freelance offre une flexibilité et des revenus potentiellement supérieurs au salariat</li>
+<li>✅ Les démarches administratives sont simplifiées avec la micro-entreprise</li>
+<li>✅ Un matelas de sécurité de 3 mois est recommandé avant de se lancer</li>
+</ul>
+</div>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 2 : Facturation électronique -->
+	<item>
+		<title>Facturation électronique 2026 : Guide complet pour opticiens indépendants</title>
+		<pubDate>Mon, 13 Jan 2026 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="juridique"><![CDATA[Juridique]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>À partir de <strong>septembre 2026</strong>, toutes les entreprises françaises devront être capables de recevoir des factures électroniques. L'obligation d'émission suivra en fonction de la taille de l'entreprise.<sup><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">1</a></sup></p>
+
+<h2>📅 Calendrier officiel</h2>
+<ul>
+<li><strong>1er septembre 2026</strong> : Obligation de réception des factures électroniques (toutes entreprises)</li>
+<li><strong>1er septembre 2026</strong> : Obligation d'émission pour les grandes entreprises et ETI</li>
+<li><strong>1er septembre 2027</strong> : Obligation d'émission pour les PME et micro-entreprises</li>
+</ul>
+<p><small>Source : <a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">Service-Public</a></small></p>
+
+<h2>🔍 Qu'est-ce que ça change concrètement ?</h2>
+<p>Fini les factures PDF envoyées par email classique. Vous devrez passer par une <strong>Plateforme de Dématérialisation Partenaire (PDP)</strong> agréée par l'État ou utiliser le <strong>Portail Public de Facturation (PPF)</strong>.<sup><a href="https://www.keobiz.fr/le-mag/ppf-facturation-electronique/" target="_blank" rel="noopener">2</a></sup></p>
+
+<h3>PPF vs PDP : quelle différence ?</h3>
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Critère</th>
+<th>PPF (Public)</th>
+<th>PDP (Privé)</th>
+</tr>
+<tr>
+<td>Coût</td>
+<td>Gratuit</td>
+<td>Payant (selon volume)</td>
+</tr>
+<tr>
+<td>Fonctionnalités</td>
+<td>Basiques</td>
+<td>Avancées (workflow, CRM, etc.)</td>
+</tr>
+<tr>
+<td>Intégrations</td>
+<td>Limitées</td>
+<td>Multiples (comptabilité, ERP)</td>
+</tr>
+</table>
+
+<h2>✅ Checklist de mise en conformité</h2>
+<ol>
+<li><strong>SIRET à jour</strong> sur tous vos documents commerciaux</li>
+<li><strong>Choix d'une solution agréée</strong> (PPF ou PDP)</li>
+<li><strong>Test du parcours complet</strong> : devis → facture → paiement</li>
+<li><strong>Archivage sécurisé</strong> : obligation de conservation 10 ans<sup><a href="https://www.esker.com/fr/blog/facturation-electronique/archivage-facture-electronique/" target="_blank" rel="noopener">3</a></sup></li>
+</ol>
+
+<h2>⚠️ Sanctions en cas de non-respect</h2>
+<p>Le non-respect de l'obligation peut entraîner des amendes, notamment 15 € par facture non conforme (plafonnée à 15 000 € par an).<sup><a href="https://www.extencia.fr/sanctions-non-conformite-facturation-electronique" target="_blank" rel="noopener">4</a></sup></p>
+
+<div style="background: #FFF3E0; padding: 20px; border-left: 4px solid #FF6600; margin: 20px 0;">
+<strong>💡 Conseil pratique</strong><br>
+Anticipez dès maintenant en testant une solution de facturation électronique compatible. L'enjeu n'est pas seulement légal : c'est aussi votre trésorerie (paiements plus rapides, moins d'erreurs).
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">Service-Public – Généralisation de la facturation électronique</a></li>
+<li><a href="https://www.keobiz.fr/le-mag/ppf-facturation-electronique/" target="_blank" rel="noopener">Keobiz – PPF et facturation électronique</a></li>
+<li><a href="https://www.esker.com/fr/blog/facturation-electronique/archivage-facture-electronique/" target="_blank" rel="noopener">Esker – Archivage des factures électroniques</a></li>
+<li><a href="https://www.extencia.fr/sanctions-non-conformite-facturation-electronique" target="_blank" rel="noopener">Extencia – Sanctions facturation électronique</a></li>
+</ol>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 3 : Calculer son TJM -->
+	<item>
+		<title>Calculer votre taux horaire : la méthode complète (avec exemple)</title>
+		<pubDate>Mon, 13 Jan 2026 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="finance"><![CDATA[Finance]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>En tant qu'opticien freelance, <strong>fixer son taux journalier moyen (TJM)</strong> est crucial. Trop bas, vous travaillez à perte. Trop haut, vous risquez de ne pas trouver de missions.</p>
+
+<h2>🧮 La formule de base</h2>
+<pre>TJM = (Revenus souhaités + Charges + Marge) / Nombre de jours facturables</pre>
+
+<h2>📊 Exemple concret</h2>
+<p><strong>Objectif :</strong> Gagner l'équivalent de 2 500 € net/mois</p>
+
+<h3>Étape 1 : Calculer vos charges annuelles</h3>
+<ul>
+<li>Cotisations sociales (21,2 % du CA en micro-entreprise pour prestations de services) : ~6 600 €/an<sup><a href="https://lamicrobyflo.fr/cotisations-sociales-micro-entreprise/" target="_blank" rel="noopener">1</a></sup></li>
+<li>Assurance RC Pro : 400 €/an</li>
+<li>Mutuelle : 600 €/an</li>
+<li>Comptable (optionnel) : 800 €/an</li>
+<li>Frais divers (km, téléphone, logiciels) : 1 200 €/an</li>
+<li><strong>Total charges : 9 600 €/an</strong></li>
+</ul>
+
+<h3>Étape 2 : Définir le nombre de jours facturables</h3>
+<p>Sur 220 jours ouvrés, retirez :</p>
+<ul>
+<li>Congés : 25 jours</li>
+<li>Jours non facturés (admin, prospection, formation) : 40 jours</li>
+<li><strong>→ 155 jours facturables par an</strong></li>
+</ul>
+
+<h3>Étape 3 : Application de la formule</h3>
+<pre>
+Revenus souhaités : 2 500 € × 12 = 30 000 €
+Charges : 9 600 €
+Marge sécurité (10 %) : 3 960 €
+---
+Total : 43 560 €
+
+TJM = 43 560 € / 155 jours = <strong>281 €/jour HT</strong>
+</pre>
+
+<h2>💰 TJM moyen observé sur le marché</h2>
+<p>En optique, le TJM freelance se situe généralement entre <strong>250 € et 350 € HT/jour</strong> selon l'expérience, la zone géographique et les spécialisations (contactologie, basse vision).</p>
+
+<div style="background: #E3F2FD; padding: 20px; border-left: 4px solid #0099FF; margin: 20px 0;">
+<strong>💡 Points de vigilance</strong>
+<ul style="margin: 10px 0;">
+<li>✅ Pensez aux charges sociales (21,2 % du CA) dès le départ</li>
+<li>✅ Provisionnez systématiquement 25 % de chaque encaissement</li>
+<li>✅ Ajustez votre TJM selon la zone (Paris vs province) et la durée de mission</li>
+</ul>
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://lamicrobyflo.fr/cotisations-sociales-micro-entreprise/" target="_blank" rel="noopener">La Micro by Flo – Cotisations sociales micro-entreprise 2026</a></li>
+<li><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">Service-Public – Cotisations sociales micro-entrepreneur</a></li>
+</ol>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 4 : Top 5 erreurs comptables -->
+	<item>
+		<title>Top 5 des erreurs comptables des débutants (et comment les éviter)</title>
+		<pubDate>Mon, 13 Jan 2026 12:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="finance"><![CDATA[Finance]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>La comptabilité fait peur à beaucoup de freelances. Voici les <strong>5 erreurs les plus courantes</strong> et comment les éviter.</p>
+
+<h2>1️⃣ Mélanger compte pro et compte perso</h2>
+<p><strong>Erreur :</strong> Utiliser son compte bancaire personnel pour encaisser les paiements clients.</p>
+<p><strong>Solution :</strong> Ouvrir un compte dédié. C'est obligatoire si votre chiffre d'affaires dépasse 10 000 € pendant 2 années consécutives.<sup><a href="https://lamicrobyflo.fr/le-compte-bancaire-en-micro-entreprise/" target="_blank" rel="noopener">1</a></sup></p>
+
+<h2>2️⃣ Oublier de provisionner les charges sociales</h2>
+<p><strong>Erreur :</strong> Dépenser tout son chiffre d'affaires sans mettre de côté pour l'URSSAF.</p>
+<p><strong>Solution :</strong> Mettre automatiquement 25 % de chaque encaissement sur un compte épargne. Les cotisations sociales représentent 21,2 % du CA pour les prestations de services.<sup><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">2</a></sup></p>
+
+<h2>3️⃣ Ne pas conserver les justificatifs</h2>
+<p><strong>Erreur :</strong> Perdre les factures de frais professionnels (carburant, matériel, formation).</p>
+<p><strong>Solution :</strong> Scanner et classer toutes les factures dans un dossier cloud. L'obligation de conservation est de <strong>10 ans</strong> pour les documents comptables.<sup><a href="https://www.esker.com/fr/blog/facturation-electronique/archivage-facture-electronique/" target="_blank" rel="noopener">3</a></sup></p>
+
+<h2>4️⃣ Déclarer en retard</h2>
+<p><strong>Erreur :</strong> Oublier les déclarations mensuelles ou trimestrielles URSSAF.</p>
+<p><strong>Solution :</strong> Activer les prélèvements automatiques et mettre des rappels calendrier.</p>
+
+<h2>5️⃣ Confondre CA et bénéfice</h2>
+<p><strong>Erreur :</strong> Penser que 3 000 € de CA = 3 000 € dans la poche.</p>
+<p><strong>Solution :</strong> Calculer : <code>CA - Charges sociales - Frais = Revenu net</code></p>
+
+<div style="background: #E3F2FD; padding: 20px; border-left: 4px solid #0099FF; margin: 20px 0;">
+<strong>📊 Checklist mensuelle</strong>
+<ul style="margin: 10px 0;">
+<li>✅ Éditer toutes les factures du mois</li>
+<li>✅ Déclarer son CA à l'URSSAF</li>
+<li>✅ Classer les justificatifs de frais</li>
+<li>✅ Vérifier les paiements reçus</li>
+<li>✅ Provisionner 25 % pour les charges</li>
+</ul>
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://lamicrobyflo.fr/le-compte-bancaire-en-micro-entreprise/" target="_blank" rel="noopener">La Micro by Flo – Compte bancaire micro-entreprise</a></li>
+<li><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">Service-Public – Cotisations sociales micro-entrepreneur</a></li>
+<li><a href="https://www.esker.com/fr/blog/facturation-electronique/archivage-facture-electronique/" target="_blank" rel="noopener">Esker – Archivage des factures</a></li>
+</ol>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 5 : Auto-entrepreneur vs EURL vs Portage -->
+	<item>
+		<title>Auto-entrepreneur, EURL ou portage salarial : quel statut en 2026 ?</title>
+		<pubDate>Mon, 13 Jan 2026 13:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="juridique"><![CDATA[Juridique]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>Vous souhaitez devenir opticien freelance mais vous hésitez sur le statut ? Voici un <strong>comparatif détaillé</strong> des 3 options principales.</p>
+
+<h2>🏆 Auto-entrepreneur (Micro-entreprise)</h2>
+<h3>✅ Avantages</h3>
+<ul>
+<li>Simplicité administrative extrême</li>
+<li>Pas de TVA (si CA < 36 800 €)<sup><a href="https://lamicrobyflo.fr/les-plafonds-de-ca-en-micro-entreprise/" target="_blank" rel="noopener">1</a></sup></li>
+<li>Charges sociales proportionnelles au CA (21,2 %)<sup><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">2</a></sup></li>
+<li>Création gratuite et rapide (en ligne)</li>
+</ul>
+
+<h3>❌ Inconvénients</h3>
+<ul>
+<li>Plafond de CA : 77 700 €/an pour les prestations de services<sup><a href="https://lamicrobyflo.fr/les-plafonds-de-ca-en-micro-entreprise/" target="_blank" rel="noopener">1</a></sup></li>
+<li>Impossibilité de déduire les frais réels</li>
+<li>Pas de distinction patrimoine pro/perso</li>
+</ul>
+
+<p><strong>👉 Pour qui ?</strong> Débutants, missions ponctuelles, CA < 50 000 €/an</p>
+
+<hr>
+
+<h2>🏢 EURL (Entreprise Unipersonnelle à Responsabilité Limitée)</h2>
+<h3>✅ Avantages</h3>
+<ul>
+<li>Protection du patrimoine personnel</li>
+<li>Déduction des frais réels (voiture, local, matériel)</li>
+<li>Optimisation fiscale possible (IR ou IS)</li>
+<li>Pas de plafond de CA</li>
+</ul>
+
+<h3>❌ Inconvénients</h3>
+<ul>
+<li>Comptabilité lourde (expert-comptable recommandé)</li>
+<li>Coût de création : 200-500 €</li>
+<li>Cotisations sociales même si CA = 0</li>
+</ul>
+
+<p><strong>👉 Pour qui ?</strong> CA > 50 000 €, investissements importants, vision long terme</p>
+
+<hr>
+
+<h2>💼 Portage salarial</h2>
+<h3>✅ Avantages</h3>
+<ul>
+<li>Statut de salarié (chômage, retraite, sécurité sociale)</li>
+<li>Zéro gestion administrative</li>
+<li>Assurance RC Pro incluse</li>
+</ul>
+
+<h3>❌ Inconvénients</h3>
+<ul>
+<li>Frais de gestion : 5-15 % du CA<sup><a href="https://www.uncdi.com/frais-de-gestion-en-portage/" target="_blank" rel="noopener">3</a></sup></li>
+<li>Salaire minimum souvent requis (~2 800 € brut/mois)</li>
+<li>Moins de liberté qu'en indépendant</li>
+</ul>
+
+<p><strong>👉 Pour qui ?</strong> Transition CDI → freelance, besoin de sécurité, gros volumes</p>
+
+<hr>
+
+<h2>📊 Tableau comparatif</h2>
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Critère</th>
+<th>Auto-entrepreneur</th>
+<th>EURL</th>
+<th>Portage</th>
+</tr>
+<tr>
+<td>Facilité création</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Protection sociale</td>
+<td>⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Optimisation fiscale</td>
+<td>⭐</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>Coût de gestion</td>
+<td>€</td>
+<td>€€€</td>
+<td>€€</td>
+</tr>
+</table>
+
+<div style="background: #E8F5E9; padding: 20px; border-left: 4px solid #4CAF50; margin: 20px 0;">
+<strong>💡 Recommandation</strong><br>
+La majorité des opticiens freelance débutent en auto-entrepreneur. C'est le meilleur compromis simplicité/efficacité pour tester l'activité.
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://lamicrobyflo.fr/les-plafonds-de-ca-en-micro-entreprise/" target="_blank" rel="noopener">La Micro by Flo – Plafonds de CA micro-entreprise</a></li>
+<li><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">Service-Public – Cotisations sociales micro-entrepreneur</a></li>
+<li><a href="https://www.uncdi.com/frais-de-gestion-en-portage/" target="_blank" rel="noopener">UNCDI – Frais de gestion en portage salarial</a></li>
+</ol>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 6 : Contactologie -->
+	<item>
+		<title>Contactologie avancée : la formation qui booste votre carrière d'opticien</title>
+		<pubDate>Mon, 13 Jan 2026 14:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="formation"><![CDATA[Formation]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>La contactologie est une compétence très demandée en magasin, car elle combine conseil, suivi client et technique (paramètres, confort, renouvellement).</p>
+
+<h2>Pourquoi la contactologie vaut (vraiment) le coup</h2>
+<p>Le marché européen des lentilles de contact a montré une croissance solide en 2024, avec une dynamique portée par les lentilles journalières.<sup><a href="https://www.acuite.fr/actualite/economie/309540/croissance-robuste-du-marche-europeen-des-lentilles-de-contact-en-2024" target="_blank" rel="noopener">1</a></sup></p>
+<p>En France, les acteurs de la filière soulignent un potentiel important mais une adoption plus faible que certains pays européens, ce qui laisse de la marge de progression en boutique.<sup><a href="https://www.acuite.fr/actualite/economie/309540/croissance-robuste-du-marche-europeen-des-lentilles-de-contact-en-2024" target="_blank" rel="noopener">1</a></sup></p>
+
+<h2>Le trio gagnant : confort, sécurité, simplicité</h2>
+<ul>
+<li><strong>Confort :</strong> matériau, hydratation et adaptation au mode de vie (écrans, climatisation, sport).</li>
+<li><strong>Sécurité :</strong> hygiène, renouvellement, respect du temps de port, et suivi.</li>
+<li><strong>Simplicité :</strong> routine claire (mise en place, retrait, entretien) = meilleure observance.</li>
+</ul>
+
+<h2>Sécheresse oculaire : comment raisonner</h2>
+<p>Ne pas raisonner uniquement "teneur en eau élevée = mieux". L'approche moderne privilégie souvent la stabilité de surface et le confort en fin de journée.</p>
+<p>En pratique : privilégier des lentilles adaptées au temps de port + éduquer sur l'environnement (écrans, pauses, humidification) et la routine.</p>
+
+<h2>Choisir le renouvellement (à expliquer au client)</h2>
+<ul>
+<li><strong>Journalières :</strong> la catégorie la plus dynamique et dominante en valeur sur de nombreux marchés européens.<sup><a href="https://www.acuite.fr/actualite/economie/309540/croissance-robuste-du-marche-europeen-des-lentilles-de-contact-en-2024" target="_blank" rel="noopener">1</a></sup></li>
+<li><strong>Mensuelles / bi-hebdo :</strong> intéressantes si le client est rigoureux (entretien) et cherche une solution économique.</li>
+</ul>
+
+<h2>Plan de formation recommandé (simple et efficace)</h2>
+<ol>
+<li><strong>Module "bases" :</strong> paramètres (BC/DIA), matériaux, hygiène, contre-indications.</li>
+<li><strong>Module "cas pratiques" :</strong> yeux secs, port prolongé, adaptation torique.</li>
+<li><strong>Module "vente et suivi" :</strong> check de tolérance, conduite à tenir, fidélisation.</li>
+</ol>
+
+<div style="background: #E3F2FD; padding: 20px; border-left: 4px solid #0099FF; margin: 20px 0;">
+<strong>💡 Astuce pédagogique</strong><br>
+Dans votre application, créez un mini-questionnaire (mode de vie, temps écran, budget, fréquence de port). À la fin, vous proposez 2 options de renouvellement + 1 option "confort yeux secs".
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://www.acuite.fr/actualite/economie/309540/croissance-robuste-du-marche-europeen-des-lentilles-de-contact-en-2024" target="_blank" rel="noopener">Acuité – Marché européen des lentilles en 2024</a></li>
+</ol>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 7 : Missions de remplacement -->
+	<item>
+		<title>Missions de remplacement opticien : 7 conseils pour réussir votre première semaine</title>
+		<pubDate>Mon, 13 Jan 2026 15:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="conseils"><![CDATA[Conseils]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>Une mission de remplacement réussie, c'est 50% de technique et 50% de fiabilité : ponctualité, communication et méthode.</p>
+
+<h2>1) Préparez votre arrivée (J-3)</h2>
+<ul>
+<li>Demandez le nom du responsable + l'heure d'arrivée exacte.</li>
+<li>Vérifiez la tenue attendue (blouse, polo, dress code).</li>
+<li>Demandez quel logiciel est utilisé (LMS) pour anticiper.</li>
+</ul>
+
+<h2>2) Le kit "pro" à avoir</h2>
+<ul>
+<li>Attestation RC Pro à jour.</li>
+<li>RIB (si paiement direct) + pièce d'identité.</li>
+<li>Attestation URSSAF / justificatifs de statut si le magasin les demande.</li>
+</ul>
+
+<h2>3) Le jour 1 : observez avant d'agir</h2>
+<ul>
+<li>Repérez stock verres/montures, atelier, SAV.</li>
+<li>Demandez les process : tiers-payant, reprises, garanties, délais labo.</li>
+<li>Notez les "habitudes maison" (argumentaires, paniers moyens, offres en cours).</li>
+</ul>
+
+<h2>4) Prise en main du logiciel en 30 minutes</h2>
+<p>Objectif : être autonome sur 5 actions clés : créer un client, saisir une ordonnance, faire un devis, encaisser, gérer un SAV.</p>
+
+<h2>5) La règle d'or : ne cassez pas l'organisation</h2>
+<p>Le magasin n'attend pas un consultant en organisation : il attend quelqu'un qui absorbe la charge et fluidifie la journée.</p>
+
+<h2>6) Laissez une trace (fin de mission)</h2>
+<ul>
+<li>Dossiers en attente (mutuelle, commandes, SAV).</li>
+<li>Points à surveiller (client sensible, adaptation progressive, etc.).</li>
+<li>Ce que vous avez fait (utile au responsable le lendemain).</li>
+</ul>
+
+<h2>7) Facturez vite, proprement</h2>
+<p>Avec la réforme de la facturation électronique, il devient encore plus important d'avoir un process clair et conforme (émission et réception selon calendrier).<sup><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">1</a></sup></p>
+
+<div style="background: #FFF3E0; padding: 20px; border-left: 4px solid #FF6600; margin: 20px 0;">
+<strong>💡 Checklist rapide</strong>
+<ul style="margin: 10px 0;">
+<li>✅ J-3 : Contact responsable + tenue + logiciel</li>
+<li>✅ J-1 : Kit pro prêt (RC Pro, RIB, justificatifs)</li>
+<li>✅ J1 : Observer avant d'agir</li>
+<li>✅ Fin de mission : Compte-rendu écrit</li>
+</ul>
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">Service-Public – Généralisation de la facturation électronique</a></li>
+</ol>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 8 : 5 outils freelance -->
+	<item>
+		<title>5 outils indispensables pour gérer votre activité d'opticien freelance en 2026</title>
+		<pubDate>Mon, 13 Jan 2026 16:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="outils"><![CDATA[Outils]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>Pour tenir le rythme en freelance, le bon stack d'outils fait la différence : moins d'admin, moins d'erreurs, plus de temps en magasin.</p>
+
+<h2>1) Une solution de facturation prête pour 2026</h2>
+<p>La facturation électronique se généralise en 2026–2027 : choisissez une solution qui pourra gérer ce cadre (PPF/PDP, formats, suivi).<sup><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">1</a></sup></p>
+
+<h2>2) Un outil de comptabilité adapté à votre statut</h2>
+<p>En micro-entreprise, les cotisations sont proportionnelles au chiffre d'affaires : un outil simple qui suit encaissements et échéances évite 80% des erreurs de débutants.<sup><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">2</a></sup></p>
+
+<h2>3) Un compte bancaire dédié (quand c'est requis)</h2>
+<p>Un compte séparé aide à piloter l'activité et à éviter les confusions pro/perso, surtout quand le chiffre d'affaires augmente.<sup><a href="https://lamicrobyflo.fr/le-compte-bancaire-en-micro-entreprise/" target="_blank" rel="noopener">3</a></sup></p>
+
+<h2>4) Un calendrier + un système de suivi (missions, relances, documents)</h2>
+<ul>
+<li>Agenda (disponibilités, déplacements, rappels).</li>
+<li>Notes standardisées "fin de mission" (dossiers en cours, SAV, commandes).</li>
+<li>Modèle d'email de compte-rendu.</li>
+</ul>
+
+<h2>5) Un archivage numérique propre</h2>
+<p>L'archivage est un sujet sous-estimé : vous devez pouvoir retrouver facilement devis, factures, justificatifs (et les conserver sur la durée).<sup><a href="https://www.esker.com/fr/blog/facturation-electronique/archivage-facture-electronique/" target="_blank" rel="noopener">4</a></sup></p>
+
+<div style="background: #E8F5E9; padding: 20px; border-left: 4px solid #4CAF50; margin: 20px 0;">
+<strong>💡 Conseil</strong><br>
+Dans votre application, vous pouvez proposer une "stack recommandée" (outlying facturation + outil compta + checklists), et laisser l'utilisateur choisir selon son statut.
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">Service-Public – Calendrier facturation électronique</a></li>
+<li><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">Service-Public – Cotisations micro-entrepreneur</a></li>
+<li><a href="https://lamicrobyflo.fr/le-compte-bancaire-en-micro-entreprise/" target="_blank" rel="noopener">La Micro by Flo – Compte bancaire micro-entreprise</a></li>
+<li><a href="https://www.esker.com/fr/blog/facturation-electronique/archivage-facture-electronique/" target="_blank" rel="noopener">Esker – Archivage des factures électroniques</a></li>
+</ol>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 9 : Entretien enseigne -->
+	<item>
+		<title>Réussir son entretien avec une enseigne nationale : les questions à prévoir</title>
+		<pubDate>Mon, 13 Jan 2026 17:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="conseils"><![CDATA[Conseils]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>Un entretien avec une enseigne se joue sur 3 choses : votre fiabilité, votre capacité à être opérationnel vite, et votre posture (pro, simple, efficace).</p>
+
+<h2>Les 10 questions les plus fréquentes (et comment répondre)</h2>
+
+<h3>1) Pourquoi le freelance plutôt qu'un CDI ?</h3>
+<p><strong>Réponse attendue :</strong> diversité des missions, progression rapide, autonomie, sans critiquer un ancien employeur.</p>
+
+<h3>2) Êtes-vous opérationnel sur notre logiciel ?</h3>
+<p><strong>Réponse attendue :</strong> "Je connais X / je suis adaptable / je me forme vite sur les workflows clés (devis, encaissement, SAV)."</p>
+
+<h3>3) Quel est votre tarif ?</h3>
+<p><strong>Réponse attendue :</strong> un tarif clair + une règle simple (ajustement possible selon durée, urgence, distance).</p>
+
+<h3>4) Vos forces principales en magasin ?</h3>
+<ul>
+<li>Atelier / montages / ajustages.</li>
+<li>Vente (progressifs, solaires, 2e paire, options).</li>
+<li>Process (tiers-payant, dossiers, relances).</li>
+</ul>
+
+<h3>5) Comment gérez-vous la pression (rush, équipe réduite) ?</h3>
+<p><strong>Réponse attendue :</strong> méthode, priorisation, communication.</p>
+
+<h3>6) Avez-vous des références ?</h3>
+<p><strong>Réponse attendue :</strong> retours écrits, avis, contacts, et exemples de missions (sans citer d'infos sensibles).</p>
+
+<h3>7) Comment facturez-vous ?</h3>
+<p><strong>Réponse attendue :</strong> process simple, facturation rapide, anticipation réforme facturation électronique.<sup><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">1</a></sup></p>
+
+<h3>8) Quelle est votre disponibilité ?</h3>
+<p><strong>Réponse attendue :</strong> planning clair + engagement sur une période.</p>
+
+<h3>9) Vous préférez quel type de magasin ?</h3>
+<p><strong>Réponse attendue :</strong> adaptabilité + mention de vos spécialisations (contactologie, basse vision, etc.).</p>
+
+<h3>10) Et si on vous propose un CDI ?</h3>
+<p><strong>Réponse attendue :</strong> ouverture sans contradiction ("j'étudie selon projet, mais actuellement je privilégie le freelance").</p>
+
+<h2>Checklist 24h avant</h2>
+<ul>
+<li>Relire la fiche du magasin (adresse, horaires, spécialités).</li>
+<li>Préparer vos documents (RC pro, justificatifs statut).</li>
+<li>Préparer 2-3 questions intelligentes (objectifs, logiciel, équipe, planning).</li>
+<li>Arriver 10 minutes en avance.</li>
+</ul>
+
+<div style="background: #E3F2FD; padding: 20px; border-left: 4px solid #0099FF; margin: 20px 0;">
+<strong>💡 Astuce finale</strong><br>
+L'entretien n'est pas une négociation difficile : c'est un échange gagnant-gagnant. Montrez que vous comprenez leurs besoins et que vous êtes la solution simple.
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">Service-Public – Facturation électronique</a></li>
+</ol>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 10 : Basse vision -->
+	<item>
+		<title>Basse vision : une spécialisation rentable et valorisante pour opticiens</title>
+		<pubDate>Mon, 13 Jan 2026 18:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="formation"><![CDATA[Formation]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>La basse vision (malvoyance) est une spécialisation à fort impact : elle demande plus de temps et de délago pédagogie, mais apporte une vraie valeur aux patients.</p>
+
+<h2>Le besoin est massif en France</h2>
+<p>Plusieurs sources associatives estiment qu'en France, près de 2 millions de personnes sont concernées par un trouble de la vision, dont une part importante d'aveugles et de malvoyants.<sup><a href="https://www.aveuglesdefrance.org/quelques-chiffres-sur-la-deficience-visuelle" target="_blank" rel="noopener">1</a></sup></p>
+<p>Des articles de vulgarisation et de santé reprennent aussi des ordres de grandeur autour de 1,7–2 millions de personnes, et alertent sur la hausse attendue avec le vieillissement.<sup><a href="https://www.sciencesetavenir.fr/sante/ophtalmologie/sante-des-yeux-l-inquietant-constat_180851" target="_blank" rel="noopener">2</a></sup></p>
+
+<h2>Ce que veut un patient basse vision</h2>
+<ul>
+<li><strong>Comprendre</strong> (explications simples, dédramatisation).</li>
+<li><strong>Retrouver de l'autonomie</strong> (lecture, déplacements, gestes du quotidien).</li>
+<li><strong>Une solution réaliste</strong> : aides optiques + entraînement + suivi.</li>
+</ul>
+
+<h2>Le kit matériel (démarrage raisonnable)</h2>
+<ul>
+<li>Échelle de lecture + tests de près.</li>
+<li>Loupes (différents grossissements).</li>
+<li>Lampe / éclairage adapté (souvent sous-estimé).</li>
+<li>Selon activité : aide électronique (loupe vidéo), filtres, systèmes télescopiques.</li>
+</ul>
+
+<h2>Comment structurer une offre "simple" en magasin</h2>
+<ol>
+<li><strong>1 rendez-vous diagnostic</strong> (30–60 min) : besoins, tests de lecture, essais.</li>
+<li><strong>1 rendez-vous équipement</strong> (45–90 min) : choix + prise en main.</li>
+<li><strong>1 suivi</strong> (2–4 semaines) : ajustement et habitudes.</li>
+</ol>
+
+<div style="background: #FFF3E0; padding: 20px; border-left: 4px solid #FF6600; margin: 20px 0;">
+<strong>💡 Conseil business</strong><br>
+Pour votre application, proposez un module "basse vision" avec : (1) trame d'entretien, (2) check-list matériel, (3) tableau de recommandations (selon besoin : lecture, TV, mobilité).
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://www.aveuglesdefrance.org/quelques-chiffres-sur-la-deficience-visuelle" target="_blank" rel="noopener">Fédération des Aveugles de France – Chiffres déficience visuelle</a></li>
+<li><a href="https://www.sciencesetavenir.fr/sante/ophtalmologie/sante-des-yeux-l-inquietant-constat_180851" target="_blank" rel="noopener">Sciences et Avenir – Ordres de grandeur & tendances</a></li>
+</ol>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 11 : CDD vs Auto-entrepreneur (Bonus) -->
+	<item>
+		<title>CDD ou auto-entrepreneur pour remplacer un opticien : que choisir en 2026 ?</title>
+		<pubDate>Mon, 13 Jan 2026 19:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="juridique"><![CDATA[Juridique]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>Vous devez remplacer un opticien pendant 2 à 4 semaines (congés, arrêt maladie, pic d'activité) ? Deux options reviennent souvent : <strong>embaucher en CDD</strong> ou <strong>faire appel à un auto-entrepreneur</strong>. Voici comment choisir en fonction de votre situation.</p>
+
+<h2>Option 1 : Le CDD — Contrat direct avec le salarié</h2>
+<p>Le CDD est un contrat conclu directement entre votre magasin et l'opticien, avec une durée déterminée et un cadre juridique strict.<sup><a href="https://travail-emploi.gouv.fr/le-contrat-duree-determinee-cdd" target="_blank" rel="noopener">1</a></sup></p>
+
+<h3>✅ Avantages du CDD</h3>
+<ul>
+<li><strong>Relation directe</strong> : vous gérez l'intégration, la formation et le suivi comme un salarié classique.</li>
+<li><strong>Contrôle total</strong> : horaires, tâches, méthode de travail (lien de subordination).</li>
+<li><strong>Coût "apparent" souvent plus bas</strong> : le salaire brut + charges patronales peut sembler moins élevé qu'un tarif freelance.</li>
+</ul>
+
+<h3>❌ Inconvénients du CDD</h3>
+<ul>
+<li><strong>Gestion administrative lourde</strong> : rédaction du contrat, DPAE (Déclaration Préalable À l'Embauche), paie, cotisations, fin de contrat.</li>
+<li><strong>Délai de recrutement</strong> : publication de l'annonce, tri des CV, entretiens, vérification des références — cela peut prendre 1 à 2 semaines.</li>
+<li><strong>Rigidité en cas de rupture anticipée</strong> : rupture possible uniquement dans des cas précis (accord mutuel, faute grave, force majeure, inaptitude).<sup><a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F40" target="_blank" rel="noopener">2</a></sup></li>
+<li><strong>Indemnité de fin de contrat</strong> : si le CDD se termine normalement, une prime de précarité de 10% du salaire brut total est due (sauf exceptions).<sup><a href="https://www.service-public.fr/particuliers/vosdroits/F40" target="_blank" rel="noopener">2</a></sup></li>
+<li><strong>Coûts cachés</strong> : temps passé à recruter, former, gérer la paie + risque d'erreur administrative (retard URSSAF, mauvaise déclaration).</li>
+</ul>
+
+<hr>
+
+<h2>Option 2 : L'auto-entrepreneur — Prestation de service</h2>
+<p>L'auto-entrepreneur (micro-entrepreneur) facture une prestation de remplacement : il est autonome, gère sa propre activité et émet des factures.<sup><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">3</a></sup></p>
+
+<h3>✅ Avantages de l'auto-entrepreneur</h3>
+<ul>
+<li><strong>Zéro gestion RH</strong> : pas de contrat de travail, pas de paie à gérer, pas de DPAE, pas de déclarations URSSAF.</li>
+<li><strong>Rapidité</strong> : un opticien freelance disponible peut commencer sous 24-48h si le besoin est urgent.</li>
+<li><strong>Flexibilité</strong> : vous définissez ensemble la durée, les jours, les horaires (dans le cadre d'un contrat de prestation clair).</li>
+<li><strong>Facturation simple</strong> : l'auto-entrepreneur vous envoie une facture, vous payez (anticipez la réforme facturation électronique 2026-2027).<sup><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">4</a></sup></li>
+<li><strong>Pas de prime de précarité</strong> ni d'indemnité de fin de contrat.</li>
+</ul>
+
+<h3>❌ Inconvénients de l'auto-entrepreneur</h3>
+<ul>
+<li><strong>Tarif horaire/journalier plus élevé</strong> : le TJM (Taux Journalier Moyen) d'un opticien freelance se situe entre 250 € et 350 € HT/jour selon expérience et zone.</li>
+<li><strong>Pas de lien de subordination</strong> : vous ne pouvez pas imposer méthode de travail (sinon risque de requalification en salariat déguisé).</li>
+<li><strong>Vous devez cadrer la prestation</strong> : périmètre (vente, atelier, SAV), horaires, livrables, RC Pro à jour.</li>
+</ul>
+
+<hr>
+
+<h2>📊 Comparaison chiffrée : 2 semaines de remplacement</h2>
+<p><strong>Hypothèse :</strong> Opticien niveau BTS+2 ans d'expérience, Paris/Île-de-France, 70h sur 2 semaines (10 jours × 7h).</p>
+
+<table border="1" cellpadding="10" style="width:100%;border-collapse:collapse;">
+<tr>
+<th>Poste</th>
+<th>CDD</th>
+<th>Auto-entrepreneur</th>
+</tr>
+<tr>
+<td><strong>Salaire brut / TJM</strong></td>
+<td>2 200 € brut/mois<br>≈ 1 100 € brut/2 semaines</td>
+<td>320 €/jour × 10 jours<br>= 3 200 € HT</td>
+</tr>
+<tr>
+<td><strong>Charges patronales (≈42%)</strong></td>
+<td>462 €</td>
+<td>0 € (gérées par le freelance)</td>
+</tr>
+<tr>
+<td><strong>Prime précarité (10%)</strong></td>
+<td>110 €</td>
+<td>0 €</td>
+</tr>
+<tr>
+<td><strong>Gestion admin / recrutement</strong></td>
+<td>≈ 300-500 € (temps RH, annonce, tri CV, paie)</td>
+<td>0 € (contact direct + facture)</td>
+</tr>
+<tr>
+<td><strong>TOTAL COÛT RÉEL</strong></td>
+<td><strong>1 972 € - 2 172 €</strong></td>
+<td><strong>3 200 € HT</strong></td>
+</tr>
+<tr>
+<td><strong>DÉLAI MISE EN PLACE</strong></td>
+<td>7 à 14 jours (recrutement)</td>
+<td>24-48h (si profil disponible)</td>
+</tr>
+</table>
+
+<p><small><strong>Note :</strong> Le coût CDD peut encore augmenter si vous sous-estimez le temps passé (entretiens ratés, formation J1-J2, erreurs paie). Le coût auto-entrepreneur est fixe et connu d'avance.</small></p>
+
+<hr>
+
+<h2>💡 Cas pratique : un magasin en Île-de-France</h2>
+<p><strong>Situation :</strong> Opticienne en congé maternité (3 semaines), besoin urgent de renfort atelier + vente (verres progressifs, contactologie).</p>
+
+<h3>Scénario A : CDD</h3>
+<ul>
+<li>Temps de recrutement : 10 jours (annonce, tri, 3 entretiens).</li>
+<li>Formation J1-J2 sur logiciel Cosium + process tiers-payant.</li>
+<li>Coût total : 2 100 € (salaire + charges + admin + prime précarité).</li>
+<li><strong>Risque :</strong> si le candidat ne convient pas techniquement, rupture anticipée compliquée.</li>
+</ul>
+
+<h3>Scénario B : Auto-entrepreneur</h3>
+<ul>
+<li>Contact via plateforme spécialisée ou réseau : profil disponible sous 48h.</li>
+<li>Brief rapide (logiciel, périmètre, horaires) + vérification RC Pro.</li>
+<li>Opérationnel J1 (déjà formé Cosium, autonome atelier).</li>
+<li>Coût total : 3 360 € HT pour 3 semaines (320 €/j × 15 j).</li>
+<li><strong>Gain :</strong> zéro temps RH, démarrage immédiat, flexibilité (prolongation ou arrêt facile).</li>
+</ul>
+
+<p><strong>Conclusion du cas :</strong> Le magasin choisit l'auto-entrepreneur pour l'<strong>urgence</strong> et la <strong>simplicité</strong>, malgré un coût légèrement supérieur.</p>
+
+<hr>
+
+<h2>🎯 Quand choisir quoi ?</h2>
+
+<h3>✅ Choisissez le CDD si :</h3>
+<ul>
+<li>Vous avez <strong>le temps de recruter</strong> (≥ 2 semaines de délai).</li>
+<li>Vous voulez <strong>intégrer durablement</strong> quelqu'un dans l'équipe (possibilité de prolongation/CDI).</li>
+<li>Vous avez <strong>une personne RH dédiée</strong> pour gérer contrat + paie + déclarations.</li>
+<li>Vous recherchez un <strong>coût de base plus faible</strong> (si vous ne comptez pas le temps passé).</li>
+</ul>
+
+<h3>✅ Choisissez l'auto-entrepreneur si :</h3>
+<ul>
+<li>Vous avez un <strong>besoin urgent</strong> (démarrage sous 48-72h).</li>
+<li>Vous voulez <strong>zéro gestion administrative</strong> (pas de paie, pas de DPAE, facturation simple).</li>
+<li>Vous cherchez <strong>flexibilité</strong> (prolonger ou arrêter facilement selon besoin).</li>
+<li>Vous voulez un <strong>profil opérationnel immédiatement</strong> (atelier, vente, logiciels maîtrisés).</li>
+<li>Vous anticipez la <strong>réforme facturation électronique 2026-2027</strong> avec un process clair.<sup><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">4</a></sup></li>
+</ul>
+
+<hr>
+
+<div style="background:#E8F5E9;padding:20px;border-left:4px solid #4CAF50;margin:20px 0;">
+<strong>🚀 Besoin d'un remplaçant opticien sous 48h ?</strong><br>
+OBLINK met en relation magasins et opticiens freelances qualifiés (atelier, vente, contacto, basse vision).<br>
+👉 <a href="https://oblink.fr/inscription-opticien"><strong>Je suis opticien : créer mon profil</strong></a>
+</div>
+
+<hr>
+
+<h3>📚 Sources officielles</h3>
+<ol>
+<li><a href="https://travail-emploi.gouv.fr/le-contrat-duree-determinee-cdd" target="_blank" rel="noopener">Travail-emploi.gouv.fr – Le contrat à durée déterminée (CDD)</a></li>
+<li><a href="https://www.service-public.fr/particuliers/vosdroits/F40" target="_blank" rel="noopener">Service-Public – Fin d'un CDD (indemnité de précarité, rupture anticipée)</a></li>
+<li><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">Service-Public – Cotisations sociales micro-entrepreneur</a></li>
+<li><a href="https://entreprendre.service-public.gouv.fr/actualites/A15683" target="_blank" rel="noopener">Service-Public – Généralisation de la facturation électronique (2026-2027)</a></li>
+</ol>
+
+<div style="background:#FFF3E0;padding:20px;border-left:4px solid #FF6600;margin:20px 0;">
+<strong>💡 À retenir</strong>
+<ul style="margin:10px 0;">
+<li>✅ Le CDD coûte moins cher "sur le papier" mais demande du temps RH et comporte des contraintes (rupture, prime précarité)</li>
+<li>✅ L'auto-entrepreneur coûte plus cher à la journée mais offre rapidité, flexibilité et zéro gestion administrative</li>
+<li>✅ Pour une mission urgente (< 1 mois), l'auto-entrepreneur est souvent le meilleur compromis coût/délai/simplicité</li>
+</ul>
+</div>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 12 : Témoignage Karim -->
+	<item>
+		<title>« J'ai quitté mon CDI : un an après, je gagne 3 200€/mois en freelance »</title>
+		<pubDate>Mon, 13 Jan 2026 20:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="temoignages"><![CDATA[Témoignages]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>Karim, 28 ans et diplômé d'un BTS Opticien-Lunetier en 2019, a travaillé 4 ans en CDI pour une grande enseigne nationale. Aujourd'hui, il est opticien freelance et gagne <strong>3 200€ net par mois</strong> en travaillant seulement 16 jours. Voici son histoire.</p>
+
+<h2>Le quotidien en CDI : un sentiment de plafonnement</h2>
+<p>« J'aimais mon métier, mais je me sentais bloqué. Mon salaire stagnait autour de 2 100€ net, avec peu de perspectives d'évolution. En tant que vendeur principal, j'avais les mêmes responsabilités qu'un manager, sans la reconnaissance ni le salaire. »</p>
+
+<p>Selon les données du marché, un opticien salarié en France gagne en moyenne entre <strong>2 200€ et 2 800€ net/mois</strong> selon l'expérience et la zone géographique.<sup><a href="https://ensao.fr/salaire-opticien-2025/" target="_blank" rel="noopener">1</a></sup></p>
+
+<blockquote>
+« Le déclic, ça a été LinkedIn. J'ai vu des anciens collègues passer freelance et afficher leur liberté. Je me suis dit : pourquoi pas moi ? »
+</blockquote>
+
+<h2>Le passage à l'acte : 3 mois de préparation</h2>
+<p>Karim n'a pas quitté son CDI du jour au lendemain. Il a préparé sa transition pendant 3 mois :</p>
+
+<ol>
+<li><strong>Formation administrative</strong> : il a suivi un webinaire gratuit sur la création d'auto-entreprise (via OBLINK).</li>
+<li><strong>Constitution d'une réserve</strong> : il a économisé 3 mois de dépenses (environ 4 500€) pour tenir les premiers mois.</li>
+<li><strong>Test du marché</strong> : pendant ses congés, il a réalisé 2 missions de remplacement pour valider le concept.</li>
+</ol>
+
+<p>« La création de mon statut auto-entrepreneur a pris 15 minutes en ligne. C'était gratuit et beaucoup plus simple que je ne le pensais. »<sup><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">2</a></sup></p>
+
+<h2>Ses revenus réels après 1 an en freelance</h2>
+<table border="1" cellpadding="10" style="width:100%;border-collapse:collapse;">
+<tr>
+<th>Poste</th>
+<th>Montant</th>
+</tr>
+<tr>
+<td><strong>TJM (Taux Journalier Moyen)</strong></td>
+<td>320€ HT/jour</td>
+</tr>
+<tr>
+<td><strong>Jours travaillés/mois</strong></td>
+<td>14 à 16 jours</td>
+</tr>
+<tr>
+<td><strong>Chiffre d'affaires mensuel</strong></td>
+<td>4 480€ à 5 120€ HT</td>
+</tr>
+<tr>
+<td><strong>Charges sociales (21,2%)</strong><sup><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">2</a></sup></td>
+<td>- 950€ à - 1 085€</td>
+</tr>
+<tr>
+<td><strong>Autres charges (RC Pro, mutuelle, frais)</strong></td>
+<td>- 250€/mois</td>
+</tr>
+<tr>
+<td><strong>REVENU NET RÉEL</strong></td>
+<td><strong>3 280€ à 3 785€ net/mois</strong></td>
+</tr>
+</table>
+
+<p><small><strong>Comparaison :</strong> En CDI, Karim gagnait 2 100€ net. En freelance, il gagne <strong>+56% de plus</strong> tout en travaillant moins de jours.</small></p>
+
+<h2>Les avantages qu'il ne regrette pas</h2>
+<ul>
+<li><strong>Liberté d'emploi du temps</strong> : il choisit ses missions et peut refuser celles qui ne l'intéressent pas.</li>
+<li><strong>Polyvalence technique</strong> : il travaille dans différents magasins (Krys, Optic 2000, indépendants), ce qui enrichit son expérience.</li>
+<li><strong>Reconnaissance financière</strong> : son expertise en atelier et contactologie est valorisée au prix du marché.</li>
+<li><strong>Moins de stress administratif qu'il ne pensait</strong> : « Avec les bons outils, la gestion prend 2h par mois maximum. »</li>
+</ul>
+
+<h2>Les difficultés rencontrées</h2>
+<p>Karim est honnête : tout n'est pas parfait.</p>
+
+<ul>
+<li><strong>Revenus variables</strong> : certains mois, il n'a que 12 jours de mission (surtout en janvier-février). Il doit provisionner pour compenser.</li>
+<li><strong>Pas de congés payés</strong> : s'il ne travaille pas, il ne gagne pas. Il provisionne 10% de son CA pour ses vacances.</li>
+<li><strong>Gestion administrative</strong> : même si c'est simple, il faut être rigoureux (factures, déclarations URSSAF mensuelles).</li>
+<li><strong>Solitude parfois</strong> : contrairement au CDI, il n'a pas d'équipe fixe. Il compense en restant en contact avec d'autres freelances via OBLINK.</li>
+</ul>
+
+<h2>Ses 3 conseils pour se lancer</h2>
+
+<div style="background:#E8F5E9;padding:20px;border-left:4px solid #4CAF50;margin:20px 0;">
+<strong>1️⃣ Tester avant de démissionner</strong><br>
+Faites 2-3 missions pendant vos congés pour valider que le freelancing vous correspond.
+</div>
+
+<div style="background:#E3F2FD;padding:20px;border-left:4px solid #0099FF;margin:20px 0;">
+<strong>2️⃣ Avoir un matelas de sécurité</strong><br>
+Économisez au moins 3 mois de dépenses avant de quitter votre CDI. Cela vous permettra de tenir les premiers mois.
+</div>
+
+<div style="background:#FFF3E0;padding:20px;border-left:4px solid #FF6600;margin:20px 0;">
+<strong>3️⃣ Maîtriser 2-3 logiciels de gestion</strong><br>
+Cosium, Ivoirnet, Montécristo : plus vous êtes polyvalent, plus vous êtes demandé. Les magasins rappellent toujours les opticiens qui maîtrisent leur logiciel.
+</div>
+
+<h2>Et demain ?</h2>
+<p>Karim envisage de passer en EURL d'ici 2 ans pour optimiser sa fiscalité. « Mais pour l'instant, l'auto-entreprise me convient parfaitement. Je gagne bien ma vie, je suis libre, et je fais ce que j'aime. »</p>
+
+<blockquote>
+« Mon seul regret ? Ne pas avoir sauté le pas plus tôt. »
+</blockquote>
+
+<hr>
+
+<div style="background:#E8F5E9;padding:20px;border-left:4px solid #4CAF50;margin:20px 0;">
+<strong>🚀 Vous aussi, devenez opticien freelance</strong><br>
+OBLINK accompagne les opticiens dans leur transition vers le freelancing : création de statut, formation logiciels, mise en relation avec des magasins.<br>
+👉 <a href="https://oblink.fr/inscription-opticien"><strong>Je m'inscris gratuitement</strong></a>
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://ensao.fr/salaire-opticien-2025/" target="_blank" rel="noopener">ENSAO – Salaire des opticiens en 2025</a></li>
+<li><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">Service-Public – Cotisations sociales micro-entrepreneur (21,2% pour prestations de services)</a></li>
+</ol>
+
+<div style="background:#E3F2FD;padding:20px;border-left:4px solid #0099FF;margin:20px 0;">
+<strong>💡 À retenir</strong>
+<ul style="margin:10px 0;">
+<li>✅ Un opticien freelance peut gagner 50% de plus qu'en CDI avec une bonne organisation</li>
+<li>✅ La transition demande 3 mois de préparation (statut, réserve financière, test du marché)</li>
+<li>✅ La polyvalence logicielle (Cosium, Ivoirnet) est la clé pour être rappelé par les magasins</li>
+</ul>
+</div>]]></content:encoded>
+	</item>
+
+	<!-- ARTICLE 13 : Guide provisionnement -->
+	<item>
+		<title>Opticien freelance : combien mettre de côté chaque mois ? (guide complet)</title>
+		<pubDate>Mon, 13 Jan 2026 21:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="finance"><![CDATA[Finance]]></category>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<content:encoded><![CDATA[<p>Vous débutez en freelance et vous vous demandez : <em>« Combien dois-je mettre de côté chaque mois ? »</em> C'est LA question que tout opticien indépendant se pose. Voici la méthode simple pour ne jamais être pris au dépourvu.</p>
+
+<h2>L'erreur n°1 des débutants : confondre CA et revenu net</h2>
+<p>Vous facturez 3 000€ ce mois-ci ? <strong>Attention :</strong> vous n'avez PAS 3 000€ à dépenser. Une partie de ce montant appartient déjà à l'URSSAF, à votre assurance RC Pro, et à vos futures vacances.</p>
+
+<blockquote>
+« Ma première année, j'ai tout dépensé. Résultat : une facture URSSAF de 4 500€ que je n'avais pas provisionnée. J'ai dû emprunter. » — Sarah, opticienne freelance
+</blockquote>
+
+<h2>La règle des 3 comptes (méthode simple et efficace)</h2>
+<p>Pour éviter ce piège, adoptez la <strong>méthode des 3 comptes bancaires</strong> :</p>
+
+<h3>Compte 1 : Encaissements (100% du CA)</h3>
+<p>C'est votre compte professionnel (obligatoire si votre CA dépasse 10 000€ sur 2 années consécutives).<sup><a href="https://lamicrobyflo.fr/le-compte-bancaire-en-micro-entreprise/" target="_blank" rel="noopener">1</a></sup> Tous vos paiements clients arrivent ici.</p>
+
+<h3>Compte 2 : Provisions charges (25% du CA)</h3>
+<p>Dès qu'un client vous paie, transférez automatiquement <strong>25% sur un compte épargne</strong> dédié. Ce compte sert uniquement à payer :</p>
+<ul>
+<li>Les cotisations URSSAF (21,2% du CA pour prestations de services)<sup><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">2</a></sup></li>
+<li>Votre RC Pro annuelle (≈400-600€)</li>
+<li>Votre mutuelle (≈50-80€/mois)</li>
+<li>La CFE (Cotisation Foncière des Entreprises, entre 200€ et 800€/an selon commune)</li>
+</ul>
+
+<h3>Compte 3 : Revenu net disponible (75% du CA)</h3>
+<p>C'est ce qui reste après avoir provisionné. C'est <strong>votre vrai revenu</strong>, celui que vous pouvez dépenser.</p>
+
+<hr>
+
+<h2>📊 Tableau de provisionnement mensuel</h2>
+<p>Voici combien mettre de côté selon votre chiffre d'affaires mensuel :</p>
+
+<table border="1" cellpadding="10" style="width:100%;border-collapse:collapse;">
+<tr>
+<th>CA mensuel</th>
+<th>URSSAF (21,2%)</th>
+<th>RC Pro + Mutuelle</th>
+<th>CFE (au prorata)</th>
+<th><strong>TOTAL à provisionner</strong></th>
+<th><strong>Revenu net dispo</strong></th>
+</tr>
+<tr>
+<td>2 000€</td>
+<td>424€</td>
+<td>100€</td>
+<td>50€</td>
+<td><strong>574€ (29%)</strong></td>
+<td><strong>1 426€</strong></td>
+</tr>
+<tr>
+<td>3 000€</td>
+<td>636€</td>
+<td>100€</td>
+<td>50€</td>
+<td><strong>786€ (26%)</strong></td>
+<td><strong>2 214€</strong></td>
+</tr>
+<tr>
+<td>4 000€</td>
+<td>848€</td>
+<td>100€</td>
+<td>50€</td>
+<td><strong>998€ (25%)</strong></td>
+<td><strong>3 002€</strong></td>
+</tr>
+<tr>
+<td>5 000€</td>
+<td>1 060€</td>
+<td>100€</td>
+<td>50€</td>
+<td><strong>1 210€ (24%)</strong></td>
+<td><strong>3 790€</strong></td>
+</tr>
+</table>
+
+<p><small><strong>Astuce :</strong> Prévoyez toujours un peu plus (25-30%) pour les imprévus et les mois creux.</small></p>
+
+<hr>
+
+<h2>💡 Provisionnement automatique : comment faire ?</h2>
+
+<h3>Option 1 : Virement automatique (recommandé)</h3>
+<p>Configurez un virement automatique dès réception d'un paiement :</p>
+<ul>
+<li><strong>25% → Compte épargne "Provisions charges"</strong></li>
+<li><strong>10% → Compte épargne "Vacances/Congés"</strong></li>
+<li><strong>65% → Compte courant personnel</strong></li>
+</ul>
+
+<h3>Option 2 : Virement manuel mensuel</h3>
+<p>Chaque fin de mois, calculez votre CA total et transférez 25% sur votre compte provisions.</p>
+
+<hr>
+
+<h2>🚨 Les charges à ne JAMAIS oublier</h2>
+
+<h3>1️⃣ URSSAF (21,2% du CA)</h3>
+<p>Déclaration mensuelle ou trimestrielle obligatoire. Pénalités en cas de retard.<sup><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">2</a></sup></p>
+
+<h3>2️⃣ CFE (Cotisation Foncière des Entreprises)</h3>
+<p>À payer en décembre chaque année. Montant variable selon votre commune (200€ à 800€).</p>
+
+<h3>3️⃣ RC Pro (Responsabilité Civile Professionnelle)</h3>
+<p>Obligatoire pour exercer. Coût : 400-600€/an selon votre niveau de couverture.</p>
+
+<h3>4️⃣ Mutuelle santé</h3>
+<p>Pas obligatoire mais fortement recommandée (≈600-960€/an).</p>
+
+<hr>
+
+<h2>📅 Checklist de provisionnement annuel</h2>
+
+<div style="background:#E3F2FD;padding:20px;border-left:4px solid #0099FF;margin:20px 0;">
+<strong>Janvier-Mars</strong>
+<ul style="margin:10px 0;">
+<li>✅ Vérifier le solde compte provisions</li>
+<li>✅ Anticiper la CFE de décembre (commencer à provisionner)</li>
+</ul>
+</div>
+
+<div style="background:#E8F5E9;padding:20px;border-left:4px solid #4CAF50;margin:20px 0;">
+<strong>Avril-Juin</strong>
+<ul style="margin:10px 0;">
+<li>✅ Payer votre RC Pro annuelle (via compte provisions)</li>
+<li>✅ Vérifier si vous dépassez les 10 000€ CA → compte pro obligatoire<sup><a href="https://lamicrobyflo.fr/le-compte-bancaire-en-micro-entreprise/" target="_blank" rel="noopener">1</a></sup></li>
+</ul>
+</div>
+
+<div style="background:#FFF3E0;padding:20px;border-left:4px solid #FF6600;margin:20px 0;">
+<strong>Octobre-Décembre</strong>
+<ul style="margin:10px 0;">
+<li>✅ Payer la CFE (compte provisions)</li>
+<li>✅ Anticiper les charges de janvier N+1</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>🎯 Exemple concret : le mois de Léa</h2>
+<p>Léa, opticienne freelance, a facturé <strong>4 200€ HT en mars</strong>. Voici comment elle provisionne :</p>
+
+<table border="1" cellpadding="10" style="width:100%;border-collapse:collapse;">
+<tr>
+<th>Poste</th>
+<th>Montant</th>
+<th>Action</th>
+</tr>
+<tr>
+<td>CA encaissé</td>
+<td>4 200€</td>
+<td>Arrive sur compte pro</td>
+</tr>
+<tr>
+<td>URSSAF (21,2%)</td>
+<td>890€</td>
+<td>→ Compte épargne provisions</td>
+</tr>
+<tr>
+<td>RC Pro + Mutuelle</td>
+<td>100€</td>
+<td>→ Compte épargne provisions</td>
+</tr>
+<tr>
+<td>CFE (au prorata)</td>
+<td>50€</td>
+<td>→ Compte épargne provisions</td>
+</tr>
+<tr>
+<td><strong>Total provisionné</strong></td>
+<td><strong>1 040€</strong></td>
+<td><strong>25% du CA</strong></td>
+</tr>
+<tr>
+<td><strong>Revenu net disponible</strong></td>
+<td><strong>3 160€</strong></td>
+<td>→ Compte perso (utilisable librement)</td>
+</tr>
+</table>
+
+<p><strong>Résultat :</strong> En fin d'année, Léa n'a aucune surprise. Elle a toujours l'argent nécessaire pour payer ses charges.</p>
+
+<hr>
+
+<div style="background:#E8F5E9;padding:20px;border-left:4px solid #4CAF50;margin:20px 0;">
+<strong>💡 Conseil pro</strong><br>
+N'attendez jamais le dernier moment pour payer vos charges. Provisionnez dès l'encaissement, vous dormirez mieux.
+</div>
+
+<hr>
+
+<h3>📚 Sources</h3>
+<ol>
+<li><a href="https://lamicrobyflo.fr/le-compte-bancaire-en-micro-entreprise/" target="_blank" rel="noopener">La Micro by Flo – Compte bancaire micro-entreprise</a></li>
+<li><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F36232" target="_blank" rel="noopener">Service-Public – Cotisations sociales micro-entrepreneur (21,2%)</a></li>
+</ol>
+
+<div style="background:#FFF3E0;padding:20px;border-left:4px solid #FF6600;margin:20px 0;">
+<strong>🎯 À retenir</strong>
+<ul style="margin:10px 0;">
+<li>✅ Provisionnez automatiquement 25% de chaque encaissement sur un compte dédié</li>
+<li>✅ Ne confondez jamais CA et revenu net disponible</li>
+<li>✅ Utilisez la méthode des 3 comptes pour une gestion simple et sans stress</li>
+</ul>
+</div>]]></content:encoded>
+	</item>
+
+</channel>
+</rss>

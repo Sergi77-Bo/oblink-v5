@@ -1,0 +1,96 @@
+Marque,Gamme,Nom Commercial,Technologie,Score OBLINK,Type
+Afflelou,Marque Enseigne,EGO,Personnalisé,7.5,Progressif
+Afflelou,Marque Enseigne,Cent Pour Cent,BBGR/Shamir,6.5,Progressif
+BBGR,Premium/Standard,Intuitiv Plus Mio,Vision Booster + Morpho,9,Progressif
+BBGR,Premium/Standard,Intuitiv Plus,Vision Booster,8.5,Progressif
+BBGR,Premium/Standard,Anateo Plus Mio,Biométrie,8,Progressif
+BBGR,Premium/Standard,Anateo Plus Mio Short/Mini,Biométrie,8,Progressif
+BBGR,Premium/Standard,Anateo Plus,Grand Champ,7.5,Progressif
+BBGR,Premium/Standard,Anateo Plus Short/Mini,Grand Champ,7.5,Progressif
+BBGR,Premium/Standard,Sirus Plus Mio,Digital Surfaçage,7,Progressif
+BBGR,Premium/Standard,Sirus Plus,Standard Plus,6.5,Progressif
+BBGR,Premium/Standard,Evolis DS,Double Surface,6,Progressif
+BBGR,Premium/Standard,EasyWork Progressif,Dégressif,6,Progressif
+BBGR,Premium/Standard,Quadro,Standard,5,Progressif
+BBGR,Premium/Standard,Extenso,Proximité,5,Progressif
+Essilor,Premium/Standard,Varilux XR Series,IA Comportementale + XR-Motion,10,Progressif
+Essilor,Premium/Standard,Varilux XR Track,IA + Eye Tracking,10,Progressif
+Essilor,Premium/Standard,Varilux XR Pro,IA + Personnalisation Ultime,10,Progressif
+Essilor,Premium/Standard,Varilux X 4D,Xtend + Dominance Oculaire,9.5,Progressif
+Essilor,Premium/Standard,Varilux X Design,Xtend Technology,9,Progressif
+Essilor,Premium/Standard,Varilux X fit,Xtend + Paramètres Port,9,Progressif
+Essilor,Premium/Standard,Varilux S 4D,Nanoptix + Dominance,8.5,Progressif
+Essilor,Premium/Standard,Varilux S Design,Nanoptix + SynchronEyes,8,Progressif
+Essilor,Premium/Standard,Varilux Physio 3.0 Fit,Binocular Booster + Fit,7.5,Progressif
+Essilor,Premium/Standard,Varilux Physio 3.0 Fit Short/Mini,Binocular Booster + Fit,7.5,Progressif
+Essilor,Premium/Standard,Varilux Physio 3.0,Binocular Booster,7,Progressif
+Essilor,Premium/Standard,Varilux Comfort Max Fit,Flex Optim + Fit,7,Progressif
+Essilor,Premium/Standard,Varilux Physio 3.0 Short/Mini,Binocular Booster,7,Progressif
+Essilor,Premium/Standard,Varilux Comfort Max Fit Short/Mini,Flex Optim + Fit,7,Progressif
+Essilor,Premium/Standard,Varilux Comfort Max,Flex Optim,6.5,Progressif
+Essilor,Premium/Standard,Varilux Comfort Max Short/Mini,Flex Optim,6.5,Progressif
+Essilor,Premium/Standard,Varilux Comfort 3.0,W.A.V.E 2.0,6,Progressif
+Essilor,Premium/Standard,Essilor Road Pilot,Conduite,6,Progressif
+Essilor,Premium/Standard,Varilux Digitime,Verre Dégressif (Mid),6,Progressif
+Essilor,Premium/Standard,Varilux Comfort 3.0 Short/Mini,W.A.V.E 2.0,6,Progressif
+Essilor,Premium/Standard,Varilux Liberty 3.0,Path Optimizer,5,Progressif
+Grand Optical,Marque Enseigne,Variview HD,Seiko/Hoya,7,Progressif
+Grand Optical,Marque Enseigne,Variview Confort,Standard,5.5,Progressif
+Générale d'Optique,Marque Enseigne,Performance,Hoya Old Gen,6,Progressif
+Générale d'Optique,Marque Enseigne,Grand Angle,Générique,5,Progressif
+Hoya,Premium/Standard,Hoyalux iD MySelf,Binocular Harmonization + 3D,10,Progressif
+Hoya,Premium/Standard,Hoyalux iD MySelf Profile,Personnalisation Digitale,10,Progressif
+Hoya,Premium/Standard,Hoyalux iD MyStyle V+,Binocular Harmonization,9,Progressif
+Hoya,Premium/Standard,Hoyalux iD LifeStyle 4,3D Binocular Vision,8.5,Progressif
+Hoya,Premium/Standard,Hoyalux iD LifeStyle 4i,Indoor Focus,8.5,Progressif
+Hoya,Premium/Standard,Hoyalux iD LifeStyle 4 Short/Mini,3D Binocular Vision,8.5,Progressif
+Hoya,Premium/Standard,Hoyalux iD LifeStyle 4i Short/Mini,Indoor Focus,8.5,Progressif
+Hoya,Premium/Standard,Hoyalux iD LifeStyle 3,Binocular Harmonization,8,Progressif
+Hoya,Premium/Standard,Hoya WorkStyle V+,Dégressif Premium,8,Progressif
+Hoya,Premium/Standard,Hoyalux iD LifeStyle 3 Short/Mini,Binocular Harmonization,8,Progressif
+Hoya,Premium/Standard,Hoyalux Balansis,View Xpansion,7,Progressif
+Hoya,Premium/Standard,Hoyalux Daynamic,Full Back Surface,6,Progressif
+Hoya,Premium/Standard,Hoya WorkSmart Room,Dégressif,6,Progressif
+Hoya,Premium/Standard,Amplitude Plus,Standard BIF,5,Progressif
+Krys,Marque Enseigne,Kalysté 2.0 Full HD,Hoya/Codir Freeform,7,Progressif
+Krys,Marque Enseigne,Kalysté 2.0 HD,Standard Digital,6,Progressif
+Krys,Marque Enseigne,Kalysté 2.0 My Proxi ID,Dégressif,5,Intérieur
+Krys,Marque Enseigne,Kalysté 2.0 Basic,Générique,4,Progressif
+Nikon,Premium/Standard,Z Suite Ultimate Z,Z-Contrast + IA,10,Progressif
+Nikon,Premium/Standard,Z Suite Master Z,Z-Contrast,9.5,Progressif
+Nikon,Premium/Standard,Presio Ultimate SP,Optical Design Engine,9,Progressif
+Nikon,Premium/Standard,Presio Master SP,NODE Technology,8.5,Progressif
+Nikon,Premium/Standard,Presio Power Infinite,Double Face Asphérique,8,Progressif
+Nikon,Premium/Standard,Presio Balance Infinite,Balance Zone,7,Progressif
+Nikon,Premium/Standard,Nikon Home & Office,Dégressif Intérieur,7,Progressif
+Nikon,Premium/Standard,Presio Wide Infinite,Large Champ,6,Progressif
+Nikon,Premium/Standard,Nikon Soltes Wide,Dégressif Lecture,6,Progressif
+Nikon,Premium/Standard,Presio First,Entrée de gamme,5,Progressif
+Novacel,Alternative,Symbioz,French Made,8,Progressif
+Novacel,Alternative,Eden,Standard,6,Progressif
+Novacel,Alternative,Olys,Budget,5,Progressif
+Optic 2000,Marque Enseigne,Infiniglass Premium,BBGR Haut de Gamme,7.5,Progressif
+Optic 2000,Marque Enseigne,Infiniglass Confort,BBGR Standard,6,Progressif
+Optical Center,Marque Enseigne,Linfini,Shamir,7,Progressif
+Optical Center,Marque Enseigne,High Definition,Standard,5,Progressif
+Rodenstock,Alternative,Impression FreeSign 3,EyeLT,9.5,Progressif
+Rodenstock,Alternative,Multigressiv MyLife 2,Pupil Optimized,8,Progressif
+Rodenstock,Alternative,Progressiv PureLife 2,Spherical,6,Progressif
+Seiko,Alternative,Brilliance,Twineye 360,9.5,Progressif
+Seiko,Alternative,Prime X,Advanced Aspheric,8.5,Progressif
+Seiko,Alternative,Synergy X,Wide Field,7,Progressif
+Shamir,Alternative,Autograph Intelligence,Big Data AI,9,Progressif
+Shamir,Alternative,Autograph III,Quasi-Personalized,8,Progressif
+Shamir,Alternative,Spectrum,Reading Zone,6,Progressif
+Zeiss,Premium/Standard,SmartLife Individual 3,SmartView 2.0 + Intelligence Augmentée,10,Progressif
+Zeiss,Premium/Standard,SmartLife Superb,SmartView + Adaptation,9,Progressif
+Zeiss,Premium/Standard,SmartLife Plus,SmartView,8.5,Progressif
+Zeiss,Premium/Standard,SmartLife Pure,SmartView (Mobile),8.5,Progressif
+Zeiss,Premium/Standard,Precision Superb,Digital Inside + Face Fit,8,Progressif
+Zeiss,Premium/Standard,DriveSafe Progressive,Luminance Design,8,Progressif
+Zeiss,Premium/Standard,Precision Plus,Digital Inside + Adaptation Frame,7.5,Progressif
+Zeiss,Premium/Standard,Precision Pure,Digital Inside,7,Progressif
+Zeiss,Premium/Standard,Zeiss Officelens Superb,Dégressif Bureau Individualisé,7,Progressif
+Zeiss,Premium/Standard,EnergizeMe,Lentilles Contact Support,6,Progressif
+Zeiss,Premium/Standard,Zeiss Officelens Plus,Dégressif Bureau,6,Progressif
+Zeiss,Premium/Standard,Zeiss Light 2,Easy Handling,5,Progressif

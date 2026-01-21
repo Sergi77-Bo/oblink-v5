@@ -1,0 +1,23 @@
+[
+    {
+        "week": "S1",
+        "deliverable": "Structure BDD Annales",
+        "module": "Annales",
+        "status": "done",
+        "deadline": "2025-01-10"
+    },
+    {
+        "week": "S2",
+        "deliverable": "Prompt Engineering Correcteur",
+        "module": "Correcteur",
+        "status": "doing",
+        "deadline": "2025-01-17"
+    },
+    {
+        "week": "S3",
+        "deliverable": "Simulateur Revenus V1",
+        "module": "Simulateur",
+        "status": "todo",
+        "deadline": "2025-01-24"
+    }
+]

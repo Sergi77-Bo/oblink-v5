@@ -1,0 +1,1288 @@
+--- PART 3: INCLUDES & LOGIC ---
+--- FILE: theme/inc/user-registration.php ---
+<?php
+// OBLINK - User Registration AJAX Handlers
+// Handles Opticien registration via AJAX
+
+// Register AJAX actions
+add_action('wp_ajax_nopriv_oblink_register_opticien', 'oblink_register_opticien_handler');
+add_action('wp_ajax_oblink_register_opticien', 'oblink_register_opticien_handler');
+
+function oblink_register_opticien_handler()
+{
+    // Sanitize inputs
+    $first_name = sanitize_text_field($_POST['first_name']);
+    $last_name = sanitize_text_field($_POST['last_name']);
+    $email = sanitize_email($_POST['email']);
+    $password = $_POST['password'];
+    $diploma = sanitize_text_field($_POST['diploma']);
+    $experience = sanitize_text_field($_POST['experience']);
+    $city = sanitize_text_field($_POST['city']);
+
+    // Validation
+    if (empty($email) || empty($password)) {
+        wp_send_json_error(['message' => 'Email et mot de passe requis.']);
+        return;
+    }
+
+    if (email_exists($email)) {
+        wp_send_json_error(['message' => 'Cet email est déjà utilisé.']);
+        return;
+    }
+
+    if (strlen($password) < 8) {
+        wp_send_json_error(['message' => 'Le mot de passe doit contenir au moins 8 caractères.']);
+        return;
+    }
+
+    // Create User
+    $username = sanitize_user(strtolower($first_name . '.' . $last_name . rand(100, 999)));
+    $user_id = wp_create_user($username, $password, $email);
+
+    if (is_wp_error($user_id)) {
+        wp_send_json_error(['message' => $user_id->get_error_message()]);
+        return;
+    }
+
+    // Update User Profile
+    wp_update_user([
+        'ID' => $user_id,
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+        'display_name' => $first_name . ' ' . $last_name,
+        'role' => 'subscriber'
+    ]);
+
+    // Save User Meta (OBLINK specific)
+    update_user_meta($user_id, 'oblink_user_type', 'opticien');
+    update_user_meta($user_id, 'oblink_diploma', $diploma);
+    update_user_meta($user_id, 'oblink_experience', $experience);
+    update_user_meta($user_id, 'oblink_city', $city);
+    update_user_meta($user_id, 'oblink_status', 'pending'); // pending, verified, premium
+    update_user_meta($user_id, 'oblink_registered_at', current_time('mysql'));
+
+    // Auto-login the user
+    wp_set_current_user($user_id);
+    wp_set_auth_cookie($user_id, true);
+
+    // Send Welcome Email (if email system is active)
+    if (function_exists('oblink_send_mail')) {
+        oblink_send_mail($email, 'Bienvenue sur OBLINK !', 'welcome-opticien', [
+            'first_name' => $first_name
+        ]);
+    }
+
+    // Success response
+    wp_send_json_success([
+        'message' => 'Compte créé avec succès !',
+        'user_id' => $user_id,
+        'redirect' => home_url('/dashboard-opticien')
+    ]);
+}
+?>--- FILE: theme/inc/admin-columns.php ---
+<?php
+// OBLINK - Admin Columns Customization
+// Adds custom columns to the Users list in WP Admin for better visibility
+
+// 1. ADD COLUMNS
+function oblink_add_user_columns($columns)
+{
+    // Remove "Posts" column (not useful for users)
+    unset($columns['posts']);
+
+    // Add new columns
+    $columns['oblink_type'] = 'Type';
+    $columns['oblink_info'] = 'Infos Pro';
+    $columns['oblink_status'] = 'Statut';
+
+    return $columns;
+}
+add_filter('manage_users_columns', 'oblink_add_user_columns');
+
+// 2. FILL COLUMNS
+function oblink_fill_user_columns($value, $column_name, $user_id)
+{
+    $type = get_user_meta($user_id, 'oblink_user_type', true);
+
+    if ($column_name === 'oblink_type') {
+        if ($type === 'opticien') {
+            return '<span style="background:#0099FF; color:white; padding:3px 8px; border-radius:4px; font-weight:bold; font-size:11px;">Opticien</span>';
+        } elseif ($type === 'entreprise') {
+            return '<span style="background:#9A48D0; color:white; padding:3px 8px; border-radius:4px; font-weight:bold; font-size:11px;">Entreprise</span>';
+        } else {
+            return '<span style="color:#999;">-</span>';
+        }
+    }
+
+    if ($column_name === 'oblink_info') {
+        if ($type === 'opticien') {
+            $diploma = get_user_meta($user_id, 'oblink_diploma', true);
+            $exp = get_user_meta($user_id, 'oblink_experience', true);
+            $city = get_user_meta($user_id, 'oblink_city', true);
+            return "<strong>$diploma</strong><br><small>$exp</small><br><small>$city</small>";
+        } elseif ($type === 'entreprise') {
+            $company = get_user_meta($user_id, 'company_name', true);
+            $siret = get_user_meta($user_id, 'siret', true);
+            return "<strong>$company</strong><br><small>SIRET: $siret</small>";
+        }
+    }
+
+    if ($column_name === 'oblink_status') {
+        $status = get_user_meta($user_id, 'oblink_status', true);
+        if ($status === 'verified') {
+            return '<span style="color:green; font-weight:bold;">Vérifié ✅</span>';
+        } elseif ($status === 'premium') {
+            return '<span style="color:orange; font-weight:bold;">PREMIUM ⭐️</span>';
+        } elseif ($status === 'pending') {
+            return '<span style="color:gray;">En attente ⏳</span>';
+        } else {
+            return '-';
+        }
+    }
+
+    return $value;
+}
+add_filter('manage_users_custom_column', 'oblink_fill_user_columns', 10, 3);
+?>--- FILE: theme/inc/messaging.php ---
+<?php
+/**
+ * OBLINK Messaging System
+ * Ultra-light sql based messaging.
+ */
+
+// 1. Create DataBase Table on Theme Activation (or check on init)
+function oblink_install_messages_table()
+{
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'oblink_messages';
+
+    // Check if table exists
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+        $charset_collate = $wpdb->get_charset_collate();
+
+        $sql = "CREATE TABLE $table_name (
+            id mediumint(9) NOT NULL AUTO_INCREMENT,
+            time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+            sender_id bigint(20) NOT NULL,
+            receiver_id bigint(20) NOT NULL,
+            subject tinytext NOT NULL,
+            message text NOT NULL,
+            is_read tinyint(1) DEFAULT 0 NOT NULL,
+            conversation_id varchar(50) NOT NULL, 
+            PRIMARY KEY  (id)
+        ) $charset_collate;";
+
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+        dbDelta($sql);
+    }
+}
+add_action('after_switch_theme', 'oblink_install_messages_table');
+// We also hook to init to be sure in dev environment, but in prod 'after_switch_theme' is better
+// For this dev session, I'll add a temporary init hook that runs ONCE then can be removed
+// add_action('init', 'oblink_install_messages_table'); // DISABLED: Only run on switch theme to avoid critical error on frontend with dbDelta
+
+// 2. SEND MESSAGE FUNCTION
+function oblink_send_message($receiver_id, $subject, $message)
+{
+    global $wpdb;
+    $sender_id = get_current_user_id();
+    if (!$sender_id)
+        return false;
+
+    // Generate Conversation ID (Smaller_ID-Larger_ID) to group messages between 2 people
+    $ids = [$sender_id, $receiver_id];
+    sort($ids);
+    $conversation_id = implode('-', $ids);
+
+    $table_name = $wpdb->prefix . 'oblink_messages';
+
+    $result = $wpdb->insert(
+        $table_name,
+        array(
+            'time' => current_time('mysql'),
+            'sender_id' => $sender_id,
+            'receiver_id' => $receiver_id,
+            'subject' => sanitize_text_field($subject),
+            'message' => sanitize_textarea_field($message),
+            'is_read' => 0,
+            'conversation_id' => $conversation_id
+        )
+    );
+
+    return $result;
+}
+
+// 3. GET CONVERSATIONS FOR CURRENT USER
+function oblink_get_conversations()
+{
+    global $wpdb;
+    $user_id = get_current_user_id();
+    $table_name = $wpdb->prefix . 'oblink_messages';
+
+    // Get latest message for each conversation involving the user
+    // This is a bit complex SQL to group by conversation and get the LATEST entry
+    /* 
+       Logic: Find all unique conversation_ids where user is sender or receiver.
+       Then get the last message details for that conversation.
+    */
+
+    $sql = "
+        SELECT m1.*, 
+               CASE 
+                   WHEN m1.sender_id = $user_id THEN m1.receiver_id 
+                   ELSE m1.sender_id 
+               END as contact_id
+        FROM $table_name m1
+        JOIN (
+            SELECT conversation_id, MAX(id) as last_msg_id
+            FROM $table_name
+            WHERE sender_id = $user_id OR receiver_id = $user_id
+            GROUP BY conversation_id
+        ) m2 ON m1.id = m2.last_msg_id
+        ORDER BY m1.time DESC
+    ";
+
+    return $wpdb->get_results($sql);
+}
+
+// 4. GET MESSAGES IN A CONVERSATION
+function oblink_get_messages($contact_id)
+{
+    global $wpdb;
+    $user_id = get_current_user_id();
+    $ids = [$user_id, $contact_id];
+    sort($ids);
+    $conversation_id = implode('-', $ids);
+
+    $table_name = $wpdb->prefix . 'oblink_messages';
+
+    // Mark as read when opening (simple logic)
+    $wpdb->update(
+        $table_name,
+        ['is_read' => 1],
+        ['conversation_id' => $conversation_id, 'receiver_id' => $user_id]
+    );
+
+    $results = $wpdb->get_results(
+        $wpdb->prepare(
+            "SELECT * FROM $table_name WHERE conversation_id = %s ORDER BY time ASC",
+            $conversation_id
+        )
+    );
+
+    return $results;
+}
+
+// 5. AJAX HANDLERS
+add_action('wp_ajax_oblink_send_msg', 'oblink_ajax_send_msg');
+function oblink_ajax_send_msg()
+{
+    check_ajax_referer('oblink_nonce', 'nonce');
+
+    $receiver_id = intval($_POST['receiver_id']);
+    $message = sanitize_textarea_field($_POST['message']);
+
+    if (oblink_send_message($receiver_id, '', $message)) {
+        wp_send_json_success(['message' => 'Envoyé']);
+    } else {
+        wp_send_json_error(['message' => 'Erreur envoi']);
+    }
+}
+
+add_action('wp_ajax_oblink_load_chat', 'oblink_ajax_load_chat');
+function oblink_ajax_load_chat()
+{
+    check_ajax_referer('oblink_nonce', 'nonce');
+    $contact_id = intval($_GET['contact_id']);
+
+    $messages = oblink_get_messages($contact_id);
+
+    // Format HTML return
+    ob_start();
+    $current_user = get_current_user_id();
+    foreach ($messages as $msg) {
+        $is_me = $msg->sender_id == $current_user;
+        ?>
+        <div class="flex <?php echo $is_me ? 'justify-end' : 'justify-start'; ?> mb-4">
+            <div
+                class="<?php echo $is_me ? 'bg-oblink-blue text-white' : 'bg-gray-100 text-gray-800'; ?> rounded-2xl py-2 px-4 max-w-[80%] text-sm">
+                <?php echo nl2br(esc_html($msg->message)); ?>
+                <div class="text-[10px] <?php echo $is_me ? 'text-blue-100' : 'text-gray-400'; ?> mt-1 text-right">
+                    <?php echo date_i18n('d M H:i', strtotime($msg->time)); ?>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    $html = ob_get_clean();
+    wp_send_json_success(['html' => $html]);
+}
+
+// 6. MISSION ALERT NOTIFICATION (EMAIL & SMS MOCK)
+add_action('wp_ajax_trigger_mission_alert', 'oblink_ajax_trigger_mission_alert');
+function oblink_ajax_trigger_mission_alert()
+{
+    // check_ajax_referer('oblink_nonce', 'nonce'); 
+    
+    $mission_title = sanitize_text_field($_POST['title']);
+    $city = sanitize_text_field($_POST['city']);
+    $type = sanitize_text_field($_POST['type']);
+    $salary = sanitize_text_field($_POST['salary']);
+    
+    // --- PYRAMIDE DE MATCHING (Logique théorique pour le Jury) ---
+    // 1. GÉOLOCALISATION : Rayon de 30km autour de la ville
+    // 2. COMPÉTENCE : Match strict sur le logiciel (ex: WinOptics)
+    // 3. DISPONIBILITÉ : Calendrier "Libre" sur la période
+    // 4. SCORE : Priorité d'envoi (Délai de grâce 15min) aux experts avec Score > 4.5/5
+    
+    // Mock Result: 12 Experts trouvés
+    $expert_count = 12; 
+
+    // --- 1. NOTIFICATION SMS (L'Urgence) ---
+    // Modèle : "🚨 OBLINK - Mission Flash ! Un magasin à $city cherche un expert $type... Match 95%... Lien: ..."
+    // API Call (Twilio/Nexmo) would go here.
+
+    // --- 2. EMAIL DE MATCHING (Le Détail) ---
+    $subject = "🎯 Nouvelle mission à " . $city . " : Ton profil a été sélectionné !";
+
+    ob_start();
+    ?>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            body { font-family: 'Helvetica', sans-serif; background-color: #f3f4f6; padding: 20px; }
+            .card { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto; border-top: 6px solid #FF6600; }
+            .header-tag { display: inline-block; background: #FFF0E6; color: #FF6600; font-weight: bold; padding: 6px 12px; border-radius: 99px; font-size: 14px; margin-bottom: 20px; }
+            .mission-box { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; padding: 25px; margin: 25px 0; }
+            .btn { display: block; width: 100%; text-align: center; padding: 15px 0; background: #007AFF; color: white; text-decoration: none; border-radius: 12px; font-weight: 800; font-size: 16px; margin-top: 30px; }
+            .expert-badge { background: #DCFCE7; color: #166534; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <span class="header-tag">⚡️ Opportunité Certifiée</span>
+            <h2 style="color: #111827; margin-top:0; font-size: 24px;">Bonjour Jean-Expert,</h2>
+            <p style="color: #4B5563; line-height: 1.6;">Un nouveau besoin vient d'être publié et correspond à tes compétences certifiées.</p>
+            
+            <div class="mission-box">
+                <h3 style="margin:0 0 15px 0; color: #111827; font-size: 18px;"><?php echo $mission_title; ?></h3>
+                <ul style="list-style: none; padding: 0; margin: 0; color: #4B5563; line-height: 2;">
+                    <li>📍 <strong>Lieu :</strong> <?php echo $city; ?> (Zone A)</li>
+                    <li>💻 <strong>Logiciel :</strong> WinOptics <span class="expert-badge">Match ✅</span></li>
+                    <li>💶 <strong>TJM proposé :</strong> <span style="color: #FF6600; font-weight: bold;"><?php echo $salary; ?> € / jour</span></li>
+                    <li>🔥 <strong>Score Matching :</strong> 98%</li>
+                </ul>
+            </div>
+
+            <p style="color: #4B5563; font-size: 14px;"><strong>Pourquoi toi ?</strong><br>Notre algorithme a analysé ton profil. Tu fais partie des rares experts qualifiés et disponibles sur ce secteur.</p>
+
+            <a href="<?php echo home_url('/dashboard-opticien'); ?>" class="btn">Voir les détails et Postuler</a>
+            
+            <p style="color: #9CA3AF; font-size: 12px; margin-top: 30px; text-align: center;">
+                Envoyé par l'Algorithme de Matching OBLINK PRO.
+            </p>
+        </div>
+    </body>
+    </html>
+    <?php
+    $email_body = ob_get_clean();
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+
+    // Make it real for the demo: Send to the currently logged in user (or hardcoded for demo)
+    // wp_mail('demo@oblink.fr', $subject, $email_body, $headers); 
+
+    // Return success to frontend with dynamic count
+    wp_send_json_success([
+        'sent_count' => $expert_count, 
+        'message' => "Votre annonce a été envoyée par SMS/Email à $expert_count experts qualifiés aux alentours."
+    ]);
+}
+--- FILE: theme/inc/theme-activation.php ---
+<?php
+/**
+ * OBLINK - Activation du thème
+ * Copie automatiquement les fichiers nécessaires à la racine WordPress
+ */
+
+function oblink_theme_activation()
+{
+    $theme_dir = get_template_directory();
+    $root_dir = ABSPATH;
+
+    // Copier generate-sitemap.php
+    $sitemap_source = $theme_dir . '/setup/generate-sitemap.php';
+    $sitemap_dest = $root_dir . 'generate-sitemap.php';
+
+    if (file_exists($sitemap_source) && !file_exists($sitemap_dest)) {
+        copy($sitemap_source, $sitemap_dest);
+    }
+
+    // Copier robots.txt
+    $robots_source = $theme_dir . '/setup/robots.txt';
+    $robots_dest = $root_dir . 'robots.txt';
+
+    if (file_exists($robots_source) && !file_exists($robots_dest)) {
+        copy($robots_source, $robots_dest);
+    }
+
+    // Générer le sitemap initial
+    if (file_exists($sitemap_dest)) {
+        // Trigger sitemap generation
+        $response = wp_remote_get(home_url('/generate-sitemap.php?save=true'));
+    }
+}
+
+// Hook sur le switch de thème
+add_action('after_switch_theme', 'oblink_theme_activation');
+?>--- FILE: theme/inc/simulator-email.php ---
+<?php
+/**
+ * OBLINK - Email Sender for Simulator Results
+ * Sends calculation results to user after email capture
+ */
+
+function send_simulator_email($email, $results, $mode, $params)
+{
+    $to = $email;
+    $subject = '💰 Vos résultats de simulation OBLINK';
+
+    // Préparer le contenu selon le mode
+    if ($mode === 'freelance') {
+        $body = get_freelance_email_body($results, $params);
+    } else {
+        $body = get_contrat_email_body($results, $params);
+    }
+
+    // Headers
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'From: OBLINK <noreply@oblink.fr>',
+        'Reply-To: contact@oblink.fr'
+    );
+
+    // Envoyer l'email
+    $sent = wp_mail($to, $subject, $body, $headers);
+
+    return $sent;
+}
+
+function get_freelance_email_body($results, $params)
+{
+    $tjm = $params['tjm'];
+    $days = $params['days'];
+    $status = $params['status'] === 'micro' ? 'Micro-Entreprise' : 'EURL';
+    $net = number_format($results['net'], 0, ',', ' ');
+    $gross = number_format($results['gross'], 0, ',', ' ');
+    $charges = number_format($results['charges'], 0, ',', ' ');
+
+    $site_url = home_url();
+
+    return "
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset='UTF-8'>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #303030; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: linear-gradient(135deg, #FF6600 0%, #9A48D0 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+            .content { background: #f9fafb; padding: 30px; }
+            .result-box { background: white; border-left: 4px solid #FF6600; padding: 20px; margin: 20px 0; border-radius: 8px; }
+            .big-number { font-size: 36px; font-weight: bold; color: #FF6600; margin: 10px 0; }
+            .detail { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e5e7eb; }
+            .cta { background: #FF6600; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; display: inline-block; margin: 20px 0; font-weight: bold; }
+            .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h1>🎉 Vos résultats de simulation</h1>
+                <p>Mode Freelance - {$status}</p>
+            </div>
+            
+            <div class='content'>
+                <p>Bonjour,</p>
+                <p>Voici le détail de votre simulation en tant qu'opticien freelance :</p>
+                
+                <div class='result-box'>
+                    <h2 style='margin-top: 0; color: #FF6600;'>💰 Net dans votre poche</h2>
+                    <div class='big-number'>{$net} €</div>
+                    <p style='color: #6b7280;'>Pour {$days} jour(s) de travail</p>
+                </div>
+                
+                <div class='result-box'>
+                    <h3>Détail du calcul</h3>
+                    <div class='detail'>
+                        <span>Taux journalier</span>
+                        <strong>{$tjm} €</strong>
+                    </div>
+                    <div class='detail'>
+                        <span>Nombre de jours</span>
+                        <strong>{$days}</strong>
+                    </div>
+                    <div class='detail'>
+                        <span>Chiffre d'affaires (HT)</span>
+                        <strong>{$gross} €</strong>
+                    </div>
+                    <div class='detail'>
+                        <span>Charges estimées</span>
+                        <strong style='color: #ef4444;'>-{$charges} €</strong>
+                    </div>
+                    <div class='detail' style='border-bottom: none; font-size: 18px;'>
+                        <span><strong>Net final</strong></span>
+                        <strong style='color: #FF6600;'>{$net} €</strong>
+                    </div>
+                </div>
+                
+                <p><strong>Intéressé par ces revenus ?</strong></p>
+                <p>Créez votre profil gratuitement et accédez à des centaines de missions qualifiées partout en France.</p>
+                
+                <div style='text-align: center;'>
+                    <a href='{$site_url}/inscription-opticien' class='cta'>
+                        Créer mon profil gratuitement
+                    </a>
+                </div>
+                
+                <p style='color: #6b7280; font-size: 14px;'>
+                    💡 <strong>Bon à savoir :</strong> Les charges peuvent varier selon votre situation personnelle. Ce calcul est une estimation.
+                </p>
+            </div>
+            
+            <div class='footer'>
+                <p>À bientôt sur OBLINK !</p>
+                <p style='font-size: 12px;'>
+                    <a href='{$site_url}' style='color: #FF6600;'>oblink.fr</a> | 
+                    <a href='{$site_url}/confidentialite' style='color: #6b7280;'>Confidentialité</a>
+                </p>
+            </div>
+        </div>
+    </body>
+    </html>
+    ";
+}
+
+function get_contrat_email_body($results, $params)
+{
+    $salaire = $params['salaire'];
+    $type = $params['contrat'] === 'cdd' ? 'CDD' : 'CDI';
+    $cadre = isset($params['cadre']) && $params['cadre'] ? 'Cadre' : 'Non-Cadre';
+    $heures = isset($params['heures']) ? $params['heures'] : 35;
+
+    $net = number_format($results['net'], 0, ',', ' ');
+    $gross = number_format($results['gross'], 0, ',', ' ');
+    $charges = number_format($results['charges'], 0, ',', ' ');
+    $tauxHoraireBrut = number_format($results['tauxHoraireBrut'], 2, ',', ' ');
+    $tauxHoraireNet = number_format($results['tauxHoraireNet'], 2, ',', ' ');
+
+    $site_url = home_url();
+
+    return "
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset='UTF-8'>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #303030; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: linear-gradient(135deg, #0099FF 0%, #9A48D0 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+            .content { background: #f9fafb; padding: 30px; }
+            .result-box { background: white; border-left: 4px solid #0099FF; padding: 20px; margin: 20px 0; border-radius: 8px; }
+            .big-number { font-size: 36px; font-weight: bold; color: #0099FF; margin: 10px 0; }
+            .detail { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e5e7eb; }
+            .cta { background: #0099FF; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; display: inline-block; margin: 20px 0; font-weight: bold; }
+            .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h1>🎉 Vos résultats de simulation</h1>
+                <p>Mode Contrat - {$type} {$cadre}</p>
+            </div>
+            
+            <div class='content'>
+                <p>Bonjour,</p>
+                <p>Voici le détail de votre simulation en contrat salarié :</p>
+                
+                <div class='result-box'>
+                    <h2 style='margin-top: 0; color: #0099FF;'>💰 Net mensuel après impôt</h2>
+                    <div class='big-number'>{$net} €</div>
+                    <p style='color: #6b7280;'>Salaire net versé chaque mois</p>
+                </div>
+                
+                <div class='result-box'>
+                    <h3>Détail du calcul</h3>
+                    <div class='detail'>
+                        <span>Salaire brut mensuel</span>
+                        <strong>{$gross} €</strong>
+                    </div>
+                    <div class='detail'>
+                        <span>Type de contrat</span>
+                        <strong>{$type}</strong>
+                    </div>
+                    <div class='detail'>
+                        <span>Statut</span>
+                        <strong>{$cadre}</strong>
+                    </div>
+                    <div class='detail'>
+                        <span>Heures/semaine</span>
+                        <strong>{$heures}h</strong>
+                    </div>
+                    <div class='detail'>
+                        <span>Charges salariales + impôt</span>
+                        <strong style='color: #ef4444;'>-{$charges} €</strong>
+                    </div>
+                    <div class='detail' style='border-bottom: none; font-size: 18px;'>
+                        <span><strong>Net après impôt</strong></span>
+                        <strong style='color: #0099FF;'>{$net} €</strong>
+                    </div>
+                </div>
+                
+                <div class='result-box'>
+                    <h3>Taux horaires</h3>
+                    <div class='detail'>
+                        <span>Taux horaire brut</span>
+                        <strong>{$tauxHoraireBrut} €/h</strong>
+                    </div>
+                    <div class='detail' style='border-bottom: none;'>
+                        <span>Taux horaire net</span>
+                        <strong style='color: #0099FF;'>{$tauxHoraireNet} €/h</strong>
+                    </div>
+                </div>
+                
+                <p><strong>Vous cherchez un poste en contrat ?</strong></p>
+                <p>Découvrez les offres CDI et CDD sur OBLINK.</p>
+                
+                <div style='text-align: center;'>
+                    <a href='{$site_url}/emploi-opticien' class='cta'>
+                        Voir les offres d'emploi
+                    </a>
+                </div>
+                
+                <p style='color: #6b7280; font-size: 14px;'>
+                    💡 <strong>Bon à savoir :</strong> Ce calcul est une estimation basée sur des taux moyens. Le taux d'imposition réel dépend de votre situation fiscale.
+                </p>
+            </div>
+            
+            <div class='footer'>
+                <p>À bientôt sur OBLINK !</p>
+                <p style='font-size: 12px;'>
+                    <a href='{$site_url}' style='color: #0099FF;'>oblink.fr</a> | 
+                    <a href='{$site_url}/confidentialite' style='color: #6b7280;'>Confidentialité</a>
+                </p>
+            </div>
+        </div>
+    </body>
+    </html>
+    ";
+}
+?>--- FILE: theme/inc/emails/application-confirm.php ---
+<h2 style="color: #1f2937; margin-top: 0; font-size: 24px;">Candidature Envoyée ! 🚀</h2>
+
+<p style="color: #4b5563; font-size: 16px; line-height: 1.6;">
+    Votre candidature pour le poste a bien été transmise au recruteur.
+</p>
+
+<div
+    style="background-color: #f0fdf4; border-left: 4px solid #10b981; padding: 20px; margin: 30px 0; border-radius: 8px;">
+    <p style="margin: 0; color: #15803d; font-size: 15px;">
+        <strong>Statut :</strong> En attente de réponse du recruteur.
+    </p>
+</div>
+
+<p style="color: #4b5563; font-size: 16px; line-height: 1.6;">
+    Vous recevrez une notification (Email & SMS) dès que le recruteur aura traité votre demande. En attendant, mettez
+    toutes les chances de votre côté en complétant votre profil !
+</p>
+
+<p style="text-align: center; margin: 40px 0;">
+    <a href="<?php echo home_url('/dashboard-opticien'); ?>"
+        style="background-color: #1f2937; color: #ffffff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
+        Suivre mes candidatures
+    </a>
+</p>--- FILE: theme/inc/emails/new-application.php ---
+<h2 style="color: #1f2937; margin-top: 0; font-size: 24px;">Nouvelle Candidature ! 🎯</h2>
+
+<p style="color: #4b5563; font-size: 16px; line-height: 1.6;">
+    Bonne nouvelle ! Un opticien vient de postuler à votre offre.
+</p>
+
+<div style="background-color: #fff7ed; padding: 20px; border-radius: 12px; margin: 25px 0; border: 1px solid #fed7aa;">
+    <table width="100%">
+        <tr>
+            <td width="60" valign="top">
+                <div
+                    style="width: 50px; height: 50px; background-color: #FF6600; color: white; border-radius: 25px; text-align: center; line-height: 50px; font-weight: bold; font-size: 18px;">
+                    JD</div>
+            </td>
+            <td>
+                <p style="margin: 0; font-weight: bold; font-size: 18px; color: #1f2937;">Jean D.</p>
+                <p style="margin: 5px 0 0 0; color: #4b5563; font-size: 14px;">BTS Opticien • 5 ans d'exp.</p>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<p style="text-align: center; margin: 40px 0;">
+    <a href="<?php echo home_url('/dashboard-entreprise'); ?>"
+        style="background-color: #0099FF; color: #ffffff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
+        Voir le profil complet
+    </a>
+</p>
+
+<p style="color: #6b7280; font-size: 14px;">
+    Le candidat attend votre réponse. Connectez-vous vite pour accepter ou refuser cette candidature.
+</p>--- FILE: theme/inc/emails/offer-published.php ---
+<h2 style="color: #1f2937; margin-top: 0; font-size: 24px;">Offre publiée ! 📢</h2>
+
+<p style="color: #4b5563; font-size: 16px; line-height: 1.6;">
+    Votre offre d'emploi <strong>
+        <?php echo esc_html($job_title); ?>
+    </strong> a bien été enregistrée.
+</p>
+
+<div
+    style="background-color: #f0fdf4; border-left: 4px solid #10b981; padding: 20px; margin: 30px 0; border-radius: 8px;">
+    <p style="margin: 0; color: #15803d; font-size: 15px;">
+        <strong>Statut :</strong> En ligne (Visible par les candidats).
+    </p>
+</div>
+
+<p style="color: #4b5563; font-size: 16px; line-height: 1.6;">
+    Vous recevrez une notification par email à chaque nouvelle candidature. Vous pouvez gérer vos offres depuis votre
+    tableau de bord.
+</p>
+
+<p style="text-align: center; margin: 40px 0;">
+    <a href="<?php echo home_url('/dashboard-entreprise'); ?>"
+        style="background-color: #0099FF; color: #ffffff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
+        Accéder au Dashboard
+    </a>
+</p>--- FILE: theme/inc/emails/header.php ---
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>OBLINK Notification</title>
+</head>
+
+<body
+    style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f9fafb; margin: 0; padding: 0; -webkit-font-smoothing: antialiased;">
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #f9fafb; padding: 40px 0;">
+        <tr>
+            <td align="center">
+
+                <!-- CONTAINER -->
+                <table width="600" border="0" cellpadding="0" cellspacing="0"
+                    style="background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+
+                    <!-- HEADER -->
+                    <tr>
+                        <td align="center"
+                            style="padding: 40px 0; background-color: #ffffff; border-bottom: 2px solid #f3f4f6;">
+                            <h1 style="margin: 0; font-size: 28px; font-weight: 900; letter-spacing: -1px;">
+                                <span style="color: #1f2937;">OB</span><span style="color: #FF6600;">LINK</span><span
+                                    style="color: #0099FF;">.</span>
+                            </h1>
+                        </td>
+                    </tr>
+
+                    <!-- CONTENT AREA (Starts here) -->
+                    <tr>
+                        <td style="padding: 40px;">--- FILE: theme/inc/emails/footer.php ---
+</td>
+</tr>
+<!-- CONTENT AREA (Ends here) -->
+
+<!-- FOOTER -->
+<tr>
+    <td style="background-color: #f3f4f6; padding: 30px; text-align: center;">
+        <p style="margin: 0 0 10px 0; font-size: 14px; color: #6b7280; font-weight: bold;">
+            <a href="#" style="color: #6b7280; text-decoration: none; margin: 0 10px;">Contact</a>
+            <a href="#" style="color: #6b7280; text-decoration: none; margin: 0 10px;">Mentions Légales</a>
+            <a href="#" style="color: #6b7280; text-decoration: none; margin: 0 10px;">Se connecter</a>
+        </p>
+        <p style="margin: 0; font-size: 12px; color: #9ca3af;">
+            &copy;
+            <?php echo date('Y'); ?> OBLINK. Tous droits réservés.<br>
+            La plateforme des Opticiens Freelances.
+        </p>
+    </td>
+</tr>
+
+</table>
+<!-- END CONTAINER -->
+
+</td>
+</tr>
+</table>
+
+</body>
+
+</html>--- FILE: theme/inc/emails/welcome-opticien.php ---
+<h2 style="color: #1f2937; margin-top: 0; font-size: 24px;">Bienvenue,
+    <?php echo esc_html($name); ?> ! 👋
+</h2>
+
+<p style="color: #4b5563; font-size: 16px; line-height: 1.6;">
+    Votre compte <strong>OBLINK</strong> a bien été créé. Vous faites désormais partie de la première communauté
+    d'opticiens freelances en France.
+</p>
+
+<div
+    style="background-color: #eff6ff; border-left: 4px solid #0099FF; padding: 20px; margin: 30px 0; border-radius: 8px;">
+    <p style="margin: 0; color: #1e40af; font-size: 15px;">
+        <strong>Prochaine étape :</strong> Complétez votre profil avec vos disponibilités et votre CV pour être visible
+        des recruteurs dès maintenant.
+    </p>
+</div>
+
+<p style="text-align: center; margin: 40px 0;">
+    <a href="<?php echo home_url('/login'); ?>"
+        style="background-color: #FF6600; color: #ffffff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block;">
+        Accéder à mon Espace
+    </a>
+</p>
+
+<p style="color: #6b7280; font-size: 14px; margin-top: 40px; border-top: 1px solid #e5e7eb; padding-top: 20px;">
+    Besoin d'aide ? Répondez simplement à cet email, notre équipe est là pour vous.
+</p>--- FILE: theme/inc/seo-meta.php ---
+<?php
+/**
+ * OBLINK - SEO Meta Tags Management
+ * 
+ * Centralized system for managing meta descriptions, Open Graph tags,
+ * Twitter Cards, and JSON-LD structured data for all pages.
+ */
+
+/**
+ * Get SEO metadata for the current page
+ * 
+ * @return array Associative array with title, description, og_image, etc.
+ */
+function oblink_get_seo_meta()
+{
+    $site_url = home_url();
+    $default_og_image = $site_url . '/wp-content/uploads/oblink-og-image.jpg';
+    $default_logo = $site_url . '/wp-content/uploads/oblink-logo.png';
+
+    // Default meta
+    $meta = [
+        'title' => 'OBLINK - Un opticien en un clin d\'œil',
+        'description' => 'OBLINK connecte opticiens freelances et magasins d\'optique en France. +500 opticiens actifs, missions qualifiées partout en France. Inscription gratuite.',
+        'og_title' => 'OBLINK - Plateforme opticiens freelances',
+        'og_description' => 'Connecte opticiens free lances et magasins d\'optique en France. +500 opticiens actifs, missions qualifiées partout en France.',
+        'og_image' => $default_og_image,
+        'og_url' => $site_url,
+        'og_type' => 'website',
+        'twitter_card' => 'summary_large_image',
+        'twitter_title' => 'OBLINK - Plateforme opticiens freelances',
+        'twitter_description' => 'Connecte opticiens freelances et magasins d\'optique en France. +500 opticiens actifs.',
+        'twitter_image' => $site_url . '/wp-content/uploads/oblink-twitter-card.jpg',
+        'canonical' => $site_url,
+    ];
+
+    // Detect current page and override meta
+    if (is_front_page() || is_home()) {
+        // Homepage - déjà configuré par défaut
+    } elseif (is_page('pour-opticiens')) {
+        $meta['title'] = 'Pour Opticiens Freelance | OBLINK';
+        $meta['description'] = 'Devenez opticien freelance avec OBLINK. Accédez à des missions qualifiées partout en France, portage salarial et accompagnement complet. Créez votre profil gratuit.';
+        $meta['og_title'] = 'Pour Opticiens Freelance | OBLINK';
+        $meta['canonical'] = home_url('/pour-opticiens');
+    } elseif (is_page('pour-entreprises')) {
+        $meta['title'] = 'Pour Entreprises | Recrutez des Opticiens | OBLINK';
+        $meta['description'] = 'Recrutez des opticiens freelances qualifiés en 48h avec OBLINK. Profils pré-validés, économies jusqu\'à 40%. +200 magasins partenaires nous font confiance.';
+        $meta['og_title'] = 'Recrutez des opticiens qualifiés | OBLINK';
+        $meta['canonical'] = home_url('/pour-entreprises');
+    } elseif (is_page('emploi-opticien')) {
+        $meta['title'] = 'Emploi Opticien Freelance | Missions en France | OBLINK';
+        $meta['description'] = 'Trouvez votre prochaine mission d\'opticien freelance. Offres de remplacement et missions ponctuelles dans toute la France. Postulez en ligne gratuitement.';
+        $meta['og_title'] = 'Missions Opticien Freelance | OBLINK';
+        $meta['canonical'] = home_url('/emploi-opticien');
+    } elseif (is_page('blog')) {
+        $meta['title'] = 'Blog Opticien Indépendant | Conseils & Guides | OBLINK';
+        $meta['description'] = 'Conseils, guides pratiques et actualités pour opticiens indépendants. Gestion, facturation, témoignages et réglementation. Blog OBLINK.';
+        $meta['og_title'] = 'Blog OBLINK | Conseils pour Opticiens';
+        $meta['canonical'] = home_url('/blog');
+    } elseif (is_page('simulateur')) {
+        $meta['title'] = 'Simulateur Revenus Opticien Freelance | OBLINK';
+        $meta['description'] = 'Calculez votre revenu net d\'opticien freelance. Simulateur gratuit incluant charges sociales, congés et frais professionnels. Résultat instantané.';
+        $meta['og_title'] = 'Simulateur Revenus | OBLINK';
+        $meta['canonical'] = home_url('/simulateur');
+    } elseif (is_page('abonnements')) {
+        $meta['title'] = 'Tarifs & Abonnements | Pour Magasins d\'Optique | OBLINK';
+        $meta['description'] = 'Tarifs transparents pour magasins d\'optique : Découverte 0€, Premium 49€/mois, Corporate sur-mesure. Sans engagement, annulable à tout moment.';
+        $meta['og_title'] = 'Tarifs OBLINK | Pour Entreprises';
+        $meta['canonical'] = home_url('/abonnements');
+    } elseif (is_page('a-propos')) {
+        $meta['title'] = 'À Propos | Notre Mission | OBLINK';
+        $meta['description'] = 'OBLINK, la première plateforme de mise en relation pour opticiens freelances et magasins d\'optique en France. Mission, valeurs et équipe.';
+        $meta['og_title'] = 'À Propos d\'OBLINK';
+        $meta['canonical'] = home_url('/a-propos');
+    } elseif (is_page('inscription-opticien')) {
+        $meta['title'] = 'Inscription Opticien Freelance | Créez Votre Profil | OBLINK';
+        $meta['description'] = 'Créez votre profil d\'opticien freelance gratuitement. Accédez aux meilleures missions partout en France. Inscription en 3 minutes.';
+        $meta['og_title'] = 'Rejoignez OBLINK | Opticiens';
+        $meta['canonical'] = home_url('/inscription-opticien');
+    } elseif (is_page('inscription-entreprise')) {
+        $meta['title'] = 'Inscription Entreprise | Recrutez des Opticiens | OBLINK';
+        $meta['description'] = 'Inscrivez votre magasin d\'optique et accédez à des centaines d\'opticiens qualifiés. Inscription gratuite sans engagement.';
+        $meta['og_title'] = 'Rejoignez OBLINK | Entreprises';
+        $meta['canonical'] = home_url('/inscription-entreprise');
+    } elseif (is_page('opticien-freelance-paris')) {
+        $meta['title'] = 'Opticien Freelance Paris | Missions & Emplois Optique 75 | OBLINK';
+        $meta['description'] = 'Opticien freelance à Paris : trouvez des missions qualifiées dans les 20 arrondissements. +450 magasins partenaires. Inscription gratuite OBLINK.';
+        $meta['og_title'] = 'Missions Opticien Freelance Paris | OBLINK';
+        $meta['og_description'] = 'Trouvez des missions d\'opticien à Paris. 450+ magasins, taux 280-350€/jour. Inscription gratuite.';
+        $meta['canonical'] = home_url('/opticien-freelance-paris');
+    } elseif (is_page('opticien-freelance-lyon')) {
+        $meta['title'] = 'Opticien Freelance Lyon | Missions Rhône (69) | OBLINK';
+        $meta['description'] = 'Missions opticien freelance à Lyon. 200+ magasins partenaires. Taux journalier attractif. Inscription gratuite OBLINK.';
+        $meta['og_title'] = 'Missions Opticien Lyon | OBLINK';
+        $meta['canonical'] = home_url('/opticien-freelance-lyon');
+    } elseif (is_page('opticien-freelance-marseille')) {
+        $meta['title'] = 'Opticien Freelance Marseille | Missions Bouches-du-Rhône | OBLINK';
+        $meta['description'] = 'Trouvez des missions d\'opticien freelance à Marseille et PACA. 150+ magasins partenaires. Inscription gratuite.';
+        $meta['og_title'] = 'Missions Opticien Marseille | OBLINK';
+        $meta['canonical'] = home_url('/opticien-freelance-marseille');
+    } elseif (is_page('comment-ca-marche')) {
+        $meta['title'] = 'Comment ça marche ? | Le Process OBLINK';
+        $meta['description'] = 'Découvrez comment OBLINK connecte opticiens et magasins en 3 étapes simples : inscription, validation et matching. Simple, rapide, efficace.';
+        $meta['og_title'] = 'Comment ça marche | OBLINK';
+        $meta['canonical'] = home_url('/comment-ca-marche');
+    } elseif (is_page('mentions-legales')) {
+        $meta['title'] = 'Mentions Légales | OBLINK';
+        $meta['description'] = 'Mentions légales du site OBLINK : éditeur, hébergeur, directeur de publication et informations légales.';
+        $meta['og_title'] = 'Mentions Légales | OBLINK';
+        $meta['canonical'] = home_url('/mentions-legales');
+    } elseif (is_single()) {
+        // Blog single article
+        global $post;
+        $meta['title'] = get_the_title() . ' | OBLINK Blog';
+        $meta['description'] = get_the_excerpt() ?: wp_trim_words(get_the_content(), 30);
+        $meta['og_title'] = get_the_title();
+        $meta['og_type'] = 'article';
+        $meta['canonical'] = get_permalink();
+
+        if (has_post_thumbnail()) {
+            $meta['og_image'] = get_the_post_thumbnail_url(null, 'large');
+            $meta['twitter_image'] = get_the_post_thumbnail_url(null, 'large');
+        }
+    }
+
+    // Synchronize Twitter with OG
+    $meta['twitter_title'] = $meta['og_title'];
+    $meta['twitter_description'] = $meta['og_description'];
+
+    return apply_filters('oblink_seo_meta', $meta);
+}
+
+/**
+ * Output SEO meta tags in <head>
+ */
+function oblink_output_seo_meta()
+{
+    $meta = oblink_get_seo_meta();
+    ?>
+    <!-- SEO Meta Tags -->
+    <title>
+        <?php echo esc_html($meta['title']); ?>
+    </title>
+    <meta name="description" content="<?php echo esc_attr($meta['description']); ?>">
+    <link rel="canonical" href="<?php echo esc_url($meta['canonical']); ?>">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="<?php echo esc_attr($meta['og_title']); ?>">
+    <meta property="og:description" content="<?php echo esc_attr($meta['og_description']); ?>">
+    <meta property="og:image" content="<?php echo esc_url($meta['og_image']); ?>">
+    <meta property="og:url" content="<?php echo esc_url($meta['canonical']); ?>">
+    <meta property="og:type" content="<?php echo esc_attr($meta['og_type']); ?>">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="OBLINK">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="<?php echo esc_attr($meta['twitter_card']); ?>">
+    <meta name="twitter:title" content="<?php echo esc_attr($meta['twitter_title']); ?>">
+    <meta name="twitter:description" content="<?php echo esc_attr($meta['twitter_description']); ?>">
+    <meta name="twitter:image" content="<?php echo esc_url($meta['twitter_image']); ?>">
+    <?php
+}
+
+/**
+ * Output JSON-LD Structured Data
+ */
+function oblink_output_json_ld()
+{
+    $site_url = home_url();
+    $schemas = [];
+
+    // Organization Schema (Global)
+    $schemas[] = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'name' => 'OBLINK',
+        'url' => $site_url,
+        'logo' => $site_url . '/wp-content/uploads/oblink-logo.png',
+        'description' => 'Plateforme de mise en relation entre opticiens freelances et magasins d\'optique en France',
+        'email' => 'contact@oblink.fr',
+        'areaServed' => [
+            '@type' => 'Country',
+            'name' => 'France'
+        ],
+        'sameAs' => [
+            'https://www.linkedin.com/company/oblink',
+            'https://www.facebook.com/oblink',
+            'https://www.instagram.com/oblink'
+        ],
+        'aggregateRating' => [
+            '@type' => 'AggregateRating',
+            'ratingValue' => '4.9',
+            'reviewCount' => '180'
+        ]
+    ];
+
+    // Page-specific schemas
+    if (is_page('emploi-opticien')) {
+        // JobPosting Schema
+        $schemas[] = [
+            '@context' => 'https://schema.org',
+            '@type' => 'JobPosting',
+            'title' => 'Missions Opticien Freelance',
+            'description' => 'Trouvez des missions d\'opticien freelance partout en France via OBLINK',
+            'datePosted' => current_time('Y-m-d'),
+            'employmentType' => 'CONTRACTOR',
+            'hiringOrganization' => [
+                '@type' => 'Organization',
+                'name' => 'OBLINK',
+                'sameAs' => $site_url
+            ],
+            'jobLocation' => [
+                '@type' => 'Place',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'addressCountry' => 'FR'
+                ]
+            ],
+            'baseSalary' => [
+                '@type' => 'MonetaryAmount',
+                'currency' => 'EUR',
+                'value' => [
+                    '@type' => 'QuantitativeValue',
+                    'value' => 280,
+                    'unitText' => 'DAY'
+                ]
+            ]
+        ];
+    }
+
+    // FAQ Schema for Comment ça marche page
+    if (is_page('comment-ca-marche')) {
+        $schemas[] = [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => [
+                [
+                    '@type' => 'Question',
+                    'name' => 'Comment m\'inscrire sur OBLINK en tant qu\'opticien ?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'L\'inscription est 100% gratuite. Créez votre profil en 3 minutes, ajoutez votre CV et diplômes, puis notre équipe valide  votre dossier sous 48h. Vous recevez ensuite des propositions de missions directement.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => 'Combien coûte OBLINK pour les magasins ?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'OBLINK propose 3 formules : Découverte à 0€ (1 offre/mois), Premium à 49€/mois (offres illimitées + support prioritaire), et Corporate sur-mesure. Sans engagement, annulable à tout moment.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => 'Quel est le délai pour trouver un opticien ?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'En moyenne, nos magasins partenaires reçoivent les premières candidatures sous 48h. 85% des offres sont pourvues en moins de 7 jours grâce à notre réseau de +500 opticiens actifs.'
+                    ]
+                ]
+            ]
+        ];
+    }
+
+    // FAQ Schema for Pour Opticiens page
+    if (is_page('pour-opticiens')) {
+        $schemas[] = [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => [
+                [
+                    '@type' => 'Question',
+                    'name' => 'Quel est le taux journalier moyen pour un opticien freelance ?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'Le taux journalier varie de 250€ à 350€ selon la région, l\'expérience et le type de mission. À Paris, la moyenne est de 280-320€/jour. Sur OBLINK, vous négociez directement vos tarifs avec les magasins.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => 'OBLINK propose-t-il du portage salarial ?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'Oui, OBLINK est partenaire avec plusieurs sociétés de portage salarial. Vous pouvez travailler en freelance tout en bénéficiant du statut salarié : assurance chômage, retraite, mutuelle et RC Pro incluses.'
+                    ]
+                ]
+            ]
+        ];
+    }
+
+    // Breadcrumb Schema (for all pages except homepage)
+    if (!is_front_page() && !is_home()) {
+        $breadcrumbs = [
+            '@context' => 'https://schema.org',
+            '@type' => 'BreadcrumbList',
+            'itemListElement' => []
+        ];
+
+        // Always start with homepage
+        $breadcrumbs['itemListElement'][] = [
+            '@type' => 'ListItem',
+            'position' => 1,
+            'name' => 'Accueil',
+            'item' => home_url('/')
+        ];
+
+        // Add current page
+        $position = 2;
+        if (is_single()) {
+            // Blog post breadcrumb
+            $breadcrumbs['itemListElement'][] = [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Blog',
+                'item' => home_url('/blog')
+            ];
+            $breadcrumbs['itemListElement'][] = [
+                '@type' => 'ListItem',
+                'position' => 3,
+                'name' => get_the_title(),
+                'item' => get_permalink()
+            ];
+        } elseif (is_page()) {
+            global $post;
+            $breadcrumbs['itemListElement'][] = [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => get_the_title(),
+                'item' => get_permalink()
+            ];
+        }
+
+        $schemas[] = $breadcrumbs;
+    }
+
+    // Output all schemas
+    foreach ($schemas as $schema) {
+        echo '<script type="application/ld+json">' . "\n";
+        echo wp_json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n";
+        echo '</script>' . "\n";
+    }
+}
+?>--- FILE: theme/inc/emails.php ---
+<?php
+/**
+ * OBLINK Transactional Email System
+ */
+
+/**
+ * Send a styled transactional email
+ *
+ * @param string $to Recipient email
+ * @param string $subject Email subject
+ * @param string $template_name Template filename (without .php) in inc/emails/
+ * @param array $data Data to pass to the template
+ * @return bool True on success
+ */
+function oblink_send_mail($to, $subject, $template_name, $data = [])
+{
+    // 1. Load Template
+    $template_path = get_template_directory() . '/inc/emails/' . $template_name . '.php';
+
+    if (!file_exists($template_path)) {
+        error_log("OBLINK EMAIL ERROR: Template $template_name not found.");
+        return false;
+    }
+
+    // Extract data to make it available in template
+    extract($data);
+
+    // Buffer output
+    ob_start();
+
+    // Header
+    include get_template_directory() . '/inc/emails/header.php';
+
+    // content
+    include $template_path;
+
+    // Footer
+    include get_template_directory() . '/inc/emails/footer.php';
+
+    $message = ob_get_clean();
+
+    // 2. Headers
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $headers[] = 'From: OBLINK <no-reply@oblink.com>';
+
+    // 3. Send
+    return wp_mail($to, $subject, $message, $headers);
+}
+
+// REGISTER AJAX ACTIONS FOR EMAILS (Simulated for Demo)
+
+// 1. AJAX: Inscription Opticien
+add_action('wp_ajax_nopriv_oblink_register_opticien', 'oblink_handle_register_opticien');
+add_action('wp_ajax_oblink_register_opticien', 'oblink_handle_register_opticien');
+
+function oblink_handle_register_opticien()
+{
+    // Simulate processing
+    $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+    $name = isset($_POST['first_name']) ? sanitize_text_field($_POST['first_name']) : 'Opticien';
+
+    if ($email) {
+        oblink_send_mail($email, 'Bienvenue sur OBLINK !', 'welcome-opticien', ['name' => $name]);
+        wp_send_json_success(['message' => 'Inscription réussie']);
+    } else {
+        wp_send_json_error(['message' => 'Email invalide']);
+    }
+}
+
+// 2. AJAX: Candidature (One Click Apply)
+add_action('wp_ajax_nopriv_oblink_apply_job', 'oblink_handle_apply_job');
+add_action('wp_ajax_oblink_apply_job', 'oblink_handle_apply_job');
+
+function oblink_handle_apply_job()
+{
+    // Simulate
+    $job_id = isset($_POST['job_id']) ? intval($_POST['job_id']) : 0;
+
+    // In a real app we would get user email from session or post
+    $user_email = 'opticien.demo@test.com'; // Mock current user
+    $recruiter_email = 'recruteur.demo@test.com'; // Mock
+
+    if ($job_id) {
+        // Mail to Candidate
+        oblink_send_mail($user_email, 'Candidature envoyée', 'application-confirm', ['job_id' => $job_id]);
+
+        // Mail to Recruiter
+        oblink_send_mail($recruiter_email, 'Nouvelle Candidature !', 'new-application', ['job_id' => $job_id]);
+
+        wp_send_json_success(['message' => 'Candidature envoyée']);
+    }
+    wp_die();
+}

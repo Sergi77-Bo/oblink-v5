@@ -1,0 +1,18 @@
+[
+    {
+        "id": "task_1",
+        "name": "Relancer Optic 2000",
+        "status": "todo",
+        "priority": "P1",
+        "type": "Ventes",
+        "date": "2025-01-20"
+    },
+    {
+        "id": "task_2",
+        "name": "Mettre à jour le simulateur",
+        "status": "doing",
+        "priority": "P2",
+        "type": "Produit",
+        "date": "2025-01-19"
+    }
+]

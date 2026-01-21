@@ -1,0 +1,56 @@
+/* ===== DESIGN GALLERY (ADDED) ===== */
+.design-gallery {
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.design-gallery h3,
+.interface-gallery h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img,
+.gallery-item .placeholder-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    /* Force 16:9 ratio */
+    object-fit: cover;
+    /* Crop image to fill */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+    background: #f0f0f0;
+    /* Default bg for placeholders */
+}
+
+/* Specific styling for placeholders (divs acting as imgs) */
+.gallery-item div.placeholder-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    /* let aspect-ratio handle it */
+}
+
+.gallery-item img:hover,
+.gallery-item .placeholder-img:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item p {
+    font-weight: 500;
+    color: #666;
+}

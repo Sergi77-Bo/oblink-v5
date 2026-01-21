@@ -1,0 +1,91 @@
+=====================================================
+✅ CORRECTIONS APPLIQUÉES AUX BUGS CRITIQUES
+=====================================================
+Date: 19 janvier 2026
+Dossier cible: theme-seo-fixed-extracted/
+
+CORRECTIONS EFFECTUÉES:
+======================
+
+1. ✅ CREDENTIALS SUPABASE SÉCURISÉES
+   Fichier: theme/functions.php
+   Avant: Credentials en dur dans le code
+   Après: Utilisation de define('SUPABASE_URL'), define('SUPABASE_KEY')
+   Impact: CRITIQUE - Évite l'exposition des clés API
+
+2. ✅ USERNAMES UNIQUES ET SÉCURISÉS
+   Fichier: theme/inc/user-registration.php  
+   Avant: $username = $first_name . '.' . $last_name . rand(100, 999)
+   Après: Utilisation de time() + wp_rand() + vérification username_exists()
+   Impact: MAJEUR - Évite les collisions d'usernames
+
+3. ✅ VALIDATION JSON FICHIERS
+   Fichier: theme/page-admin-dashboard.php
+   Avant: json_decode() sans vérification d'existence
+   Après: Vérification is_array() et null coalescence
+   Impact: MAJEUR - Évite les warnings et erreurs silencieuses
+
+4. ⏳ À IMPLÉMENTER - SQL INJECTION
+   Fichier: theme/inc/messaging.php
+   Priorité: CRITIQUE
+   Action: Wrapper tous les $wpdb->get_results() avec wp_prepare()
+
+5. ⏳ À IMPLÉMENTER - XSS VULNERABILITY
+   Fichier: theme/inc/messaging.php (line 265)
+   Priorité: CRITIQUE
+   Action: Remplacer sanitize_textarea_field() par wp_kses_post()
+
+6. ⏳ À IMPLÉMENTER - DBDELTA VERSION CHECK
+   Fichier: theme/functions.php
+   Priorité: CRITIQUE
+   Action: Ajouter version check pour éviter appels répétés
+
+7. ⏳ À IMPLÉMENTER - NAVIGATION NULL CHECK
+   Fichier: theme/js/*.js
+   Priorité: CRITIQUE
+   Action: Vérifier querySelector() avant utilisation
+
+8. ⏳ À IMPLÉMENTER - CORS ERROR HANDLING
+   Fichier: theme/js/*.js
+   Priorité: MAJEUR
+   Action: Ajouter .catch() sur tous les fetch()
+
+9. ⏳ À IMPLÉMENTER - DIVISION PAR ZÉRO
+   Fichier: theme/page-comparatif-verres.php
+   Priorité: MAJEUR
+   Action: Vérifier dénominateur > 0 avant division
+
+10. ⏳ À IMPLÉMENTER - NaN VALIDATION
+    Fichier: theme/page-comparatif-verres.php
+    Priorité: MAJEUR
+    Action: Ajouter isNaN() checks avant parseFloat()
+
+FICHIERS MODIFIÉS:
+==================
+✅ theme/functions.php (Credentials + DB init)
+✅ theme/inc/user-registration.php (Usernames uniques)
+✅ theme/page-admin-dashboard.php (JSON validation)
+
+FICHIERS À MODIFIER:
+====================
+- theme/inc/messaging.php (SQL + XSS fixes)
+- theme/js/app.js (Navigation + CORS + Error handling)
+- theme/page-comparatif-verres.php (Math validation)
+- theme/page-formation-erp.php (Validation inputs)
+- theme/page-recherche-opticiens.php (Null checks)
+
+PROCHAINES ÉTAPES:
+==================
+1. Appliquer corrections remaining sur les 5 fichiers
+2. Tester en local (npm run dev)
+3. Lancer suite de tests (validation, XSS, SQL injection)
+4. Packager en nouveau zip: oblink-theme-SECURE-FIXES.zip
+5. Déployer en production
+
+RÉSUMÉ SÉCURITÉ:
+================
+AVANT: 44 bugs (8 CRITIQUES + 24 MAJEURS + 12 MINEURS)
+APRÈS: 3 corrections appliquées
+RESTANT: 41 bugs à corriger
+
+Taux de couverture: 7%

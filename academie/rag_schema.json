@@ -1,0 +1,113 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "BTS Opticien Lunetier Exam Database Schema",
+    "description": "Structure for indexing exam papers, questions, and answers for the RAG engine.",
+    "type": "object",
+    "properties": {
+        "exams": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "integer"
+                    },
+                    "session": {
+                        "type": "string",
+                        "enum": [
+                            "Metropole",
+                            "Antilles",
+                            "Etranger"
+                        ]
+                    },
+                    "curriculum_version": {
+                        "type": "string",
+                        "enum": [
+                            "legacy",
+                            "2024-reform"
+                        ],
+                        "default": "legacy",
+                        "description": "Indicates if the exam follows the pre-2024 or post-2024 reform curriculum."
+                    },
+                    "subjects": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Analyse de la Vision",
+                                        "Optique Geometrique et Physique",
+                                        "Etude Technique",
+                                        "Mathematiques",
+                                        "Gestion"
+                                    ]
+                                },
+                                "coefficient": {
+                                    "type": "integer"
+                                },
+                                "files": {
+                                    "type": "object",
+                                    "properties": {
+                                        "subject_pdf": {
+                                            "type": "string",
+                                            "description": "Relative path to correct file"
+                                        },
+                                        "correction_pdf": {
+                                            "type": "string"
+                                        },
+                                        "assets": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "extraction_status": {
+                                    "type": "string",
+                                    "enum": [
+                                        "pending",
+                                        "processed",
+                                        "verified"
+                                    ]
+                                },
+                                "knowledge_graph": {
+                                    "type": "array",
+                                    "description": "Extracted Key Concepts for RAG retrieval",
+                                    "items": {
+                                        "topic": {
+                                            "type": "string"
+                                        },
+                                        "sub_topic": {
+                                            "type": "string"
+                                        },
+                                        "question_snippet": {
+                                            "type": "string"
+                                        },
+                                        "official_answer_snippet": {
+                                            "type": "string"
+                                        },
+                                        "common_mistakes": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "keywords": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

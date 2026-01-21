@@ -1,0 +1,60 @@
+{
+    "exams": [
+        {
+            "year": 2024,
+            "subject": "Analyse de la Vision",
+            "concepts": [
+                {
+                    "topic": "Hypermétropie",
+                    "sub_topic": "Compensation théorique",
+                    "question_snippet": "Un sujet hypermétrope de +3.00 D est corrigé en verres de contact. Quelle puissance théorique de verre lunette (dist. vertex 12mm) lui faudrait-il ?",
+                    "official_answer_snippet": "La formule de passage lentille-lunette : DL = Dc / (1 - d*Dc). Avec Dc=+3.00 et d=0.012, on obtient DL ≈ +3.11 D.",
+                    "difficulty": 3,
+                    "common_mistakes": [
+                        "Oublier de convertir 12mm en mètres (0.012)",
+                        "Intervertir Dc et DL dans la formule"
+                    ]
+                },
+                {
+                    "topic": "Vision Binoculaire",
+                    "sub_topic": "Phorie",
+                    "question_snippet": "Lors du test de Maddox, le sujet voit la ligne rouge à droite du point blanc. Quel type de phorie cela indique-t-il (sujet orthophore corrigé) ?",
+                    "official_answer_snippet": "Vision croisée (OD voit image OG et inversement) = Exophorie. La ligne rouge (vue par l'œil avec le Maddox, disons OD) est à l'opposé de la déviation.",
+                    "difficulty": 4,
+                    "common_mistakes": [
+                        "Confondre Eso et Exo en vision croisée",
+                        "Ne pas préciser quel œil porte la baguette de Maddox"
+                    ]
+                },
+                {
+                    "topic": "Anatomie",
+                    "sub_topic": "Accommodation",
+                    "question_snippet": "Citez les deux mécanismes principaux physiologiques déclenchant l'accommodation.",
+                    "official_answer_snippet": "1. Le flou rétinien (défocalisation). 2. La convergence (syncinésie accommodation-convergence).",
+                    "difficulty": 2,
+                    "common_mistakes": [
+                        "Citer la contraction pupillaire (c'est une conséquence, pas un déclencheur)",
+                        "Parler de la volonté consciente uniquement"
+                    ]
+                }
+            ]
+        },
+        {
+            "year": 2023,
+            "subject": "Optique Géométrique",
+            "concepts": [
+                {
+                    "topic": "Prismes",
+                    "sub_topic": "Relation de Prentice",
+                    "question_snippet": "Calculer l'effet prismatique induit à 10mm au-dessus du centre optique d'un verre de +5.00 D.",
+                    "official_answer_snippet": "P = d (cm) * D. Ici d=1cm, D=+5.00. Donc P = 1 * 5 = 5.00 D. Base Haut (verre convexe, base au centre).",
+                    "difficulty": 2,
+                    "common_mistakes": [
+                        "Erreur sur l'orientation de la base (Haut vs Bas)",
+                        "Utiliser la distance en mm au lieu de cm"
+                    ]
+                }
+            ]
+        }
+    ]
+}

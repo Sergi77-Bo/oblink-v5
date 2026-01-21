@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/">
+
+<channel>
+	<title>OBLINK Blog</title>
+	<link>https://oblink.fr</link>
+	<description>Articles et conseils pour opticiens freelance</description>
+	<language>fr-FR</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://oblink.fr</wp:base_site_url>
+	<wp:base_blog_url>https://oblink.fr</wp:base_blog_url>
+
+	<item>
+		<title>Témoignage : "J'ai quitté mon CDI pour devenir opticienne freelance"</title>
+		<link>https://oblink.fr/blog/temoignage-opticienne-freelance</link>
+		<pubDate>Mon, 13 Jan 2025 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="temoignages"><![CDATA[Témoignages]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=1</guid>
+		<description><![CDATA[Découvrez le parcours inspirant de Marion, 32 ans, qui a franchi le pas vers l'indépendance.]]></description>
+		<content:encoded><![CDATA[
+<p><strong>Marion, 32 ans, diplômée depuis 8 ans</strong>, travaillait pour une grande enseigne nationale. Après plusieurs années de routine, elle a décidé de sauter le pas et de devenir opticienne freelance via OBLINK.</p>
+
+<h2>Pourquoi ce choix ?</h2>
+<p>"J'avais besoin de liberté. Je voulais choisir mes missions, gérer mon emploi du temps et surtout être mieux rémunérée pour mes compétences. En CDI, je gagnais 2100€ net. Aujourd'hui, avec 15 jours de mission par mois, je dépasse facilement les 3500€ net."</p>
+
+<h2>Les premières semaines</h2>
+<p>Marion avoue avoir eu peur au début : "J'ai mis 3 mois à me lancer administrativement. Heureusement, OBLINK m'a guidée pour créer mon statut d'auto-entrepreneur et comprendre mes obligations fiscales."</p>
+
+<blockquote>"La première mission à Marseille m'a convaincue. Le magasin était ravi, j'ai été payée sous 48h, et j'ai reçu 5 nouvelles demandes la semaine suivante."</blockquote>
+
+<h2>Ses conseils</h2>
+<ul>
+<li>Ne pas avoir peur de l'administratif (c'est plus simple qu'on ne le croit)</li>
+<li>Commencer avec 2-3 missions par mois pour tester</li>
+<li>Toujours avoir un matelas de sécurité (3 mois de dépenses)</li>
+<li>Utiliser des outils comme OBLINK pour éviter les mauvaises surprises</li>
+</ul>
+
+<p><em>Aujourd'hui, Marion travaille 18 jours par mois et gagne plus qu'en CDI tout en profitant d'une vraie flexibilité.</em></p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Découvrez le parcours inspirant de Marion, 32 ans, qui a franchi le pas vers l'indépendance.]]></excerpt:encoded>
+		<wp:post_id>1</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-13 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-13 10:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>Facturation électronique 2025 : Guide complet pour opticiens indépendants</title>
+		<link>https://oblink.fr/blog/facturation-electronique-2025</link>
+		<pubDate>Tue, 14 Jan 2025 09:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="juridique"><![CDATA[Juridique]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=2</guid>
+		<description><![CDATA[Tout ce que vous devez savoir sur la nouvelle obligation de facturation électronique en 2025-2026.]]></description>
+		<content:encoded><![CDATA[
+<p>À partir de <strong>septembre 2026</strong>, tous les professionnels en France devront utiliser la facturation électronique pour leurs transactions B2B. Voici ce qui change pour vous.</p>
+
+<h2>📅 Calendrier de déploiement</h2>
+<ul>
+<li><strong>1er septembre 2026</strong> : Obligation de réception des factures électroniques (toutes entreprises)</li>
+<li><strong>1er septembre 2026</strong> : Obligation d'émission pour les grandes entreprises et ETI</li>
+<li><strong>1er septembre 2027</strong> : Obligation d'émission pour les PME et micro-entreprises</li>
+</ul>
+
+<h2>Qu'est-ce que ça change concrètement ?</h2>
+<p>Fini les factures PDF envoyées par email ! Vous devrez passer par une <strong>plateforme de dématérialisation partenaire</strong> (PDP) agréée par l'État ou le portail public.</p>
+
+<h3>Les avantages</h3>
+<ul>
+<li>✅ Traitement automatisé (gain de temps)</li>
+<li>✅ Réduction des erreurs de saisie</li>
+<li>✅ Conformité fiscale assurée</li>
+<li>✅ Paiements plus rapides (délais raccourcis)</li>
+</ul>
+
+<h2>Comment se préparer ?</h2>
+<ol>
+<li><strong>Choisir une solution agréée</strong> : Chorus Pro (gratuit) ou une PDP privée</li>
+<li><strong>Adapter vos outils</strong> : Vérifier que votre logiciel de facturation est compatible</li>
+<li><strong>Former votre comptable</strong> (ou vous-même)</li>
+</ol>
+
+<div style="background: #FFF3E0; padding: 20px; border-left: 4px solid #FF6600; margin: 20px 0;">
+<strong>💡 Astuce OBLINK</strong><br>
+Si vous facturez via OBLINK, nous gérons automatiquement la transition vers la facturation électronique. Vous n'aurez rien à faire !
+</div>
+
+<h2>Les sanctions en cas de non-respect</h2>
+<p>Le non-respect de cette obligation peut entraîner une amende de <strong>15€ par facture non conforme</strong> (plafonnée à 15 000€ par an).</p>
+
+<p><strong>Notre conseil :</strong> Anticipez dès maintenant en testant une solution de facturation électronique compatible.</p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Tout ce que vous devez savoir sur la nouvelle obligation de facturation électronique en 2025-2026.]]></excerpt:encoded>
+		<wp:post_id>2</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-14 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-14 09:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>Calculer votre taux horaire : la méthode complète (avec exemple)</title>
+		<link>https://oblink.fr/blog/calculer-taux-horaire</link>
+		<pubDate>Wed, 08 Jan 2025 14:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="finance"><![CDATA[Finance]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=3</guid>
+		<description><![CDATA[Apprenez à calculer votre taux horaire freelance pour être rentable et compétitif.]]></description>
+		<content:encoded><![CDATA[
+<p>En tant qu'opticien freelance, <strong>fixer son taux horaire</strong> est crucial. Trop bas, vous travaillez à perte. Trop haut, vous risquez de ne pas trouver de missions.</p>
+
+<h2>La formule de base</h2>
+<pre>Taux horaire = (Revenus souhaités + Charges + Marge) / Nombre d'heures facturables</pre>
+
+<h2>Exemple concret</h2>
+<p><strong>Objectif :</strong> Gagner l'équivalent de 2500€ net/mois</p>
+
+<h3>Étape 1 : Calculer vos charges annuelles</h3>
+<ul>
+<li>Cotisations sociales (22% du CA en auto-entrepreneur) : ~6600€/an</li>
+<li>Assurance RC Pro : 400€/an</li>
+<li>Mutuelle : 600€/an</li>
+<li>Comptable : 800€/an</li>
+<li>Frais divers (km, téléphone, logiciels) : 1200€/an</li>
+<li><strong>Total charges : 9600€/an</strong></li>
+</ul>
+
+<h3>Étape 2 : Définir le nombre d'heures facturables</h3>
+<p>Sur 220 jours ouvrés, retirez :</p>
+<ul>
+<li>Congés : 25 jours</li>
+<li>Jours non facturés (admin, maladie, prospection) : 40 jours</li>
+<li><strong>= 155 jours facturables × 7h = 1085 heures/an</strong></li>
+</ul>
+
+<h3>Étape 3 : Application</h3>
+<pre>
+Revenus souhaités : 2500€ × 12 = 30 000€
+Charges : 9600€
+Marge sécurité (10%) : 3960€
+---
+Total : 43 560€ / 1085h = <strong>40€/heure</strong>
+</pre>
+
+<h2>Le taux journalier moyen (TJM)</h2>
+<p>En optique, le TJM freelance se situe entre <strong>250€ et 400€ HT/jour</strong> selon l'expérience et la zone géographique.</p>
+
+<p>💡 <strong>Conseil OBLINK :</strong> Utilisez notre simulateur de revenus pour ajuster votre TJM en temps réel !</p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Apprenez à calculer votre taux horaire freelance pour être rentable et compétitif.]]></excerpt:encoded>
+		<wp:post_id>3</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-08 14:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-08 14:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>Top 5 des erreurs comptables des débutants (et comment les éviter)</title>
+		<link>https://oblink.fr/blog/erreurs-comptables-debutants</link>
+		<pubDate>Thu, 09 Jan 2025 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="finance"><![CDATA[Finance]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=4</guid>
+		<description><![CDATA[Les pièges comptables à éviter absolument quand on débute en freelance.]]></description>
+		<content:encoded><![CDATA[
+<p>La comptabilité fait peur à beaucoup de freelances. Voici les 5 erreurs les plus courantes et comment les éviter.</p>
+
+<h2>1️⃣ Mélanger compte pro et compte perso</h2>
+<p><strong>Erreur :</strong> Utiliser son compte bancaire personnel pour encaisser les paiements clients.</p>
+<p><strong>Solution :</strong> Ouvrir un compte dédié (obligatoire si CA > 10 000€/an pendant 2 ans consécutifs)</p>
+
+<h2>2️⃣ Oublier de provisionner les charges sociales</h2>
+<p><strong>Erreur :</strong> Dépenser tout son chiffre d'affaires sans mettre de côté pour l'URSSAF.</p>
+<p><strong>Solution :</strong> Mettre automatiquement 25% de chaque encaissement sur un compte épargne</p>
+
+<h2>3️⃣ Ne pas conserver les justificatifs</h2>
+<p><strong>Erreur :</strong> Perdre les factures de frais professionnels (carburant, matériel, formation)</p>
+<p><strong>Solution :</strong> Scanner et classer toutes les factures dans un dossier cloud (obligation de conservation : 10 ans)</p>
+
+<h2>4️⃣ Déclarer en retard</h2>
+<p><strong>Erreur :</strong> Oublier les déclarations mensuelles ou trimestrielles URSSAF</p>
+<p><strong>Solution :</strong> Activer les prélèvements automatiques et mettre des rappels calendrier</p>
+
+<h2>5️⃣ Confondre CA et bénéfice</h2>
+<p><strong>Erreur :</strong> Penser que 3000€ de CA = 3000€ dans la poche</p>
+<p><strong>Solution :</strong> Calculer : CA - Charges sociales - Frais = Revenu net</p>
+
+<div style="background: #E3F2FD; padding: 20px; border-left: 4px solid #0099FF; margin: 20px 0;">
+<strong>📊 Checklist mensuelle OBLINK</strong>
+<ul style="margin: 10px 0;">
+<li>✅ Éditer toutes les factures du mois</li>
+<li>✅ Déclarer son CA à l'URSSAF</li>
+<li>✅ Classer les justificatifs de frais</li>
+<li>✅ Vérifier les paiements reçus</li>
+<li>✅ Provisionner 25% pour les charges</li>
+</ul>
+</div>
+
+<p><strong>Bonus :</strong> OBLINK génère automatiquement vos factures et vous rappelle vos échéances !</p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Les pièges comptables à éviter absolument quand on débute en freelance.]]></excerpt:encoded>
+		<wp:post_id>4</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-09 11:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-09 11:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>Auto-entrepreneur, EURL ou portage salarial : quel statut en 2025 ?</title>
+		<link>https://oblink.fr/blog/quel-statut-juridique-2025</link>
+		<pubDate>Fri, 10 Jan 2025 08:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="juridique"><![CDATA[Juridique]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=7</guid>
+		<description><![CDATA[Comparatif complet des 3 statuts possibles pour exercer comme opticien indépendant.]]></description>
+		<content:encoded><![CDATA[
+<p>Vous souhaitez devenir opticien freelance mais vous hésitez sur le statut ? Voici un comparatif détaillé.</p>
+
+<h2>🏆 Auto-entrepreneur (Micro-entreprise)</h2>
+<h3>✅ Avantages</h3>
+<ul>
+<li>Simplicité administrative extrême</li>
+<li>Pas de TVA (si CA < 36 800€)</li>
+<li>Charges sociales proportionnelles au CA (22%)</li>
+<li>Création gratuite et rapide (en ligne)</li>
+</ul>
+
+<h3>❌ Inconvénients</h3>
+<ul>
+<li>Plafond de CA : 77 700€/an</li>
+<li>Impossibilité de déduire les frais réels</li>
+<li>Pas de distinction patrimoine pro/perso</li>
+</ul>
+
+<p><strong>👉 Pour qui ?</strong> Débutants, missions ponctuelles, CA < 50 000€/an</p>
+
+<hr>
+
+<h2>🏢 EURL (Entreprise Unipersonnelle à Responsabilité Limitée)</h2>
+<h3>✅ Avantages</h3>
+<ul>
+<li>Protection du patrimoine personnel</li>
+<li>Déduction des frais réels (voiture, local, matériel)</li>
+<li>Optimisation fiscale possible (IR ou IS)</li>
+<li>Pas de plafond de CA</li>
+</ul>
+
+<h3>❌ Inconvénients</h3>
+<ul>
+<li>Comptabilité lourde (expert-comptable obligatoire)</li>
+<li>Coût de création : 200-500€</li>
+<li>Cotisations sociales même si CA = 0</li>
+</ul>
+
+<p><strong>👉 Pour qui ?</strong> CA > 50 000€, investissements importants, vision long terme</p>
+
+<hr>
+
+<h2>💼 Portage salarial</h2>
+<h3>✅ Avantages</h3>
+<ul>
+<li>Statut de salarié (chômage, retraite, sécurité sociale)</li>
+<li>Zéro gestion administrative</li>
+<li>Assurance RC Pro incluse</li>
+</ul>
+
+<h3>❌ Inconvénients</h3>
+<ul>
+<li>Frais de gestion : 5-10% du CA</li>
+<li>Salaire minimum : 2800€ brut/mois obligatoire</li>
+<li>Moins de liberté</li>
+</ul>
+
+<p><strong>👉 Pour qui ?</strong> Transition CDI → freelance, besoin de sécurité, gros volumes</p>
+
+<hr>
+
+<h2>📊 Tableau comparatif</h2>
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Critère</th>
+<th>Auto-entrepreneur</th>
+<th>EURL</th>
+<th>Portage</th>
+</tr>
+<tr>
+<td>Facilité création</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Protection sociale</td>
+<td>⭐⭐</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Optimisation fiscale</td>
+<td>⭐</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>Coût de gestion</td>
+<td>€</td>
+<td>€€€</td>
+<td>€€</td>
+</tr>
+</table>
+
+<p><strong>Notre recommandation :</strong> 95% des opticiens freelance débutent en auto-entrepreneur. C'est le meilleur compromis simplicité/efficacité.</p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Comparatif complet des 3 statuts possibles pour exercer comme opticien indépendant.]]></excerpt:encoded>
+		<wp:post_id>7</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-10 08:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-10 08:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>Contactologie avancée : la formation qui booste votre carrière d'opticien</title>
+		<link>https://oblink.fr/blog/formation-contactologie-avancee</link>
+		<pubDate>Sat, 11 Jan 2025 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="formation"><![CDATA[Formation]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=5</guid>
+		<description><![CDATA[Pourquoi la formation en contactologie est l'investissement le plus rentable pour un opticien freelance en 2025.]]></description>
+		<content:encoded><![CDATA[
+<p>En 2025, la <strong>contactologie avancée</strong> est devenue une compétence ultra-recherchée par les magasins d'optique à Paris, Lyon, Marseille et dans toute la France. Voici pourquoi vous devriez vous former.</p>
+
+<h2>📈 Le marché de la contactologie en France</h2>
+<p>Selon les dernières études du secteur optique :</p>
+<ul>
+<li>🔹 <strong>6,8 millions</strong> de porteurs de lentilles en France</li>
+<li>🔹 Croissance annuelle de <strong>+4,5%</strong> du marché</li>
+<li>🔹 <strong>80% des magasins</strong> cherchent des opticiens formés en contacto</li>
+<li>🔹 TJM moyen contactologue : <strong>320-450€</strong> (vs 250-300€ standard)</li>
+</ul>
+
+<h2>🎓 Formations disponibles en France</h2>
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Organisme</th>
+<th>Durée</th>
+<th>Prix</th>
+<th>Localisation</th>
+<th>Diplôme</th>
+</tr>
+<tr>
+<td>ISO Paris</td>
+<td>120h (6 mois)</td>
+<td>2800€</td>
+<td>Paris 13ème</td>
+<td>CQP Contactologie</td>
+</tr>
+<tr>
+<td>ORT Lyon</td>
+<td>100h (5 mois)</td>
+<td>2400€</td>
+<td>Lyon 7ème</td>
+<td>Certificat</td>
+</tr>
+<tr>
+<td>ICO Bures-sur-Yvette</td>
+<td>140h (7 mois)</td>
+<td>3200€</td>
+<td>Île-de-France</td>
+<td>DU Contactologie</td>
+</tr>
+<tr>
+<td>Formation continue OBLINK</td>
+<td>80h (e-learning)</td>
+<td>1800€</td>
+<td>100% en ligne</td>
+<td>Attestation pro</td>
+</tr>
+</table>
+
+<h2>💰 Rentabilité : simulation sur 12 mois</h2>
+<p><strong>Sans formation contactologie :</strong></p>
+<ul>
+<li>TJM moyen : 280€</li>
+<li>15 jours/mois × 12 = 180 jours</li>
+<li>Revenu brut : 50 400€</li>
+</ul>
+
+<p><strong>Avec formation contactologie :</strong></p>
+<ul>
+<li>TJM moyen : 380€ (+100€/jour)</li>
+<li>18 jours/mois × 12 = 216 jours (plus de demandes)</li>
+<li>Revenu brut : 82 080€</li>
+<li><strong>Gain net : +31 680€/an</strong></li>
+</ul>
+
+<div style="background: #E8F5E9; padding: 20px; border-left: 4px solid #4CAF50; margin: 20px 0;">
+<strong>✅ ROI de la formation</strong><br>
+Investissement : 2800€<br>
+Retour sur investissement : <strong>1 mois</strong> (gain de 100€/jour × 28 jours travaillés)<br>
+Bénéfice net sur 1 an : <strong>+28 880€</strong>
+</div>
+
+<h2>🗺️ Zones géographiques les plus demandeuses</h2>
+<ol>
+<li><strong>Île-de-France</strong> : 340 offres/mois (Paris, Boulogne, Versailles)</li>
+<li><strong>Auvergne-Rhône-Alpes</strong> : 180 offres/mois (Lyon, Grenoble, Annecy)</li>
+<li><strong>PACA</strong> : 150 offres/mois (Marseille, Nice, Aix-en-Provence)</li>
+<li><strong>Occitanie</strong> : 120 offres/mois (Toulouse, Montpellier)</li>
+<li><strong>Nouvelle-Aquitaine</strong> : 95 offres/mois (Bordeaux, Pau)</li>
+</ol>
+
+<h2>🔗 Ressources OBLINK pour contactologues</h2>
+<ul>
+<li>📊 <a href="https://oblink.fr/simulateur">Simulateur de revenus contactologue</a></li>
+<li>📚 <a href="https://oblink.fr/formation-erp">Académie OBLINK : formations certifiantes</a></li>
+<li>💼 <a href="https://oblink.fr/emploi-opticien">Offres contactologie en temps réel</a></li>
+<li>📞 <a href="https://oblink.fr/inscription-opticien">S'inscrire comme contactologue freelance</a></li>
+</ul>
+
+<p><strong>Conclusion :</strong> La formation en contactologie est l'investissement #1 pour augmenter vos revenus freelance dès 2025. Profitez des <a href="https://oblink.fr/formation-erp">formations certifiantes OBLINK</a> finançables via votre CPF.</p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Pourquoi la formation en contactologie est l'investissement le plus rentable pour un opticien freelance en 2025.]]></excerpt:encoded>
+		<wp:post_id>5</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-11 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-11 10:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>Missions de remplacement opticien : 7 conseils pour réussir votre première semaine</title>
+		<link>https://oblink.fr/blog/reussir-mission-remplacement-opticien</link>
+		<pubDate>Sun, 12 Jan 2025 09:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="conseils"><![CDATA[Conseils]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=6</guid>
+		<description><![CDATA[Le guide complet pour réussir votre première mission de remplacement en magasin d'optique (Paris, Lyon, Marseille, Bordeaux).]]></description>
+		<content:encoded><![CDATA[
+<p>Vous venez de décrocher votre <strong>première mission de remplacement</strong> via <a href="https://oblink.fr">OBLINK</a> ? Félicitations ! Voici les 7 clés pour transformer l'essai et recevoir plein de nouvelles demandes.</p>
+
+<h2>1️⃣ Préparez votre arrivée (J-3)</h2>
+<h3>Documents à avoir sur vous</h3>
+<ul>
+<li>✅ Carte professionnelle CNC (obligatoire)</li>
+<li>✅ Attestation assurance RC Pro</li>
+<li>✅ RIB pour le virement (si paiement direct)</li>
+<li>✅ Contrat OBLINK signé</li>
+</ul>
+
+<h3>Contactez le magasin</h3>
+<p>Appelez <strong>48h avant</strong> pour confirmer :</p>
+<ul>
+<li>Horaires exacts (9h-19h ? 10h-20h ?)</li>
+<li>Logiciel utilisé (Winoptics, Cosium, Audioptic, etc.)</li>
+<li>Code vestimentaire (chemise ? polo ? blouse ?)</li>
+<li>Badges/accès parking</li>
+</ul>
+
+<h2>2️⃣ Maîtrisez le logiciel en 30 minutes</h2>
+<p>Les 3 logiciels les plus utilisés en France :</p>
+<table border="1" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Logiciel</th>
+<th>Part de marché</th>
+<th>Difficulté</th>
+<th>Tuto OBLINK</th>
+</tr>
+<tr>
+<td>Winoptics</td>
+<td>35%</td>
+<td>⭐⭐</td>
+<td><a href="https://oblink.fr/formation-erp">Voir le tuto</a></td>
+</tr>
+<tr>
+<td>Cosium</td>
+<td>28%</td>
+<td>⭐⭐⭐</td>
+<td><a href="https://oblink.fr/formation-erp">Voir le tuto</a></td>
+</tr>
+<tr>
+<td>Audioptic</td>
+<td>18%</td>
+<td>⭐</td>
+<td><a href="https://oblink.fr/formation-erp">Voir le tuto</a></td>
+</tr>
+<tr>
+<td>Ivoirnet</td>
+<td>12%</td>
+<td>⭐⭐⭐⭐</td>
+<td><a href="https://oblink.fr/formation-erp">Voir le tuto</a></td>
+</tr>
+</table>
+
+<p>💡 <strong>Astuce :</strong> Suivez les <a href="https://oblink.fr/formation-erp">formations gratuites OBLINK</a> sur Winoptics, Cosium et Ivoirnet avant votre mission.</p>
+
+<h2>3️⃣ Jour 1 : Observez et notez</h2>
+<p>Pendant vos 2 premières heures :</p>
+<ul>
+<li>📍 Repérez l'emplacement du stock (verres, montures, lunettes de soleil)</li>
+<li>🔧 Localisez l'atelier de montage</li>
+<li>📋 Demandez les process internes (essayage, devis, SAV)</li>
+<li>👥 Présentez-vous à toute l'équipe (ne faites pas cavalier seul)</li>
+</ul>
+
+<h2>4️⃣ Les 3 erreurs à éviter absolument</h2>
+
+<h3>❌ Erreur #1 : Vouloir tout changer</h3>
+<p>Vous êtes là pour <strong>aider</strong>, pas pour réorganiser. Respectez les méthodes du magasin.</p>
+
+<h3>❌ Erreur #2 : Refuser les tâches annexes</h3>
+<p>Nettoyage vitrine, rangement stock, inventaire = c'est normal. Ne faites pas la fine bouche.</p>
+
+<h3>❌ Erreur #3 : Partir à 18h59 pile</h3>
+<p>Si un client est en train d'essayer à 18h55, <strong>terminez la vente</strong>. Ça marque des points.</p>
+
+<h2>5️⃣ Adoptez la "règle des 10 ventes"</h2>
+<p>Objectif personnel : <strong>Réalisez 10 ventes les 3 premiers jours</strong>.</p>
+
+<p>Cela prouve votre efficacité et génère des avis positifs. Résultat : le magasin vous rappellera ET vous recommandera à son réseau.</p>
+
+<div style="background: #FFF3E0; padding: 20px; border-left: 4px solid #FF6600; margin: 20px 0;">
+<strong>📊 Benchmark de performance (source OBLINK)</strong><br><br>
+<strong>Opticien remplaçant TOP 10% :</strong><br>
+• CA généré : 8000-12000€/semaine<br>
+• Taux de transformation : 65%+<br>
+• Panier moyen : 380€<br>
+• Note satisfaction : 4,8/5<br><br>
+<strong>Résultat :</strong> 95% de rappel par le magasin
+</div>
+
+<h2>6️⃣ Géolocalisation : villes les plus actives</h2>
+<p>Nombre de missions de remplacement disponibles/mois en 2025 :</p>
+<ol>
+<li><strong>Paris et banlieue</strong> : 420 missions/mois</li>
+<li><strong>Lyon</strong> : 180 missions/mois</li>
+<li><strong>Marseille</strong> : 145 missions/mois</li>
+<li><strong>Toulouse</strong> : 110 missions/mois</li>
+<li><strong>Bordeaux</strong> : 95 missions/mois</li>
+<li><strong>Lille</strong> : 85 missions/mois</li>
+<li><strong>Nantes</strong> : 75 missions/mois</li>
+</ol>
+
+<p>👉 <a href="https://oblink.fr/emploi-opticien">Voir les missions disponibles près de chez vous</a></p>
+
+<h2>7️⃣ Demandez un retour écrit</h2>
+<p>Le dernier jour, demandez poliment au gérant :</p>
+<blockquote>"Pourriez-vous m'envoyer un petit retour écrit sur ma semaine ? Ça m'aidera pour mes futures missions."</blockquote>
+
+<p>Un avis 5★ sur <a href="https://oblink.fr">OBLINK</a> = +30% de demandes en plus le mois suivant.</p>
+
+<h2>🔗 Ressources OBLINK pour vos missions</h2>
+<ul>
+<li>📋 <a href="https://oblink.fr/emploi-opticien">Voir les missions disponibles</a></li>
+<li>🎓 <a href="https://oblink.fr/formation-erp">Formations ERP gratuites</a></li>
+<li>💰 <a href="https://oblink.fr/simulateur">Simulateur de revenus freelance</a></li>
+<li>✍️ <a href="https://oblink.fr/inscription-opticien">Créer mon profil remplaçant</a></li>
+</ul>
+
+<p><strong>Prêt à démarrer ?</strong> Inscrivez-vous sur <a href="https://oblink.fr/inscription-opticien">OBLINK</a> et recevez votre première mission sous 48h (Paris, Lyon, Marseille, Bordeaux, Lille).</p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Le guide complet pour réussir votre première mission de remplacement en magasin d'optique (Paris, Lyon, Marseille, Bordeaux).]]></excerpt:encoded>
+		<wp:post_id>6</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-12 09:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-12 09:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>5 outils indispensables pour gérer votre activité d'opticien freelance en 2025</title>
+		<link>https://oblink.fr/blog/outils-opticien-freelance</link>
+		<pubDate>Mon, 13 Jan 2025 15:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="outils"><![CDATA[Outils]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=8</guid>
+		<description><![CDATA[Comparatif 2025 des meilleurs logiciels de facturation, comptabilité et gestion pour opticiens indépendants.]]></description>
+		<content:encoded><![CDATA[
+<p>En tant qu'<strong>opticien freelance</strong>, vous devez jongler entre missions, facturation, comptabilité et prospection. Voici les 5 outils qui vous feront gagner 10h/semaine.</p>
+
+<h2>🧾 1. Facturation : comparatif des solutions</h2>
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Outil</th>
+<th>Prix/mois</th>
+<th>Facturation électronique 2026</th>
+<th>Auto-entrepreneur</th>
+<th>Note</th>
+</tr>
+<tr>
+<td><strong>OBLINK Pro</strong></td>
+<td>0€ (inclus)</td>
+<td>✅ Compatible</td>
+<td>✅ Optimisé</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Freebe</td>
+<td>9,99€</td>
+<td>✅ Compatible</td>
+<td>✅</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Henrri</td>
+<td>0€ (limité)</td>
+<td>❌ Pas encore</td>
+<td>✅</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Sellsy</td>
+<td>39€</td>
+<td>✅ Compatible</td>
+<td>⚠️ Complexe</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+</table>
+
+<p>💡 <strong>Recommandation OBLINK :</strong> Si vous passez par notre plateforme, <a href="https://oblink.fr/inscription-opticien">la facturation est automatique</a> et conforme à la loi 2026.</p>
+
+<h2>💼 2. Comptabilité : les 3 champions</h2>
+
+<h3>🥇 Indy (ex-Georges) - Le préféré des freelances</h3>
+<ul>
+<li><strong>Prix :</strong> 0€ pour auto-entrepreneurs / 29€/mois pour EURL</li>
+<li><strong>Points forts :</strong> Synchronisation bancaire, déclarations URSSAF auto, bilan comptable</li>
+<li><strong>Géolocalisation :</strong> Service client basé à Paris, support français 7j/7</li>
+</ul>
+
+<h3>🥈 Pennylane - Pour les structures en croissance</h3>
+<ul>
+<li><strong>Prix :</strong> 30€/mois (formule freelance)</li>
+<li><strong>Points forts :</strong> Notes de frais automatiques, multi-comptes, export comptable</li>
+<li><strong>Pour qui :</strong> EURL, SASU, CA > 50k€</li>
+</ul>
+
+<h3>🥉 Comptalib - L'économique</h3>
+<ul>
+<li><strong>Prix :</strong> 0€ (version gratuite suffisante)</li>
+<li><strong>Points forts :</strong> Simple, rapide, adapté débutants</li>
+<li><strong>Limites :</strong> Pas de synchro bancaire automatique</li>
+</ul>
+
+<div style="background: #E3F2FD; padding: 20px; border-left: 4px solid #0099FF; margin: 20px 0;">
+<strong>🔗 Intégration OBLINK</strong><br>
+Votre tableau de bord OBLINK s'intègre automatiquement avec <strong>Indy</strong> et <strong>Pennylane</strong>. Vos factures OBLINK sont importées en 1 clic.
+<br><a href="https://oblink.fr/dashboard-opticien">Activer l'intégration →</a>
+</div>
+
+<h2>📅 3. Planning & missions : OBLINK (évidemment)</h2>
+<p>Notre plateforme centralise :</p>
+<ul>
+<li>✅ <strong>Recherche de missions</strong> géolocalisées (Paris, Lyon, Marseille, Bordeaux, Lille, Nantes, etc.)</li>
+<li>✅ <strong>Calendrier intelligent</strong> : vos disponibilités synchronisées</li>
+<li>✅ <strong>Paiements sous 48h</strong> après validation</li>
+<li>✅ <strong>Avis clients</strong> pour booster votre profil</li>
+</ul>
+
+<p>👉 <a href="https://oblink.fr/emploi-opticien">Voir les missions disponibles près de chez vous</a></p>
+
+<h2>💰 4. Gestion financière : Qonto vs Shine</h2>
+
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Critère</th>
+<th>Qonto</th>
+<th>Shine</th>
+</tr>
+<tr>
+<td>Prix de base</td>
+<td>9€/mois</td>
+<td>7,90€/mois</td>
+</tr>
+<tr>
+<td>Carte bancaire</td>
+<td>✅ Mastercard</td>
+<td>✅ Mastercard</td>
+</tr>
+<tr>
+<td>Catégorisation auto</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Export compta</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Assurance gratuite</td>
+<td>❌</td>
+<td>✅ (RC Pro incluse)</td>
+</tr>
+<tr>
+<td>Support</td>
+<td>Chat + Tel</td>
+<td>Chat uniquement</td>
+</tr>
+</table>
+
+<p><strong>Verdict :</strong></p>
+<ul>
+<li>💳 <strong>Qonto</strong> si vous voulez une banque "pro" reconnue (interface sublime)</li>
+<li>💡 <strong>Shine</strong> si vous débutez (RC Pro gratuite = économie de 400€/an)</li>
+</ul>
+
+<h2>📊 5. Simulateur de revenus : OBLINK Calculator</h2>
+<p>Notre <a href="https://oblink.fr/simulateur">simulateur de revenus</a> vous permet de :</p>
+<ul>
+<li>Calculer votre TJM optimal selon votre zone géographique</li>
+<li>Estimer vos charges sociales (URSSAF, retraite, assurances)</li>
+<li>Comparer auto-entrepreneur vs EURL</li>
+<li>Simuler vos revenus nets sur 6-12 mois</li>
+</ul>
+
+<p><strong>Exemple de simulation :</strong></p>
+<pre>
+📍 Localisation : Lyon
+💼 Statut : Auto-entrepreneur
+🎯 Objectif : 3000€ net/mois
+📅 Jours travaillés : 15/mois
+
+→ TJM recommandé : <strong>340€</strong>
+→ CA mensuel : 5100€
+→ Charges (22%) : 1122€
+→ Reste : 3978€
+→ Impôts estimés (versement libératoire 2,2%) : 112€
+→ Net final : <strong>3866€/mois</strong>
+</pre>
+
+<p>👉 <a href="https://oblink.fr/simulateur">Faire ma simulation personnalisée</a></p>
+
+<h2>🗺️ Données géolocalisées : TJM moyen par ville</h2>
+<ol>
+<li><strong>Paris et Île-de-France</strong> : 340-450€/jour</li>
+<li><strong>Lyon</strong> : 300-380€/jour</li>
+<li><strong>Marseille</strong> : 280-350€/jour</li>
+<li><strong>Bordeaux</strong> : 270-340€/jour</li>
+<li><strong>Toulouse</strong> : 270-330€/jour</li>
+<li><strong>Lille</strong> : 260-320€/jour</li>
+<li><strong>Nantes</strong> : 260-310€/jour</li>
+</ol>
+
+<p><em>Source : Observatoire OBLINK 2025, données issues de 12 400 missions réalisées</em></p>
+
+<h2>🎁 Bonus : la stack complète d'un freelance organisé</h2>
+<ul>
+<li>📋 <strong>Missions :</strong> <a href="https://oblink.fr">OBLINK</a></li>
+<li>💰 <strong>Banque :</strong> Qonto ou Shine</li>
+<li>🧾 <strong>Facturation :</strong> OBLINK Pro (inclus)</li>
+<li>📊 <strong>Comptabilité :</strong> Indy</li>
+<li>📅 <strong>Planning :</strong> Google Agenda (synchro OBLINK)</li>
+<li>🎓 <strong>Formations :</strong> <a href="https://oblink.fr/formation-erp">Académie OBLINK</a></li>
+</ul>
+
+<p><strong>Prêt à professionnaliser votre activité ?</strong> Créez votre compte OBLINK en 2 minutes et accédez à tous ces outils.</p>
+
+<p>👉 <a href="https://oblink.fr/inscription-opticien">S'inscrire gratuitement</a></p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Comparatif 2025 des meilleurs logiciels de facturation, comptabilité et gestion pour opticiens indépendants.]]></excerpt:encoded>
+		<wp:post_id>8</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-13 15:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-13 15:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>Réussir son entretien avec une enseigne nationale : les questions à prévoir</title>
+		<link>https://oblink.fr/blog/entretien-enseigne-nationale-opticien</link>
+		<pubDate>Tue, 14 Jan 2025 11:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="conseils"><![CDATA[Conseils]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=9</guid>
+		<description><![CDATA[Guide 2025 pour décrocher une mission longue durée chez Krys, Optic 2000, Grand Optical ou Alain Afflelou.]]></description>
+		<content:encoded><![CDATA[
+<p>Vous avez décroché un entretien avec une <strong>enseigne nationale</strong> (Krys, Optic 2000, Grand Optical, Alain Afflelou) via <a href="https://oblink.fr">OBLINK</a> ? Voici les 10 questions les plus posées et comment y répondre comme un pro.</p>
+
+<h2>📋 Les 10 questions incontournables</h2>
+
+<h3>1. "Pourquoi avoir choisi le freelance plutôt qu'un CDI ?"</h3>
+<p><strong>❌ Mauvaise réponse :</strong> "Je n'aimais pas mon ancien patron."</p>
+<p><strong>✅ Bonne réponse :</strong></p>
+<blockquote>"J'aime la diversité des missions. Travailler avec différentes enseignes me permet d'apprendre en permanence, de découvrir de nouvelles techniques de vente et de m'adapter à tous les profils de clients. C'est aussi une façon de mieux valoriser mes compétences."</blockquote>
+
+<h3>2. "Connaissez-vous notre logiciel de caisse ?"</h3>
+<p><strong>Comparatif des logiciels par enseigne :</strong></p>
+<table border="1" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Enseigne</th>
+<th>Logiciel principal</th>
+<th>Difficulté</th>
+<th>Formation OBLINK</th>
+</tr>
+<tr>
+<td>Krys Group</td>
+<td>Winoptics</td>
+<td>⭐⭐</td>
+<td><a href="https://oblink.fr/formation-erp">Disponible</a></td>
+</tr>
+<tr>
+<td>Optic 2000</td>
+<td>Cosium</td>
+<td>⭐⭐⭐</td>
+<td><a href="https://oblink.fr/formation-erp">Disponible</a></td>
+</tr>
+<tr>
+<td>Grand Optical</td>
+<td>Audioptic</td>
+<td>⭐</td>
+<td><a href="https://oblink.fr/formation-erp">Disponible</a></td>
+</tr>
+<tr>
+<td>Alain Afflelou</td>
+<td>Ivoirnet</td>
+<td>⭐⭐⭐⭐</td>
+<td><a href="https://oblink.fr/formation-erp">Disponible</a></td>
+</tr>
+</table>
+
+<p><strong>✅ Bonne réponse :</strong></p>
+<blockquote>"J'ai déjà travaillé avec [nom du logiciel]. Si ce n'est pas le cas, je me forme en 48h via la plateforme OBLINK qui propose des tutos vidéos spécifiques."</blockquote>
+
+<h3>3. "Quel est votre TJM ?"</h3>
+<p><strong>Grille 2025 par zone géographique :</strong></p>
+<ul>
+<li>🗼 <strong>Paris (75) :</strong> 320-400€/jour</li>
+<li>🏙️ <strong>Lyon, Marseille, Bordeaux :</strong> 280-350€/jour</li>
+<li>🌆 <strong>Lille, Toulouse, Nantes :</strong> 260-320€/jour</li>
+<li>🏘️ <strong>Villes moyennes :</strong> 240-290€/jour</li>
+</ul>
+
+<p><strong>✅ Bonne réponse :</strong></p>
+<blockquote>"Mon TJM standard est de 340€. Mais je suis flexible selon la durée de la mission. Pour un contrat de 3 mois minimum, je peux ajuster à 310€/jour."</blockquote>
+
+<p>💡 <strong>Astuce :</strong> Utilisez le <a href="https://oblink.fr/simulateur">simulateur OBLINK</a> pour calculer votre TJM minimum avant l'entretien.</p>
+
+<h3>4. "Êtes-vous disponible combien de temps ?"</h3>
+<p><strong>❌ Mauvaise réponse :</strong> "Je ne sais pas trop, ça dépend."</p>
+<p><strong>✅ Bonne réponse :</strong></p>
+<blockquote>"Je peux m'engager sur [X semaines/mois] à temps plein. Si la collaboration se passe bien, je suis ouvert à prolonger. Mes disponibilités sont mises à jour en temps réel sur <a href="https://oblink.fr">mon profil OBLINK</a>."</blockquote>
+
+<h3>5. "Avez-vous des références ?"</h3>
+<p><strong>✅ Bonne réponse :</strong></p>
+<blockquote>"Oui, j'ai déjà travaillé pour [X magasins] via OBLINK. Vous pouvez consulter mes avis directement sur ma fiche. J'ai une note moyenne de 4,8/5 sur mes 12 dernières missions."</blockquote>
+
+<p>👉 <a href="https://oblink.fr/inscription-opticien">Créer mon profil avec avis vérifiés</a></p>
+
+<h2>🎯 Les 3 questions pièges (et comment les retourner)</h2>
+
+<h3>Piège #1 : "Vous êtes cher pour un remplaçant, non ?"</h3>
+<p><strong>Réponse calibrée :</strong></p>
+<blockquote>"Un freelance compétent vous coûte effectivement plus cher à la journée qu'un salarié. Mais je suis opérationnel dès le jour 1, sans période d'adaptation. Pas de charges patronales, pas de congés payés à gérer, et je prends le relais immédiatement sur vos objectifs de vente."</blockquote>
+
+<h3>Piège #2 : "Pourquoi avoir quitté votre dernier poste ?"</h3>
+<p><strong>❌ À éviter :</strong> Critiquer votre ancien employeur</p>
+<p><strong>✅ Réponse pro :</strong></p>
+<blockquote>"J'ai choisi d'évoluer vers plus de flexibilité et de diversité. Le freelancing me permet de travailler avec différentes enseignes et d'élargir constamment mes compétences."</blockquote>
+
+<h3>Piège #3 : "Et si on vous propose un CDI après ?"</h3>
+<p><strong>✅ Réponse équilibrée :</strong></p>
+<blockquote>"Je suis ouvert à en discuter si l'expérience est très positive des deux côtés. Mais aujourd'hui, mon choix de vie est orienté vers le freelancing et la flexibilité qu'il m'apporte."</blockquote>
+
+<h2>📊 Benchmark : profil type recherché par les enseignes</h2>
+<p><em>Basé sur 8 200 recrutements OBLINK en 2024</em></p>
+
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Critère</th>
+<th>Niveau attendu</th>
+</tr>
+<tr>
+<td>Expérience minimale</td>
+<td>2 ans post-BTS</td>
+</tr>
+<tr>
+<td>Connaissance ERP</td>
+<td>Au moins 1 logiciel maîtrisé</td>
+</tr>
+<tr>
+<td>CA moyen/semaine</td>
+<td>6000-9000€</td>
+</tr>
+<tr>
+<td>Contactologie</td>
+<td>Apprécié (+15% TJM)</td>
+</tr>
+<tr>
+<td>Basse vision</td>
+<td>Très apprécié (+20% TJM)</td>
+</tr>
+</table>
+
+<h2>🗺️ Villes avec le plus de recrutements enseignes (2025)</h2>
+<ol>
+<li><strong>Paris et banlieue</strong> : 950 postes/an</li>
+<li><strong>Lyon</strong> : 380 postes/an</li>
+<li><strong>Marseille</strong> : 310 postes/an</li>
+<li><strong>Toulouse</strong> : 220 postes/an</li>
+<li><strong>Bordeaux</strong> : 190 postes/an</li>
+</ol>
+
+<p>👉 <a href="https://oblink.fr/emploi-opticien">Voir les postes disponibles par ville</a></p>
+
+<h2>✅ Checklist avant l'entretien</h2>
+<ul>
+<li>☑️ Relire la fiche du magasin (adresse, nom du gérant, spécialités)</li>
+<li>☑️ Imprimer votre CV + attestations (RC Pro, CNC)</li>
+<li>☑️ Préparer 3 questions intelligentes à poser</li>
+<li>☑️ Vérifier votre tenue (chemise/polo, pas de jean troué)</li>
+<li>☑️ Arriver 10 minutes en avance (jamais en retard)</li>
+</ul>
+
+<h2>🔗 Ressources OBLINK pour maximiser vos chances</h2>
+<ul>
+<li>📚 <a href="https://oblink.fr/formation-erp">Formations gratuites logiciels ERP</a></li>
+<li>📊 <a href="https://oblink.fr/simulateur">Calculer votre TJM optimal</a></li>
+<li>💼 <a href="https://oblink.fr/emploi-opticien">Postuler aux offres enseignes nationales</a></li>
+<li>✍️ <a href="https://oblink.fr/inscription-opticien">Créer mon profil certifié</a></li>
+</ul>
+
+<p><strong>Conseil final :</strong> Les enseignes nationales recrutent 80% de leurs freelances via OBLINK. Optimisez votre profil pour apparaître en priorité.</p>
+
+<p>👉 <a href="https://oblink.fr/inscription-opticien">Créer mon compte maintenant</a></p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Guide 2025 pour décrocher une mission longue durée chez Krys, Optic 2000, Grand Optical ou Alain Afflelou.]]></excerpt:encoded>
+		<wp:post_id>9</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-14 11:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-14 11:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+	<item>
+		<title>Basse vision : une spécialisation rentable et valorisante pour opticiens</title>
+		<link>https://oblink.fr/blog/specialisation-basse-vision-opticien</link>
+		<pubDate>Wed, 15 Jan 2025 10:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[OBLINK]]></dc:creator>
+		<category domain="category" nicename="formation"><![CDATA[Formation]]></category>
+		<guid isPermaLink="false">https://oblink.fr/?p=10</guid>
+		<description><![CDATA[Pourquoi la basse vision est LA spécialisation à acquérir en 2025 pour augmenter vos revenus d'opticien freelance.]]></description>
+		<content:encoded><![CDATA[
+<p>La <strong>basse vision</strong> (malvoyance) est un marché en pleine explosion en France. Avec le vieillissement de la population, les besoins augmentent de +12% par an. Voici pourquoi vous devriez vous former.</p>
+
+<h2>📊 Le marché de la basse vision en France (2025)</h2>
+<ul>
+<li>🔹 <strong>1,7 million</strong> de personnes malvoyantes en France</li>
+<li>🔹 <strong>207 000 nouvelles déficiences visuelles/an</strong> (INSEE)</li>
+<li>🔹 Seulement <strong>8% des opticiens</strong> sont formés en basse vision</li>
+<li>🔹 TJM moyen spécialiste : <strong>380-500€</strong> (vs 280€ standard)</li>
+<li>🔹 Panier moyen client : <strong>1200-2800€</strong> (vs 380€)</li>
+</ul>
+
+<h2>💰 Rentabilité : comparatif avec l'optique classique</h2>
+
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Critère</th>
+<th>Optique classique</th>
+<th>Basse vision</th>
+<th>Écart</th>
+</tr>
+<tr>
+<td>Panier moyen</td>
+<td>380€</td>
+<td>1800€</td>
+<td>+374%</td>
+</tr>
+<tr>
+<td>Temps de vente</td>
+<td>45 min</td>
+<td>90 min</td>
+<td>x2</td>
+</tr>
+<tr>
+<td>Rentabilité/heure</td>
+<td>506€</td>
+<td>1200€</td>
+<td>+137%</td>
+</tr>
+<tr>
+<td>Taux de fidélisation</td>
+<td>35%</td>
+<td>78%</td>
+<td>+123%</td>
+</tr>
+<tr>
+<td>TJM freelance</td>
+<td>280€</td>
+<td>420€</td>
+<td>+50%</td>
+</tr>
+</table>
+
+<h2>🎓 Formations basse vision disponibles en France</h2>
+
+<h3>Formation certifiante ISO (Paris)</h3>
+<ul>
+<li><strong>Durée :</strong> 140h (7 mois)</li>
+<li><strong>Prix :</strong> 3600€</li>
+<li><strong>Localisation :</strong> Paris 13ème</li>
+<li><strong>Diplôme :</strong> CQP Basse Vision</li>
+<li><strong>Financement :</strong> CPF, OPCO, Pôle Emploi</li>
+</ul>
+
+<h3>Formation continue CFRO (Lyon)</h3>
+<ul>
+<li><strong>Durée :</strong> 120h (6 mois)</li>
+<li><strong>Prix :</strong> 3200€</li>
+<li><strong>Localisation :</strong> Lyon 3ème</li>
+<li><strong>Diplôme :</strong> Certificat professionnel</li>
+</ul>
+
+<h3>Formation OBLINK Académie (e-learning)</h3>
+<ul>
+<li><strong>Durée :</strong> 90h (4 mois en autodidacte)</li>
+<li><strong>Prix :</strong> 2400€</li>
+<li><strong>Localisation :</strong> 100% en ligne</li>
+<li><strong>Diplôme :</strong> Attestation professionnelle</li>
+<li><strong>Financement :</strong> CPF compatible</li>
+</ul>
+
+<p>👉 <a href="https://oblink.fr/formation-erp">Voir le programme de formation OBLINK</a></p>
+
+<h2>🛠️ Matériel nécessaire (investissement initial)</h2>
+<p>Pour exercer en basse vision, vous aurez besoin de :</p>
+
+<table border="1" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+<tr>
+<th>Équipement</th>
+<th>Prix</th>
+<th>Obligatoire ?</th>
+</tr>
+<tr>
+<td>Loupes de Feinbloom</td>
+<td>450€</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Système télescopique Galileo</td>
+<td>1200€</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Lampe d'examen LED</td>
+<td>180€</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Tests de lecture (Parinaud, etc.)</td>
+<td>120€</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Aides électroniques (loupes vidéo)</td>
+<td>2800€</td>
+<td>⚠️ Selon activité</td>
+</tr>
+<tr>
+<td><strong>Total minimum</strong></td>
+<td><strong>1950€</strong></td>
+<td></td>
+</tr>
+</table>
+
+<p><strong>ROI de l'investissement :</strong></p>
+<ul>
+<li>Coût formation + matériel : ~5500€</li>
+<li>Gain moyen/client : +1420€ (vs optique standard)</li>
+<li><strong>Rentabilité atteinte en 4 clients</strong></li>
+</ul>
+
+<h2>🗺️ Zones géographiques les plus demandeuses</h2>
+<p><em>Demande en consultations basse vision par région (2025)</em></p>
+
+<ol>
+<li><strong>Île-de-France</strong> : 4200 demandes/mois (Paris, Boulogne, Versailles, Créteil)</li>
+<li><strong>Auvergne-Rhône-Alpes</strong> : 1800 demandes/mois (Lyon, Grenoble, Annecy)</li>
+<li><strong>PACA</strong> : 1500 demandes/mois (Marseille, Nice, Toulon, Aix)</li>
+<li><strong>Occitanie</strong> : 980 demandes/mois (Toulouse, Montpellier)</li>
+<li><strong>Nouvelle-Aquitaine</strong> : 850 demandes/mois (Bordeaux, Limoges)</li>
+</ol>
+
+<p>💡 <strong>Insight OBLINK :</strong> Les zones rurales et semi-rurales ont un déficit énorme de spécialistes. TJM majoré de 20-30% hors grandes villes.</p>
+
+<h2>👥 Profil type du client basse vision</h2>
+<ul>
+<li>🔸 <strong>Âge moyen :</strong> 68 ans</li>
+<li>🔸 <strong>Pathologies principales :</strong> DMLA (42%), glaucome (28%), rétinopathie diabétique (18%)</li>
+<li>🔸 <strong>Parcours :</strong> Orienté par ophtalmologue ou orthoptiste</li>
+<li>🔸 <strong>Budget moyen :</strong> 1800€ (remboursement Sécu + mutuelle : 400-800€)</li>
+<li>🔸 <strong>Fidélité :</strong> 78% reviennent au moins 1x/an</li>
+</ul>
+
+<h2>📈 Simulation de revenus : opticien classique vs spécialiste basse vision</h2>
+
+<h3>Scénario 1 : Opticien classique (Paris)</h3>
+<pre>
+TJM : 320€
+Jours travaillés/mois : 18
+Revenu mensuel brut : 5760€
+Charges (22%) : 1267€
+Net mensuel : 4493€
+</pre>
+
+<h3>Scénario 2 : Spécialiste basse vision (Paris)</h3>
+<pre>
+TJM : 450€
+Jours travaillés/mois : 16 (clientèle plus qualifiée)
+Revenu mensuel brut : 7200€
+Charges (22%) : 1584€
+Net mensuel : 5616€
+<strong>Gain : +1123€/mois (+25%)</strong>
+</pre>
+
+<h3>Scénario 3 : Mixte (70% classique / 30% basse vision)</h3>
+<pre>
+13 jours classique × 320€ = 4160€
+5 jours basse vision × 450€ = 2250€
+Total CA : 6410€
+Charges (22%) : 1410€
+Net mensuel : 5000€
+<strong>Gain : +507€/mois (+11%)</strong>
+</pre>
+
+<p>👉 <a href="https://oblink.fr/simulateur">Calculer votre simulation personnalisée</a></p>
+
+<h2>🏆 Avantages au-delà du financier</h2>
+<ul>
+<li>✅ <strong>Impact social :</strong> Vous changez vraiment la vie des gens</li>
+<li>✅ <strong>Moins de concurrence :</strong> Marché encore peu saturé</li>
+<li>✅ <strong>Prescriptions médicales :</strong> Flux de clients qualifiés garanti</li>
+<li>✅ <strong>Valorisation professionnelle :</strong> Reconnaissance par vos pairs</li>
+<li>✅ <strong>Relationnel approfondi :</strong> Moins de "vente produit", plus de conseil</li>
+</ul>
+
+<div style="background: #E8F5E9; padding: 20px; border-left: 4px solid #4CAF50; margin: 20px 0;">
+<strong>💬 Témoignage - Julien, 34 ans, spécialiste basse vision (Bordeaux)</strong><br><br>
+"J'ai fait la formation il y a 2 ans. Aujourd'hui, 40% de mon CA vient de la basse vision. Je travaille moins (16j/mois au lieu de 20) et je gagne 800€ de plus. Mais surtout, j'adore ce métier maintenant. Les clients me remercient, pleurent parfois... c'est incomparable."
+</div>
+
+<h2>🔗 Ressources OBLINK pour vous lancer</h2>
+<ul>
+<li>🎓 <a href="https://oblink.fr/formation-erp">Formation basse vision OBLINK Académie</a></li>
+<li>💼 <a href="https://oblink.fr/emploi-opticien">Offres spécialistes basse vision</a></li>
+<li>📊 <a href="https://oblink.fr/simulateur">Simulateur revenus spécialisé</a></li>
+<li>✍️ <a href="https://oblink.fr/inscription-opticien">Créer mon profil spécialiste</a></li>
+</ul>
+
+<p><strong>Prêt à faire la différence ?</strong> La basse vision n'est pas juste une spécialisation rentable, c'est un métier profondément humain.</p>
+
+<p>👉 <a href="https://oblink.fr/formation-erp">Découvrir la formation OBLINK</a></p>
+		]]></content:encoded>
+		<excerpt:encoded><![CDATA[Pourquoi la basse vision est LA spécialisation à acquérir en 2025 pour augmenter vos revenus d'opticien freelance.]]></excerpt:encoded>
+		<wp:post_id>10</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-15 10:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-15 10:00:00]]></wp:post_date_gmt>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+	</item>
+
+</channel>
+</rss>

@@ -1,0 +1,793 @@
+<?php
+/*
+Template Name: Académie Oblink (Anciennement Formation ERP)
+*/
+header('Content-Type: text/html; charset=utf-8');
+include 'header-inc.php';
+?>
+<!-- Header: La Vision Académie HUB -->
+<div class="text-center mb-16 relative">
+    <span
+        class="inline-block py-1 px-3 rounded-full bg-oblink-orange/10 text-oblink-orange font-bold text-sm mb-4 uppercase tracking-wider">
+        <i class="fas fa-graduation-cap mr-2"></i>L'excellence Optique
+    </span>
+    <h1 class="text-4xl md:text-6xl font-black font-display text-oblink-gray mb-6">
+        Académie <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-oblink-orange to-oblink-violet">OBLINK</span>
+    </h1>
+    <p class="text-xl text-gray-500 max-w-3xl mx-auto font-body leading-relaxed mb-12">
+        De l'étudiant au professionnel aguerri. Une plateforme unique pour réussir votre diplôme et booster
+        votre carrière.
+    </p>
+
+    <!-- HUB NAVIGATION CARDS -->
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto text-left">
+
+        <!-- Card 1: PASS EXAMEN (New) -->
+        <a href="<?php echo home_url('/pass-examen'); ?>"
+            class="group block relative overflow-hidden rounded-3xl border border-gray-200 hover:border-oblink-orange/50 transition-all duration-300 shadow-lg hover:shadow-2xl bg-white">
+            <div
+                class="absolute top-0 right-0 w-32 h-32 bg-oblink-orange/10 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-oblink-orange to-pink-500 text-white flex items-center justify-center text-2xl shadow-lg">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <span class="bg-red-100 text-red-600 font-bold px-3 py-1 rounded-full text-xs">NOUVEAU</span>
+                </div>
+                <h3 class="text-2xl font-black text-gray-900 mb-2 group-hover:text-oblink-orange transition">Je
+                    passe mon BTS</h3>
+                <p class="text-gray-500 mb-6 font-medium">Annales corrigées, IA prédictive et fiches de révision
+                    pour assurer votre diplôme.</p>
+                <div class="flex items-center text-oblink-blue font-bold text-sm">
+                    Découvrir le Pass Examen <i
+                        class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition"></i>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card 2: FORMATIONS PRO (Existing) -->
+        <a href="#formations-logiciels"
+            class="group block relative overflow-hidden rounded-3xl border border-gray-200 hover:border-oblink-blue/50 transition-all duration-300 shadow-lg hover:shadow-2xl bg-white">
+            <div
+                class="absolute top-0 right-0 w-32 h-32 bg-oblink-blue/10 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-oblink-blue to-cyan-500 text-white flex items-center justify-center text-2xl shadow-lg">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <span class="bg-blue-100 text-blue-600 font-bold px-3 py-1 rounded-full text-xs">PRO</span>
+                </div>
+                <h3 class="text-2xl font-black text-gray-900 mb-2 group-hover:text-oblink-blue transition">Je
+                    suis Opticien</h3>
+                <p class="text-gray-500 mb-6 font-medium">Maîtrisez les logiciels ERP et développez des
+                    compétences cliniques rares.</p>
+                <div class="flex items-center text-oblink-blue font-bold text-sm">
+                    Voir les formations <i
+                        class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div id="formations-logiciels" class="pt-12"></div>
+
+
+<!-- Section 1: Logiciels & ERP (Gratuit - Partenaires) -->
+<div class="mb-20">
+    <div class="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
+        <h2 class="text-2xl md:text-3xl font-bold text-oblink-gray flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-oblink-blue text-white flex items-center justify-center text-lg"><i
+                    class="fas fa-laptop-code"></i></span>
+            Maîtriser les Outils (Gratuit)
+        </h2>
+        <span class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded-full text-xs">OFFERT PAR LES
+            ÉDITEURS</span>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Course Card: Cosium -->
+        <div onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')"
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group cursor-pointer">
+            <div class="relative h-48 bg-gray-900 overflow-hidden">
+                <!-- YouTube Thumbnail Preview -->
+                <div class="absolute inset-0 flex items-center justify-center bg-gray-900">
+                    <h3 class="text-white font-black text-3xl tracking-tighter">
+                        COSIUM</h3>
+                </div>
+                <div
+                    class="absolute top-3 right-3 bg-white/20 backdrop-blur text-white text-xs font-bold px-2 py-1 rounded">
+                    <i class="fas fa-clock mr-1"></i> 2h30
+                </div>
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span
+                        class="w-16 h-16 rounded-full bg-white text-oblink-blue flex items-center justify-center text-2xl shadow-2xl transform group-hover:scale-110 transition">
+                        <i class="fas fa-play ml-1"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="p-5">
+                <h3 class="font-bold text-lg text-oblink-gray mb-1">Maîtriser Cosium Optic</h3>
+                <p class="text-sm text-gray-500 mb-4 line-clamp-2">De la création client à la télétransmission.
+                    Le guide complet officiel.</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">
+                            C</div>
+                        <span class="text-xs font-bold text-gray-500">Team Cosium</span>
+                    </div>
+                    <span class="text-oblink-blue font-bold">GRATUIT</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Card: Ivoirnet -->
+        <div onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')"
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group cursor-pointer">
+            <div class="relative h-48 bg-emerald-800 overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-black text-3xl tracking-tighter">
+                        IVOIRNET</h3>
+                </div>
+                <div
+                    class="absolute top-3 right-3 bg-white/20 backdrop-blur text-white text-xs font-bold px-2 py-1 rounded">
+                    <i class="fas fa-clock mr-1"></i> 1h45
+                </div>
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span
+                        class="w-16 h-16 rounded-full bg-white text-emerald-600 flex items-center justify-center text-2xl shadow-2xl transform group-hover:scale-110 transition">
+                        <i class="fas fa-play ml-1"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="p-5">
+                <h3 class="font-bold text-lg text-oblink-gray mb-1">Ivoirnet : L'essentiel</h3>
+                <p class="text-sm text-gray-500 mb-4 line-clamp-2">Gérer un magasin indépendant avec Ivoirnet.
+                    Tiers-payant inclus.</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold">
+                            I</div>
+                        <span class="text-xs font-bold text-gray-500">Team Ivoirnet</span>
+                    </div>
+                    <span class="text-oblink-blue font-bold">GRATUIT</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Card: WinOptics -->
+        <div onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')"
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group cursor-pointer">
+            <div class="relative h-48 bg-orange-700 overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-black text-3xl tracking-tighter">
+                        WinOptics</h3>
+                </div>
+                <div
+                    class="absolute top-3 right-3 bg-white/20 backdrop-blur text-white text-xs font-bold px-2 py-1 rounded">
+                    <i class="fas fa-clock mr-1"></i> 1h00
+                </div>
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span
+                        class="w-16 h-16 rounded-full bg-white text-orange-600 flex items-center justify-center text-2xl shadow-2xl transform group-hover:scale-110 transition">
+                        <i class="fas fa-play ml-1"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="p-5">
+                <h3 class="font-bold text-lg text-oblink-gray mb-1">WinOptics Start</h3>
+                <p class="text-sm text-gray-500 mb-4 line-clamp-2">Prise en main rapide pour les remplacements
+                    d'été.</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold">
+                            W</div>
+                        <span class="text-xs font-bold text-gray-500">Win Academy</span>
+                    </div>
+                    <span class="text-oblink-blue font-bold">GRATUIT</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section 2: Expertise Clinique & Technique (Premium) -->
+<div class="mb-20">
+    <div class="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
+        <h2 class="text-2xl md:text-3xl font-bold text-oblink-gray flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-oblink-violet text-white flex items-center justify-center text-lg"><i
+                    class="fas fa-microscope"></i></span>
+            Expertise Clinique (Certifiant)
+        </h2>
+        <a href="#" class="text-sm font-bold text-gray-400 hover:text-oblink-violet">Tout voir <i
+                class="fas fa-arrow-right ml-1"></i></a>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Course Card: Réfraction -->
+        <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group">
+            <div class="relative h-48 bg-indigo-900 flex items-center justify-center overflow-hidden">
+                <i class="fas fa-eye text-6xl text-white/20 group-hover:scale-110 transition"></i>
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                    <span class="bg-oblink-orange text-white text-[10px] font-bold px-2 py-1 rounded">BEST
+                        SELLER</span>
+                </div>
+            </div>
+            <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-lg text-oblink-gray leading-tight">Refraction Complexe : Le Cas
+                        par Cas</h3>
+                    <div class="flex items-center text-yellow-400 text-xs gap-1">
+                        <i class="fas fa-star"></i> 4.9
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500 mb-4 line-clamp-2">Analysez et résolvez 99% des plaintes clients
+                    en examen de vue.</p>
+
+                <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                    <div class="flex items-center gap-2">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                            class="w-8 h-8 rounded-full border border-gray-100" alt="Instructor">
+                        <span class="text-xs font-bold text-gray-600">Dr. Marc L.</span>
+                    </div>
+                    <span class="font-black text-xl text-oblink-gray">159 €</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Card: Contactologie -->
+        <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group">
+            <div class="relative h-48 bg-teal-800 flex items-center justify-center overflow-hidden">
+                <i class="fas fa-dot-circle text-6xl text-white/20 group-hover:scale-110 transition"></i>
+            </div>
+            <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-lg text-oblink-gray leading-tight">Adaptation Lentilles Rigides
+                    </h3>
+                    <div class="flex items-center text-yellow-400 text-xs gap-1">
+                        <i class="fas fa-star"></i> 4.8
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500 mb-4 line-clamp-2">Ne laissez plus partir de clients faute de
+                    compétence en rigides.</p>
+
+                <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                    <div class="flex items-center gap-2">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                            class="w-8 h-8 rounded-full border border-gray-100" alt="Instructor">
+                        <span class="text-xs font-bold text-gray-600">Sarah B.</span>
+                    </div>
+                    <span class="font-black text-xl text-oblink-gray">129 €</span>
+                </div>
+            </div>
+        </div>
+        <!-- Course Card: Low Vision -->
+        <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group">
+            <div class="relative h-48 bg-gray-800 flex items-center justify-center overflow-hidden">
+                <i class="fas fa-search-plus text-6xl text-white/20 group-hover:scale-110 transition"></i>
+            </div>
+            <div class="p-5">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-lg text-oblink-gray leading-tight">Initiation Basse Vision</h3>
+                    <div class="flex items-center text-yellow-400 text-xs gap-1">
+                        <i class="fas fa-star"></i> 4.5
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500 mb-4 line-clamp-2">Un marché de niche très rentable. Apprenez
+                    les bases.</p>
+
+                <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                    <div class="flex items-center gap-2">
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg"
+                            class="w-8 h-8 rounded-full border border-gray-100" alt="Instructor">
+                        <span class="text-xs font-bold text-gray-600">Jean V.</span>
+                    </div>
+                    <span class="font-black text-xl text-oblink-gray">89 €</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CTA: Devenir Formateur -->
+<div
+    class="bg-gradient-to-br from-oblink-gray to-gray-900 rounded-3xl p-8 md:p-16 relative overflow-hidden text-center md:text-left">
+    <!-- Background Decoration -->
+    <div
+        class="absolute top-0 right-0 w-96 h-96 bg-oblink-orange/20 rounded-full blur-[100px] pointer-events-none transform translate-x-1/2 -translate-y-1/2">
+    </div>
+
+    <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-white/10 text-white font-bold text-xs mb-4 border border-white/20">
+                APPEL AUX EXPERTS
+            </span>
+            <h2 class="text-3xl md:text-4xl font-black text-white font-display mb-6">Monétisez votre expertise
+                optique</h2>
+            <ul class="space-y-4 mb-8 text-gray-300">
+                <li class="flex items-center gap-3">
+                    <i class="fas fa-check-circle text-oblink-orange"></i>
+                    <span>Touchez <strong>70% de commission</strong> sur chaque vente.</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i class="fas fa-check-circle text-oblink-orange"></i>
+                    <span>Nous gérons le marketing et la plateforme.</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i class="fas fa-check-circle text-oblink-orange"></i>
+                    <span>Accès immédiat à +500 opticiens qualifiés.</span>
+                </li>
+            </ul>
+            <a href="mailto:partenaires@oblink.com?subject=Je veux devenir formateur"
+                class="inline-block px-8 py-4 bg-white text-oblink-gray font-bold rounded-xl hover:bg-oblink-orange hover:text-white transition shadow-lg transform hover:-translate-y-1">
+                Devenir Formateur Oblink
+            </a>
+        </div>
+        <div class="relative hidden md:block">
+            <!-- Simuler une carte profil formateur -->
+            <div
+                class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl transform rotate-3 hover:rotate-0 transition duration-500">
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                        class="w-16 h-16 rounded-full border-2 border-oblink-orange">
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Sarah B.</h4>
+                        <p class="text-gray-400 text-sm">Experte Contactologie</p>
+                    </div>
+                </div>
+                <div class="bg-black/30 rounded-xl p-4 mb-2">
+                    <div class="text-xs text-gray-400 uppercase font-bold mb-1">Revenus ce mois</div>
+                    <div class="text-3xl font-black text-white">2 450,00 €</div>
+                </div>
+                <div class="text-xs text-center text-gray-400 mt-2 italic"> * Revenu moyen top formateur</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<!-- Video Modal -->
+<!-- Video Modal -->
+<div id="videoModal" class="fixed inset-0 bg-black/90 z-[9999] hidden items-center justify-center p-4"
+    onclick="closeVideoModal()">
+    <div class="relative w-full max-w-5xl" onclick="event.stopPropagation()">
+        <button onclick="closeVideoModal()"
+            class="absolute -top-12 right-0 text-white hover:text-oblink-orange transition text-2xl">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
+            <iframe id="videoIframe" class="absolute top-0 left-0 w-full h-full rounded-xl" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Course Detail Modal (Expert Cosium) -->
+<div id="courseModal" class="fixed inset-0 bg-black/90 z-[9999] hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl w-full max-w-4xl min-h-[50vh] relative animate-fade-in-up flex flex-col"
+        onclick="event.stopPropagation()">
+
+        <!-- Modal Header -->
+        <div
+            class="sticky top-0 bg-white/95 backdrop-blur z-20 border-b border-gray-100 p-6 flex justify-between items-center rounded-t-3xl">
+            <div>
+                <span
+                    class="bg-oblink-blue/10 text-oblink-blue font-bold px-3 py-1 rounded-full text-xs mb-2 inline-block">
+                    <i class="fas fa-certificate mr-1"></i> CERTIFIANT
+                </span>
+                <h2 class="text-2xl md:text-3xl font-black text-oblink-gray">Expert Cosium 2026</h2>
+            </div>
+            <button onclick="closeCourseModal()"
+                class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="p-8 md:p-12 overflow-y-auto flex-grow">
+
+            <!-- Intro / Why -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-fire text-orange-500"></i> Pourquoi ce module est indispensable ?
+                </h3>
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    En 2026, la maîtrise superficielle de Cosium ne suffit plus. Entre la généralisation de la
+                    facturation électronique et les nouvelles normes de télétransmission, une erreur de saisie peut
+                    bloquer des milliers d'euros de trésorerie pour un magasin. Ce module vous apprend à devenir <span
+                        class="font-bold text-oblink-gray bg-yellow-100 px-1">l'opticien que les gérants
+                        s'arrachent</span> : celui qui fluidifie les ventes sans jamais générer de rejets.
+                </p>
+            </div>
+
+            <!-- The Technical Program -->
+            <div class="mb-12 bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                <h3 class="text-xl font-black text-oblink-gray mb-6 uppercase tracking-wider text-center">
+                    Le Programme Technique (Expert Grade)
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Block 1 -->
+                    <div>
+                        <h4 class="font-bold text-oblink-blue mb-3 flex items-center gap-2">
+                            <span
+                                class="w-6 h-6 rounded-full bg-oblink-blue text-white flex items-center justify-center text-xs">1</span>
+                            Configuration & Mesures
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i>
+                                Intégration colonnes prise de mesures (Activisu...)</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Gestion
+                                historique réfraction & comparatifs</li>
+                        </ul>
+
+                        <h4 class="font-bold text-oblink-blue mb-3 flex items-center gap-2">
+                            <span
+                                class="w-6 h-6 rounded-full bg-oblink-blue text-white flex items-center justify-center text-xs">2</span>
+                            Ingénierie Tiers-Payant
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span
+                                    class="font-bold">PEC Automatisée :</span> Paramétrage conventions</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span
+                                    class="font-bold">Anti-Rejets :</span> Méthode "Resubmission" (Noémie, LPP erronés)
+                            </li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i>
+                                Optimisation des devis mixtes 100% Santé</li>
+                        </ul>
+                    </div>
+
+                    <!-- Block 2 -->
+                    <div>
+                        <h4 class="font-bold text-oblink-blue mb-3 flex items-center gap-2">
+                            <span
+                                class="w-6 h-6 rounded-full bg-oblink-blue text-white flex items-center justify-center text-xs">3</span>
+                            Stock & Logistique EDI
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i>
+                                Réception EDI & Étiquetage auto</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i>
+                                Inventaire tournant sans fermer le magasin</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> Relances
+                                fournisseurs automatiques</li>
+                        </ul>
+
+                        <h4 class="font-bold text-oblink-blue mb-3 flex items-center gap-2">
+                            <span
+                                class="w-6 h-6 rounded-full bg-oblink-blue text-white flex items-center justify-center text-xs">4</span>
+                            Conformité & Sécurité
+                        </h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i>
+                                Signature électronique & RGPD</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i>
+                                Facturation électronique (PPF)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXAMEN QUIZ SECTION (New) -->
+            <div class="mb-12 bg-white rounded-2xl p-8 border-2 border-oblink-blue/10 shadow-lg relative overflow-hidden"
+                id="quiz-section">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-oblink-blue/5 rounded-full blur-2xl -mr-10 -mt-10">
+                </div>
+
+                <h3 class="text-xl font-black text-oblink-gray mb-2 flex items-center gap-2 relative z-10">
+                    <i class="fas fa-vial text-oblink-blue"></i> Testez votre niveau "Expert"
+                </h3>
+                <p class="text-sm text-gray-500 mb-6 relative z-10">Répondez à ces 3 situations critiques pour voir si
+                    vous avez besoin de cette formation.</p>
+
+                <!-- Step 1: Start -->
+                <div id="quiz-start" class="text-center py-6">
+                    <button onclick="startQuiz()"
+                        class="bg-oblink-gray text-white font-bold py-3 px-8 rounded-xl hover:bg-black transition transform hover:scale-105 shadow-xl ring-4 ring-oblink-gray/10">
+                        <i class="fas fa-play mr-2"></i> Lancer le Test (3 min)
+                    </button>
+                    <p class="text-xs text-gray-400 mt-3 italic">Réservé aux opticiens diplômés</p>
+                </div>
+
+                <!-- Step 2: Questions (Hidden by default) -->
+                <div id="quiz-question-container" class="hidden">
+                    <div class="mb-4 flex justify-between items-center">
+                        <span class="text-xs font-bold text-oblink-blue bg-blue-50 px-2 py-1 rounded">QUESTION <span
+                                id="current-q-num">1</span>/3</span>
+                        <div class="h-1.5 w-32 bg-gray-100 rounded-full overflow-hidden">
+                            <div id="quiz-progress-bar" class="h-full bg-oblink-blue w-1/3 transition-all duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 id="question-text" class="font-bold text-lg text-gray-800 mb-6"></h4>
+
+                    <div class="space-y-3" id="answers-container">
+                        <!-- Answers injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Step 3: Success Result (Hidden) -->
+                <div id="quiz-result-success" class="hidden text-center py-6 animate-fade-in-up">
+                    <div
+                        class="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-3xl mx-auto mb-4">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h4 class="font-black text-xl text-gray-900 mb-2">Bien joué !</h4>
+                    <p class="text-sm text-gray-600 mb-6">Vous avez de bonnes bases, mais le Tiers-Payant 2026 demande
+                        une précision chirurgicale. Ce module va vous rendre infaillible.</p>
+                    <button onclick="scrollToCTA()" class="text-oblink-blue font-bold underline">Voir l'offre
+                        spéciale</button>
+                </div>
+
+                <!-- Step 3: Fail Result (Hidden) -->
+                <div id="quiz-result-fail" class="hidden text-center py-6 animate-fade-in-up">
+                    <div
+                        class="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-3xl mx-auto mb-4">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h4 class="font-black text-xl text-gray-900 mb-2">Alerte Formation</h4>
+                    <p class="text-sm text-gray-600 mb-6">Ces erreurs vous coûteraient cher en magasin réel. Il est
+                        urgent de vous mettre à niveau avant de postuler.</p>
+                    <button onclick="scrollToCTA()" class="text-oblink-orange font-bold underline">Profiter de la
+                        formation (-30%)</button>
+                </div>
+
+            </div>
+
+            <!-- Method & Bonus -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div
+                    class="bg-gradient-to-br from-oblink-violet/10 to-transparent p-6 rounded-2xl border border-oblink-violet/20">
+                    <h3 class="font-bold text-lg text-oblink-violet mb-4"><i class="fas fa-brain mr-2"></i> La Méthode
+                        OBLINK</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-oblink-violet"></span>
+                            <strong>Bac à sable Cosium :</strong> Entraînez-vous sans risque.
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-oblink-violet"></span>
+                            <strong>Quiz de Validation :</strong> 20 situations critiques à résoudre.
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-oblink-violet"></span>
+                            <strong>Support IA 24/7 :</strong> Votre "Professeur Virtuel" dédié.
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-oblink-orange/10 to-transparent p-6 rounded-2xl border border-oblink-orange/20">
+                    <h3 class="font-bold text-lg text-oblink-orange mb-4"><i class="fas fa-gift mr-2"></i> Bonus :
+                        Survival Kit</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-oblink-orange"></span>
+                            Checklist "Prise de Poste" (Check-up magasin)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-oblink-orange"></span>
+                            Guide Codes LPP 2026 (Imprimable)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sticky CTA Mobile / Bottom -->
+            <div id="modal-cta" class="text-center pt-8 border-t border-gray-100">
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-6 bg-gray-900 text-white p-4 rounded-xl">
+                    <div class="text-left">
+                        <div class="text-sm text-gray-400">Investissement PRO</div>
+                        <div class="text-3xl font-black">99 € <span
+                                class="text-xs font-normal text-gray-500">(Déductible frais pro)</span></div>
+                    </div>
+                    <button
+                        class="w-full md:w-auto px-8 py-4 bg-oblink-orange text-white font-bold rounded-xl hover:bg-white hover:text-oblink-orange transition transform hover:scale-105 shadow-lg">
+                        🚀 M'INSCRIRE MAINTENANT
+                    </button>
+                </div>
+                <p class="text-xs text-gray-400 mt-4">Accès immédiat • Satisfait ou Remboursé 14j</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Video Modal
+    function openVideoModal(videoUrl) {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('videoIframe');
+        iframe.src = videoUrl + '?autoplay=1';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('videoIframe');
+        iframe.src = '';
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Course Modal
+    // Course Modal
+    function openCourseModal(courseId) {
+        // In a real app, we would fetch course details using courseId
+        // For now, we show the static 'Expert Cosium' content
+        const modal = document.getElementById('courseModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCourseModal() {
+        const modal = document.getElementById('courseModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+
+    function closeCourseModal() {
+        const modal = document.getElementById('courseModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+
+    function scrollToCTA() {
+        document.getElementById('modal-cta').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // --- QUIZ LOGIC (Static Expert Questions) ---
+    const quizData = [
+        {
+            question: "Rejet Tiers-Payant 'Droits Incomplets' avec carte valide. Quelle action immédiate ?",
+            answers: [
+                { text: "Forcer la télétransmission", isCorrect: false },
+                { text: "Vérifier code convention & dates PEC", isCorrect: true },
+                { text: "Appeler la mutuelle (15 min)", isCorrect: false }
+            ]
+        },
+        {
+            question: "Écart de stock -5 montures RayBan. Le magasin est plein. Que faites-vous ?",
+            answers: [
+                { text: "Inventaire complet (Fermeture)", isCorrect: false },
+                { text: "Inventaire partiel + Régul Vol", isCorrect: true },
+                { text: "Attendre le prochain bilan", isCorrect: false }
+            ]
+        },
+        {
+            question: "Facturation 100% Santé (Classe A) bloquée. Erreur fréquente ?",
+            answers: [
+                { text: "Code LPP Monture ne matche pas Panier A", isCorrect: true },
+                { text: "Le client n'a pas sa carte Vitale", isCorrect: false },
+                { text: "Erreur serveur Cosium", isCorrect: false }
+            ]
+        }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function startQuiz() {
+        document.getElementById('quiz-start').classList.add('hidden');
+        document.getElementById('quiz-question-container').classList.remove('hidden');
+        showQuestion();
+    }
+
+    function showQuestion() {
+        const q = quizData[currentQuestion];
+        document.getElementById('question-text').innerText = q.question;
+        document.getElementById('current-q-num').innerText = currentQuestion + 1;
+
+        // Progress bar
+        const progress = ((currentQuestion + 1) / quizData.length) * 100;
+        document.getElementById('quiz-progress-bar').style.width = progress + "%";
+
+        const answersDiv = document.getElementById('answers-container');
+        answersDiv.innerHTML = '';
+
+        q.answers.forEach(ans => {
+            const btn = document.createElement('button');
+            btn.className = "w-full text-left p-4 rounded-xl border border-gray-200 hover:bg-gray-50 transition flex items-center justify-between group";
+            btn.innerHTML = `
+                <span class="font-medium text-gray-700 group-hover:text-oblink-blue">${ans.text}</span>
+                <i class="fas fa-chevron-right text-gray-300"></i>
+            `;
+            btn.onclick = () => selectAnswer(ans.isCorrect);
+            answersDiv.appendChild(btn);
+        });
+    }
+
+    function selectAnswer(isCorrect) {
+        if (isCorrect) score++;
+
+        if (currentQuestion < quizData.length - 1) {
+            currentQuestion++;
+            showQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        document.getElementById('quiz-question-container').classList.add('hidden');
+        if (score >= 2) {
+            document.getElementById('quiz-result-success').classList.remove('hidden');
+        } else {
+            document.getElementById('quiz-result-fail').classList.remove('hidden');
+        }
+    }
+
+    // Modal Close Logic - Prevent closing when clicking content
+    window.onclick = function (event) {
+        const courseModal = document.getElementById('courseModal');
+        const videoModal = document.getElementById('videoModal');
+        if (event.target == courseModal) {
+            closeCourseModal();
+        }
+        if (event.target == videoModal) {
+            closeVideoModal();
+        }
+    }
+
+</script>
+
+<!-- Modal Styles & Animation -->
+<style>
+    /* Animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 0.3s ease-out;
+    }
+
+    /* Modal States */
+    #courseModal,
+    #videoModal {
+        display: none !important;
+    }
+
+    #courseModal.flex,
+    #videoModal.flex {
+        display: flex !important;
+    }
+</style>
+
+<?php include get_template_directory() . "/footer-content.php";
+wp_footer(); ?>

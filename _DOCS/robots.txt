@@ -1,0 +1,47 @@
+# Robots.txt for OBLINK
+# Generated: 2026-01-19
+
+User-agent: *
+Allow: /
+
+# Block admin areas
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+
+# Allow specific WordPress resources
+Allow: /wp-admin/admin-ajax.php
+Allow: /wp-content/uploads/
+
+# Block search and filters (avoid duplicate content)
+Disallow: /*?s=
+Disallow: /*&s=
+Disallow: /search/
+Disallow: /*?p=*
+Disallow: /*?attachment_id=*
+
+# Block WordPress core files
+Disallow: /readme.html
+Disallow: /license.txt
+Disallow: /wp-config.php
+
+# Sitemap location (NOTE: Update with your production URL)
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
+
+# Crawl delay (optional, conservative)
+Crawl-delay: 1
+
+# Specific bots (if needed)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# SEO Tools - Allow without delay for audits
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /

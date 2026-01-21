@@ -1,0 +1,26 @@
+[
+    {
+        "id": "mag_1",
+        "name": "Optic 2000 Lyon Part-Dieu",
+        "type": "Magasin",
+        "status": "prospect",
+        "city": "Lyon",
+        "last_contact": "2025-01-10"
+    },
+    {
+        "id": "mag_2",
+        "name": "Krys Paris Bastille",
+        "type": "Magasin",
+        "status": "contacted",
+        "city": "Paris",
+        "last_contact": "2025-01-15"
+    },
+    {
+        "id": "mag_3",
+        "name": "Afflelou Marseille Vieux-Port",
+        "type": "Magasin",
+        "status": "meeting",
+        "city": "Marseille",
+        "last_contact": "2025-01-18"
+    }
+]
