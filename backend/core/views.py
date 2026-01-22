@@ -52,6 +52,7 @@ class CandidateViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 class ApplicationViewSet(viewsets.ModelViewSet):
+    queryset = Application.objects.all()  # Required for DRF router
     serializer_class = ApplicationSerializer
     permission_classes = [permissions.IsAuthenticated]
 
