@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_URL } from '../config';
 
 // On définit la structure des données qu'on envoie
 interface ProfileData {
@@ -22,7 +23,7 @@ export function useProfile() {
             return;
         }
 
-        fetch('http://localhost:8000/api/candidats/me/', { // Localhost pour le dev
+        fetch(`${API_URL}/api/candidats/me/`, {
             headers: { 'Authorization': `Bearer ${token}` }
         })
             .then(res => {
@@ -44,8 +45,8 @@ export function useProfile() {
 
         const method = profile ? 'PATCH' : 'POST'; // Si profil existe update, sinon create
         const url = profile && profile.id
-            ? `http://localhost:8000/api/candidats/${profile.id}/`
-            : 'http://localhost:8000/api/candidats/';
+            ? `${API_URL}/api/candidats/${profile.id}/`
+            : `${API_URL}/api/candidats/`;
 
         const res = await fetch(url, {
             method: method,

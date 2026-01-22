@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { API_URL } from '../config';
 
 interface Message {
     id: number;
@@ -26,7 +27,7 @@ export default function AcademyChat() {
         // 2. Appel API
         const token = localStorage.getItem('access_token');
         try {
-            const res = await fetch('http://localhost:8000/api/academy/chat/', {
+            const res = await fetch(`${API_URL}/api/academy/chat/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -67,8 +68,8 @@ export default function AcademyChat() {
                 {messages.map(msg => (
                     <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                         <div className={`max-w-[80%] p-4 rounded-2xl text-sm shadow-sm transition-all duration-300 ${msg.sender === 'user'
-                                ? 'bg-brand-primary text-white rounded-br-none'
-                                : 'bg-white text-gray-800 border border-gray-100 rounded-bl-none'
+                            ? 'bg-brand-primary text-white rounded-br-none'
+                            : 'bg-white text-gray-800 border border-gray-100 rounded-bl-none'
                             }`}>
                             <p className="whitespace-pre-wrap">{msg.text}</p>
                         </div>

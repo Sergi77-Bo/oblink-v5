@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../config';
 
 export default function CreateMission() {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function CreateMission() {
         const token = localStorage.getItem('access_token');
 
         try {
-            const res = await fetch('http://localhost:8000/api/missions/', {
+            const res = await fetch(`${API_URL}/api/missions/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -111,8 +112,8 @@ export default function CreateMission() {
                                 type="button"
                                 onClick={() => toggleSoftware(soft)}
                                 className={`px-3 py-1 rounded-full text-sm border ${formData.software_required.includes(soft)
-                                        ? 'bg-brand-primary text-white border-brand-primary'
-                                        : 'bg-white text-gray-600 border-gray-300'
+                                    ? 'bg-brand-primary text-white border-brand-primary'
+                                    : 'bg-white text-gray-600 border-gray-300'
                                     }`}
                             >
                                 {soft}

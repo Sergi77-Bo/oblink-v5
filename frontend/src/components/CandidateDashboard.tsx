@@ -19,7 +19,7 @@ export default function CandidateDashboard() {
 
     useEffect(() => {
         const token = localStorage.getItem('access_token');
-        fetch('http://localhost:8000/api/applications/', {
+        fetch(`${API_URL}/api/applications/`, {
             headers: { 'Authorization': `Bearer ${token}` }
         })
             .then(res => res.json())

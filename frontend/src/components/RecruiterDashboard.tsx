@@ -36,7 +36,7 @@ export default function RecruiterDashboard() {
             return;
         }
 
-        fetch('http://localhost:8000/api/missions/mine/', {
+        fetch(`${API_URL}/api/missions/mine/`, {
             headers: { 'Authorization': `Bearer ${token}` }
         })
             .then(res => res.json())
@@ -64,7 +64,7 @@ export default function RecruiterDashboard() {
 
         // Pour l'instant on récupère toutes les applications et on filtre (MVP)
         // Dans le futur : endpoint dédié /api/missions/{id}/applications/
-        fetch(`http://localhost:8000/api/applications/`, {
+        fetch(`${API_URL}/api/applications/`, {
             headers: { 'Authorization': `Bearer ${token}` }
         })
             .then(res => res.json())

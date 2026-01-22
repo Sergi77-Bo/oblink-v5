@@ -13,7 +13,7 @@ export default function MissionDetail() {
     const [hasApplied, setHasApplied] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/missions/${id}/`)
+        fetch(`${API_URL}/api/missions/${id}/`)
             .then(res => {
                 if (!res.ok) throw new Error('Mission introuvable');
                 return res.json();
@@ -35,7 +35,7 @@ export default function MissionDetail() {
         setApplying(true);
 
         try {
-            const res = await fetch('http://localhost:8000/api/applications/', {
+            const res = await fetch(`${API_URL}/api/applications/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -109,8 +109,8 @@ export default function MissionDetail() {
                         onClick={handleApply}
                         disabled={applying || hasApplied}
                         className={`w-full py-4 rounded-xl shadow-lg transition-all transform duration-200 font-bold text-lg ${hasApplied
-                                ? "bg-green-600 text-white cursor-default shadow-none"
-                                : "bg-brand-primary hover:bg-orange-600 text-white hover:-translate-y-1 hover:shadow-orange-500/30"
+                            ? "bg-green-600 text-white cursor-default shadow-none"
+                            : "bg-brand-primary hover:bg-orange-600 text-white hover:-translate-y-1 hover:shadow-orange-500/30"
                             } disabled:opacity-70 disabled:cursor-not-allowed`}
                     >
                         {applying ? "Envoi en cours..." : hasApplied ? "Candidature Envoyée ✅" : "Postuler maintenant"}
