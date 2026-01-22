@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import type { Mission } from '../types';
+import { API_URL } from '../config';
 
 export default function MissionDetail() {
     const { id } = useParams();
