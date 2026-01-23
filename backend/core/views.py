@@ -5,11 +5,83 @@ from rest_framework.views import APIView
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
-from .models import Mission, CandidateProfile, Application
+from django.contrib.auth.models import User
+from .models import Mission, CandidateProfile, Application, CompanyProfile
 from .serializers import MissionSerializer, CandidateSerializer, ApplicationSerializer, UserSerializer
 from .ai_service import OpticienAI
 
-class ManageUserView(APIView):
+class SeedDataView(APIView):
+    permission_classes = [permissions.AllowAny]  # Public for easy setup, secure later!
+
+    def get(self, request):
+        # 1. Create Demo Company User
+        user, created = User.objects.get_or_create(username='demo_company', defaults={'email': 'demo@company.com'})
+        if created:
+            user.set_password('demo123')
+            user.save()
+        
+        # 2. Create Company Profile
+        company, _ = CompanyProfile.objects.get_or_create(
+            user=user,
+            defaults={
+                'company_name': 'GrandOptical Demo',
+                'network_brand': 'GrandOptical',
+                'subscription_tier': 'PREMIUM'
+            }
+        )
+
+        # 3. Create Missions
+        missions_data = [
+            {
+                "title": "Opticien Collaborateur H/F - Paris 15",
+                "city": "Paris",
+                "description": "Rejoignez une équipe dynamique dans un magasin moderne. CDI 39h, avantages tickets resto + mutuelle.",
+                "job_type": "CDI",
+                "software_required": ["COSIUM"],
+                "company": company
+            },
+            {
+                "title": "Remplacement Freelance - 3 jours",
+                "city": "Lyon",
+                "description": "Besoin urgent pour remplacement maladie. Taux attractif.",
+                "job_type": "FREELANCE",
+                "software_required": ["POLEYRE"],
+                "company": company
+            },
+            {
+                "title": "Directeur Adjoint H/F",
+                "city": "Bordeaux",
+                "description": "Poste à responsabilité. Management d'une équipe de 5 personnes.",
+                "job_type": "CDI",
+                "software_required": ["IVOIR"],
+                "company": company
+            },
+            {
+                "title": "Alternant BTS OL - 2e année",
+                "city": "Nantes",
+                "description": "Formation complète assurée (atelier + vente).",
+                "job_type": "ALTERNANCE",
+                "software_required": ["OSIRIS"],
+                "company": company
+            },
+             {
+                "title": "Opticien Lunetier Expert",
+                "city": "Marseille",
+                "description": "Magasin créateur recherche profil passionné par les belles montures.",
+                "job_type": "CDI",
+                "software_required": ["COSIUM"],
+                "company": company
+            }
+        ]
+
+        created_count = 0
+        for m_data in missions_data:
+            # Check duplicates based on title/city
+            if not Mission.objects.filter(title=m_data["title"], city=m_data["city"]).exists():
+                Mission.objects.create(**m_data)
+                created_count += 1
+
+        return Response({"message": f"Seed Success! {created_count} missions created.", "total_missions": Mission.objects.count()})
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
