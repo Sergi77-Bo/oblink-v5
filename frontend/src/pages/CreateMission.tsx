@@ -6,11 +6,11 @@ export default function CreateMission() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         title: '',
-        job_type: 'CDI',
+        jobType: 'CDI',
         city: '',
         description: '',
-        daily_rate: '',
-        software_required: [] as string[]
+        dailyRate: '',
+        softwareRequired: [] as string[]
     });
 
     const softwares = ['COSIUM', 'POLEYRE', 'IVOIR', 'OSIRIS', 'WINOPTICS'];
@@ -43,9 +43,9 @@ export default function CreateMission() {
     const toggleSoftware = (soft: string) => {
         setFormData(prev => ({
             ...prev,
-            software_required: prev.software_required.includes(soft)
-                ? prev.software_required.filter(s => s !== soft)
-                : [...prev.software_required, soft]
+        softwareRequired: prev.softwareRequired.includes(soft)
+            ? prev.softwareRequired.filter(s => s !== soft)
+            : [...prev.softwareRequired, soft]
         }));
     };
 
@@ -71,8 +71,8 @@ export default function CreateMission() {
                         <label className="block font-medium mb-1">Type de contrat</label>
                         <select
                             className="w-full border p-3 rounded-lg"
-                            value={formData.job_type}
-                            onChange={e => setFormData({ ...formData, job_type: e.target.value })}
+                        value={formData.jobType}
+                        onChange={e => setFormData({ ...formData, jobType: e.target.value })}
                         >
                             <option value="CDI">CDI</option>
                             <option value="FREELANCE">Freelance</option>
@@ -97,8 +97,8 @@ export default function CreateMission() {
                     <input
                         type="number"
                         className="w-full border p-3 rounded-lg"
-                        value={formData.daily_rate}
-                        onChange={e => setFormData({ ...formData, daily_rate: e.target.value })}
+                        value={formData.dailyRate}
+                        onChange={e => setFormData({ ...formData, dailyRate: e.target.value })}
                         placeholder="Ex: 350"
                     />
                 </div>
@@ -111,7 +111,7 @@ export default function CreateMission() {
                                 key={soft}
                                 type="button"
                                 onClick={() => toggleSoftware(soft)}
-                                className={`px-3 py-1 rounded-full text-sm border ${formData.software_required.includes(soft)
+                                className={`px-3 py-1 rounded-full text-sm border ${formData.softwareRequired.includes(soft)
                                     ? 'bg-brand-primary text-white border-brand-primary'
                                     : 'bg-white text-gray-600 border-gray-300'
                                     }`}

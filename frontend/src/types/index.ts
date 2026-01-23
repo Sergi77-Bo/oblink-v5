@@ -1,8 +1,8 @@
 export interface Company {
     id: number;
-    company_name: string;
-    network_brand: string;
-    subscription_tier: string;
+    companyName: string;
+    networkBrand: string;
+    subscriptionTier: string;
 }
 
 export interface Mission {
@@ -10,11 +10,11 @@ export interface Mission {
     company: Company;
     title: string;
     description: string;
-    job_type: 'CDI' | 'FREELANCE' | 'ALTERNANCE';
-    software_required: string[]; // C'est un JSONField qui renvoie une liste de strings
+    jobType: 'CDI' | 'FREELANCE' | 'ALTERNANCE';
+    softwareRequired: string[]; // C'est un JSONField qui renvoie une liste de strings
     city: string;
-    is_active: boolean;
-    created_at: string;
-    years_experience: number;
-    daily_rate: number;
+    isActive: boolean;
+    createdAt: string;
+    yearsExperience: number;
+    dailyRate: number;
 }

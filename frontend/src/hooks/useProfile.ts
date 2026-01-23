@@ -4,11 +4,11 @@ import { API_URL } from '../config';
 // On définit la structure des données qu'on envoie
 interface ProfileData {
     id?: number;
-    years_experience: number;
-    software_skills: string[]; // Modifié pour matcher le backend (JSONField -> liste de strings)
-    is_freelance: boolean;
-    has_equipment: boolean;
-    mobility_radius_km: number;
+    yearsExperience: number;
+    softwareSkills: string[]; // Modifié pour matcher le backend (JSONField -> liste de strings)
+    isFreelance: boolean;
+    hasEquipment: boolean;
+    mobilityRadiusKm: number;
 }
 
 export function useProfile() {

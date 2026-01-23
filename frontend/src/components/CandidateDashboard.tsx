@@ -8,7 +8,7 @@ interface Application {
         title: string;
         city: string;
         company: {
-            company_name: string;
+            companyName: string;
         };
     };
     status: 'PENDING' | 'ACCEPTED' | 'REJECTED';
@@ -133,7 +133,7 @@ export default function CandidateDashboard() {
                                 {applications.map(app => (
                                     <tr key={app.id} className="hover:bg-blue-50/30 transition-colors group">
                                         <td className="p-5 font-bold text-brand-dark">{app.mission.title}</td>
-                                        <td className="p-5 text-gray-600 font-medium">{app.mission.company.company_name || "Confidentiel"}</td>
+                                        <td className="p-5 text-gray-600 font-medium">{app.mission.company.companyName || "Confidentiel"}</td>
                                         <td className="p-5 text-gray-500">{app.mission.city}</td>
                                         <td className="p-5">{getStatusBadge(app.status)}</td>
                                     </tr>

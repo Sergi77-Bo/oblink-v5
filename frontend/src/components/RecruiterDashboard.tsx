@@ -6,9 +6,9 @@ interface Applicant {
     id: number;
     candidate: {
         email: string;
-        years_experience: number;
-        software_skills: string[];
-        is_freelance: boolean;
+        yearsExperience: number;
+        softwareSkills: string[];
+        isFreelance: boolean;
     };
     status: string;
 }
@@ -17,7 +17,7 @@ interface MyMission {
     id: number;
     title: string;
     city: string;
-    job_type: string;
+    jobType: string;
 }
 
 export default function RecruiterDashboard() {
@@ -110,10 +110,10 @@ export default function RecruiterDashboard() {
                             >
                                 <div>
                                     <h3 className="font-bold text-lg text-brand-dark">{mission.title}</h3>
-                                    <p className="text-sm text-gray-500 font-medium flex items-center gap-2">
-                                        <span className="bg-gray-100 px-2 py-0.5 rounded text-xs text-gray-600 uppercase tracking-wide">{mission.job_type}</span>
-                                        <span>{mission.city}</span>
-                                    </p>
+                                        <p className="text-sm text-gray-500 font-medium flex items-center gap-2">
+                                            <span className="bg-gray-100 px-2 py-0.5 rounded text-xs text-gray-600 uppercase tracking-wide">{mission.jobType}</span>
+                                            <span>{mission.city}</span>
+                                        </p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className={`text-sm font-bold px-3 py-1 rounded-full transition-colors ${selectedMissionId === mission.id ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-600 group-hover:bg-blue-50 group-hover:text-blue-600'}`}>
@@ -148,10 +148,10 @@ export default function RecruiterDashboard() {
                                                         <div>
                                                             <p className="font-bold text-brand-dark text-lg">{app.candidate.email}</p>
                                                             <div className="flex flex-wrap gap-2 text-xs mt-1">
-                                                                <span className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded font-medium">{app.candidate.years_experience} ans exp.</span>
-                                                                {app.candidate.is_freelance && <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded font-medium">Freelance</span>}
+                                                                <span className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded font-medium">{app.candidate.yearsExperience} ans exp.</span>
+                                                                {app.candidate.isFreelance && <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded font-medium">Freelance</span>}
                                                                 <span className="text-gray-400">|</span>
-                                                                <span className="text-gray-500">{app.candidate.software_skills?.join(', ')}</span>
+                                                                <span className="text-gray-500">{app.candidate.softwareSkills?.join(', ')}</span>
                                                             </div>
                                                         </div>
                                                     </div>

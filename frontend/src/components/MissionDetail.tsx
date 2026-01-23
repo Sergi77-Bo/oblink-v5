@@ -1,28 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import type { Mission } from '../types';
-import { API_URL } from '../config';
+import { useMission } from '../hooks/useMission';
+import api from '../services/api';
 
 export default function MissionDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [mission, setMission] = useState<Mission | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+
+    // Use the Hook!
+    const { mission, loading, error } = useMission(id);
 
     const [applying, setApplying] = useState(false);
     const [hasApplied, setHasApplied] = useState(false);
-
-    useEffect(() => {
-        fetch(`${API_URL}/api/missions/${id}/`)
-            .then(res => {
-                if (!res.ok) throw new Error('Mission introuvable');
-                return res.json();
-            })
-            .then(data => setMission(data))
-            .catch(err => setError(err.message))
-            .finally(() => setLoading(false));
-    }, [id]);
 
     const handleApply = async () => {
         const token = localStorage.getItem('access_token');
@@ -36,29 +25,20 @@ export default function MissionDetail() {
         setApplying(true);
 
         try {
-            const res = await fetch(`${API_URL}/api/applications/`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({ mission: mission?.id })
-            });
+            // Use api.post (Automatic Headers & CamelCase response)
+            await api.post('/api/applications/', { mission: mission?.id });
 
-            if (res.status === 409) {
+            setHasApplied(true);
+            alert("Candidature envoyée avec succès ! ✅");
+
+        } catch (error: any) {
+            if (error.response?.status === 409) {
                 alert("Vous avez déjà postulé à cette offre !");
                 setHasApplied(true);
-            } else if (res.ok) {
-                setHasApplied(true);
-                alert("Candidature envoyée avec succès ! ✅");
             } else {
-                const data = await res.json();
-                // C'est ici qu'on affiche la vraie erreur
-                console.error("Erreur Application:", data);
-                alert("Erreur Technique : " + JSON.stringify(data));
+                console.error("Erreur Application:", error);
+                alert("Erreur Technique lors de la candidature.");
             }
-        } catch (error) {
-            alert("Erreur réseau : Vérifiez que le back est lancé.");
         } finally {
             setApplying(false);
         }
@@ -78,15 +58,15 @@ export default function MissionDetail() {
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                         <div>
                             <span className="inline-block px-3 py-1 bg-brand-light text-brand-primary text-xs font-bold uppercase tracking-wide rounded-full mb-3">
-                                {mission.job_type}
+                                {mission.jobType}
                             </span>
                             <h1 className="text-3xl md:text-4xl font-extrabold font-primary text-brand-dark mb-2">{mission.title}</h1>
                             <div className="flex items-center text-gray-500 font-medium">
-                                {mission.city} • {mission.company?.company_name || "Entreprise"}
+                                {mission.city} • {mission.company?.companyName || "Entreprise"}
                             </div>
                         </div>
                         <div className="text-right hidden md:block">
-                            <div className="text-2xl font-bold text-brand-primary">{mission.daily_rate}€ <span className="text-sm text-gray-400 font-normal">/jour</span></div>
+                            <div className="text-2xl font-bold text-brand-primary">{mission.dailyRate}€ <span className="text-sm text-gray-400 font-normal">/jour</span></div>
                         </div>
                     </div>
 
@@ -98,7 +78,7 @@ export default function MissionDetail() {
 
                         <h3 className="text-xl font-bold text-brand-dark mt-8 mb-4 font-primary">Logiciels requis</h3>
                         <div className="flex gap-2 flex-wrap">
-                            {mission.software_required?.map((soft, i) => (
+                            {mission.softwareRequired?.map((soft, i) => (
                                 <span key={i} className="px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-sm font-medium">
                                     {soft}
                                 </span>

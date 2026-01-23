@@ -1,29 +1,8 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import type { Mission } from '../types';
-import { API_URL } from '../config';
+import { useMissions } from '../hooks/useMissions';
 
 export default function MissionList() {
-    const [missions, setMissions] = useState<Mission[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
-
-    useEffect(() => {
-        fetch(`${API_URL}/api/missions/`)
-            .then((res) => {
-                if (!res.ok) throw new Error('Erreur réseau');
-                return res.json();
-            })
-            .then((data) => {
-                setMissions(data);
-                setLoading(false);
-            })
-            .catch((err) => {
-                console.error(err);
-                setError("Impossible de contacter le serveur. Vérifiez qu'il tourne bien sur le port 8000.");
-                setLoading(false);
-            });
-    }, []);
+    const { missions, loading, error } = useMissions();
 
     if (loading) return <div className="p-10 text-center text-gray-500">Chargement des missions...</div>;
     if (error) return <div className="p-10 text-red-500">Erreur: {error}</div>;
@@ -41,10 +20,10 @@ export default function MissionList() {
                         <div className="flex justify-between items-start mb-4">
                             <div>
                                 <h3 className="font-bold text-lg text-gray-900 leading-tight">{mission.title}</h3>
-                                <p className="text-sm text-gray-500 font-medium">{mission.company?.company_name || 'Entreprise confidentielle'}</p>
+                                <p className="text-sm text-gray-500 font-medium">{mission.company?.companyName || 'Entreprise confidentielle'}</p>
                             </div>
                             <span className="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-blue-200">
-                                {mission.job_type}
+                                {mission.jobType}
                             </span>
                         </div>
 
@@ -53,7 +32,7 @@ export default function MissionList() {
                         </p>
 
                         <div className="flex flex-wrap gap-2 mb-4">
-                            {mission.software_required?.map((soft) => (
+                        {mission.softwareRequired?.map((soft) => (
                                 <span key={soft} className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded font-medium">
                                     {soft}
                                 </span>
