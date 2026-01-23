@@ -6,8 +6,22 @@ from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from .models import Mission, CandidateProfile, Application
-from .serializers import MissionSerializer, CandidateSerializer, ApplicationSerializer
+from .serializers import MissionSerializer, CandidateSerializer, ApplicationSerializer, UserSerializer
 from .ai_service import OpticienAI
+
+class ManageUserView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request):
+        serializer = UserSerializer(request.user)
+        return Response(serializer.data)
+
+    def patch(self, request):
+        serializer = UserSerializer(request.user, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class MissionViewSet(viewsets.ModelViewSet):
     """

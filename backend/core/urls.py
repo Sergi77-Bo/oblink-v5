@@ -14,4 +14,5 @@ urlpatterns = [
     path('tools/generate-contract/', ContractGeneratorView.as_view(), name='generate-contract'),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('users/me/', ManageUserView.as_view(), name='manage_user'),
 ]
