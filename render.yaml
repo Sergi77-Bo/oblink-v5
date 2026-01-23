@@ -24,23 +24,21 @@ services:
           property: connectionString
       - key: FRONTEND_URL
         fromService:
-          type: static
+          type: web
           name: oblink-frontend
           property: url
 
-  # Frontend: React Static Site
-  - type: static
+  # Frontend: React Web Service (Serving Static Files)
+  # Switched to 'web' type to ensure correct Blueprint parsing
+  - type: web
     name: oblink-frontend
+    runtime: node
     region: frankfurt
     plan: free
-    repo: https://github.com/Sergi77-Bo/oblink-v5 # Will be auto-filled by Render when using Blueprint
+    repo: https://github.com/Sergi77-Bo/oblink-v5
     rootDir: frontend
     buildCommand: "npm install && npm run build"
-    publishDir: dist
-    routes:
-      - type: rewrite
-        source: /**
-        destination: /index.html
+    startCommand: "npx serve -s dist -l $PORT --single"
     envVars:
       - key: VITE_API_URL
         fromService:
