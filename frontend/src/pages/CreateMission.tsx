@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config';
 import { useRequireAuth } from '../hooks/useRequireAuth';
@@ -45,9 +45,9 @@ export default function CreateMission() {
     const toggleSoftware = (soft: string) => {
         setFormData(prev => ({
             ...prev,
-        softwareRequired: prev.softwareRequired.includes(soft)
-            ? prev.softwareRequired.filter(s => s !== soft)
-            : [...prev.softwareRequired, soft]
+            softwareRequired: prev.softwareRequired.includes(soft)
+                ? prev.softwareRequired.filter(s => s !== soft)
+                : [...prev.softwareRequired, soft]
         }));
     };
 
@@ -77,8 +77,8 @@ export default function CreateMission() {
                         <label className="block font-medium mb-1">Type de contrat</label>
                         <select
                             className="w-full border p-3 rounded-lg"
-                        value={formData.jobType}
-                        onChange={e => setFormData({ ...formData, jobType: e.target.value })}
+                            value={formData.jobType}
+                            onChange={e => setFormData({ ...formData, jobType: e.target.value })}
                         >
                             <option value="CDI">CDI</option>
                             <option value="FREELANCE">Freelance</option>
