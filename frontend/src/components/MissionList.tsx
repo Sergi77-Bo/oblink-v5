@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import type { Mission } from '../types';
+import { API_URL } from '../config';
 
 export default function MissionList() {
     const [missions, setMissions] = useState<Mission[]>([]);
@@ -8,7 +9,7 @@ export default function MissionList() {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/missions/')
+        fetch(`${API_URL}/api/missions/`)
             .then((res) => {
                 if (!res.ok) throw new Error('Erreur réseau');
                 return res.json();

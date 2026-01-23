@@ -1,7 +1,5 @@
 import { useState } from 'react';
-// import { API_URL } from '../config'; // Assuming you might have a config, but hardcoding for now as per snippet or using relative path if proxied.
-// The snippet used http://127.0.0.1:8000/api/tools/generate-contract/
-// I will use that or a relative path if I knew the setup, but sticking to user snippet.
+import { API_URL } from '../config';
 
 export default function ContractTool() {
     const [formData, setFormData] = useState({
@@ -13,8 +11,7 @@ export default function ContractTool() {
     const generatePDF = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Note: In production this should be an env var or relative path /api/...
-        const response = await fetch('http://127.0.0.1:8000/api/tools/generate-contract/', {
+        const response = await fetch(`${API_URL}/api/tools/generate-contract/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
