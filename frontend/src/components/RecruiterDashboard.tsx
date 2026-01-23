@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { API_URL } from '../config';
+import { useRequireAuth } from '../hooks/useRequireAuth';
 
 
 interface Applicant {
@@ -21,6 +22,7 @@ interface MyMission {
 }
 
 export default function RecruiterDashboard() {
+    const { loading: authLoading } = useRequireAuth();
     const [missions, setMissions] = useState<MyMission[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -79,7 +81,7 @@ export default function RecruiterDashboard() {
             .finally(() => setLoadingApplicants(false));
     };
 
-    if (loading) return <div className="p-10 text-center animate-pulse">Chargement de votre espace...</div>;
+    if (authLoading || loading) return <div className="p-10 text-center animate-pulse">Chargement de votre espace...</div>;
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-5xl">

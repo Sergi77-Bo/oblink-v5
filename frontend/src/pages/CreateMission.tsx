@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config';
+import { useRequireAuth } from '../hooks/useRequireAuth';
 
 export default function CreateMission() {
+    const { loading: authLoading } = useRequireAuth();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         title: '',
@@ -48,6 +50,10 @@ export default function CreateMission() {
             : [...prev.softwareRequired, soft]
         }));
     };
+
+    if (authLoading) {
+        return <div className="p-10 text-center animate-pulse">Vérification de la session...</div>;
+    }
 
     return (
         <div className="max-w-2xl mx-auto py-10">

@@ -99,6 +99,8 @@ class SeedDataView(APIView):
                 created_count += 1
 
         return Response({"message": f"Seed Success! {created_count} missions created.", "total_missions": Mission.objects.count()})
+
+class ManageUserView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):

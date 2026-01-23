@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { API_URL } from '../config';
+import { useRequireAuth } from '../hooks/useRequireAuth';
 
 interface Application {
     id: number;
@@ -15,10 +16,15 @@ interface Application {
 }
 
 export default function CandidateDashboard() {
+    const { loading: authLoading, isAuthenticated } = useRequireAuth();
     const [applications, setApplications] = useState<Application[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        if (!isAuthenticated) {
+            return;
+        }
+
         const token = localStorage.getItem('access_token');
         fetch(`${API_URL}/api/applications/`, {
             headers: { 'Authorization': `Bearer ${token}` }
@@ -31,7 +37,7 @@ export default function CandidateDashboard() {
             })
             .catch(err => console.error(err))
             .finally(() => setLoading(false));
-    }, []);
+    }, [isAuthenticated]);
 
     const getStatusBadge = (status: string) => {
         switch (status) {
@@ -40,6 +46,10 @@ export default function CandidateDashboard() {
             default: return <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold border border-yellow-200">En attente ⏳</span>;
         }
     };
+
+    if (authLoading) {
+        return <div className="p-10 text-center text-brand-primary">Chargement de votre session...</div>;
+    }
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-6xl animate-fade-in-up">
