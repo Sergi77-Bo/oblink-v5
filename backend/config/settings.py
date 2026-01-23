@@ -44,7 +44,7 @@ if os.environ.get('FRONTEND_URL'):
     frontend_url = os.environ.get('FRONTEND_URL')
     if not frontend_url.startswith('http'):
         frontend_url = f"https://{frontend_url}"
-    CORS_ALLOWED_ORIGINS.append(frontend_url)
+    CORS_ALLOWED_ORIGINS.append(frontend_url.rstrip('/'))
 
 CORS_ALLOW_ALL_ORIGINS = DEBUG # True only in dev
 
