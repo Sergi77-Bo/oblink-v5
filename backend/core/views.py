@@ -30,6 +30,23 @@ class SeedDataView(APIView):
             }
         )
 
+        # 2.5 Create Demo Candidate User
+        user_c, created_c = User.objects.get_or_create(username='demo_candidate', defaults={'email': 'candidat@demo.com', 'first_name': 'Jean', 'last_name': 'Dupont'})
+        if created_c:
+            user_c.set_password('demo123')
+            user_c.save()
+        
+        CandidateProfile.objects.get_or_create(
+            user=user_c,
+            defaults={
+                'years_experience': 5,
+                'is_diploma_verified': True,
+                'daily_rate': 250,
+                'software_skills': ["COSIUM", "OSIRIS"],
+                'mobility_radius_km': 20
+            }
+        )
+
         # 3. Create Missions
         missions_data = [
             {
