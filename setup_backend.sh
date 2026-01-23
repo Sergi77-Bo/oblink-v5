@@ -11,7 +11,9 @@ pip install -r backend/requirements.txt
 
 # 2. Collect Static Files
 echo "🗂️ Collecting static files..."
-python backend/manage.py collectstatic --noinput
+cd backend
+python manage.py collectstatic --noinput
+cd ..
 
 echo "✅ Build script completed successfully."
 
