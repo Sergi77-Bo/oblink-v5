@@ -33,7 +33,6 @@ services:
   - type: web
     name: oblink-frontend
     runtime: static
-    plan: free
     repo: https://github.com/Sergi77-Bo/oblink-v5
     rootDir: frontend
     buildCommand: "npm install && npm run build"
