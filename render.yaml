@@ -26,14 +26,13 @@ services:
         fromService:
           type: web
           name: oblink-frontend
-          property: url
+          property: host
 
   # Frontend: React Static Site
   # Correct syntax: type: web, runtime: static
   - type: web
     name: oblink-frontend
     runtime: static
-    region: frankfurt
     plan: free
     repo: https://github.com/Sergi77-Bo/oblink-v5
     rootDir: frontend
@@ -48,4 +47,4 @@ services:
         fromService:
           type: web
           name: oblink-backend
-          property: url
+          property: host
