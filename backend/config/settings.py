@@ -1,11 +1,19 @@
 import os
 import dj_database_url
 from pathlib import Path
+from django.core.exceptions import ImproperlyConfigured
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-me-in-production')
-DEBUG = 'RENDER' not in os.environ
-ALLOWED_HOSTS = []
+
+# DEBUG handling for Railway
+# Default to True in dev, False if RAILWAY_ENVIRONMENT is present
+DEBUG = 'RAILWAY_ENVIRONMENT' not in os.environ and os.environ.get('DEBUG', 'True') == 'True'
+
+ALLOWED_HOSTS = ['*'] # Temporary for initial setup, or better:
+if os.environ.get('RAILWAY_PUBLIC_DOMAIN'):
+    ALLOWED_HOSTS.append(os.environ.get('RAILWAY_PUBLIC_DOMAIN'))
+    
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
@@ -85,9 +93,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if not DATABASE_URL:
+    raise ImproperlyConfigured('DATABASE_URL environment variable is required')
+
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///' + str(BASE_DIR / 'db.sqlite3'),
+    'default': dj_database_url.parse(
+        DATABASE_URL,
         conn_max_age=600
     )
 }

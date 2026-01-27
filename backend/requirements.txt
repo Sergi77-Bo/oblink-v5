@@ -8,3 +8,7 @@ whitenoise
 dj-database-url
 reportlab
 djangorestframework-camel-case
+weasyprint
+boto3
+uvicorn
+python-dotenv
