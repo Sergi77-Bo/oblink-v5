@@ -44,17 +44,15 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://oblink-v5.vercel.app",  # Production frontend
+    "https://oblink-frontend-production.up.railway.app",
 ]
-# Add Vercel frontend URL from env
-if os.environ.get('FRONTEND_URL'):
-    frontend_url = os.environ.get('FRONTEND_URL')
-    if not frontend_url.startswith('http'):
-        frontend_url = f"https://{frontend_url}"
-    CORS_ALLOWED_ORIGINS.append(frontend_url.rstrip('/'))
 
-CORS_ALLOW_ALL_ORIGINS = DEBUG # True only in dev
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "https://oblink-frontend-production.up.railway.app",
+]
+
+CORS_ALLOW_ALL_ORIGINS = False
 
 ROOT_URLCONF = 'config.urls'
 

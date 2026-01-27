@@ -33,12 +33,14 @@ export default function RecruiterDashboard() {
 
     // 1. Charger les missions du recruteur
     useEffect(() => {
-        const token = localStorage.getItem('access_token');
-        if (!token) {
-            setLoading(false);
+        if (!isAuthenticated) {
+            if (!authLoading) {
+                setLoading(false);
+            }
             return;
         }
 
+        const token = localStorage.getItem('access_token');
         fetch(`${API_URL}/api/missions/mine/`, {
             headers: { 'Authorization': `Bearer ${token}` }
         })
@@ -52,7 +54,7 @@ export default function RecruiterDashboard() {
             })
             .catch(err => console.error(err))
             .finally(() => setLoading(false));
-    }, []);
+    }, [isAuthenticated, authLoading]);
 
     // 2. Charger les candidats quand on clique sur une mission
     const fetchApplicants = (missionId: number) => {

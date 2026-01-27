@@ -22,6 +22,9 @@ export default function CandidateDashboard() {
 
     useEffect(() => {
         if (!isAuthenticated) {
+            if (!authLoading) {
+                setLoading(false);
+            }
             return;
         }
 
@@ -37,7 +40,7 @@ export default function CandidateDashboard() {
             })
             .catch(err => console.error(err))
             .finally(() => setLoading(false));
-    }, [isAuthenticated]);
+    }, [isAuthenticated, authLoading]);
 
     const getStatusBadge = (status: string) => {
         switch (status) {
