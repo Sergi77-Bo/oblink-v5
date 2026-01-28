@@ -1,8 +1,7 @@
 from django.db import migrations
-from django.contrib.auth import get_user_model
 
 def create_demo_user(apps, schema_editor):
-    User = get_user_model()
+    User = apps.get_model('auth', 'User')
     CompanyProfile = apps.get_model('core', 'CompanyProfile')
     
     # Créer l'utilisateur
