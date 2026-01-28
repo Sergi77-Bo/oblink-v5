@@ -21,6 +21,14 @@ class CandidateSerializer(serializers.ModelSerializer):
         fields = ['id', 'email', 'is_diploma_verified', 'software_skills', 'years_experience', 'is_freelance', 'daily_rate']
 
 class MissionSerializer(serializers.ModelSerializer):
+    # Nested company serializer
+    company = CompanySerializer(read_only=True)
+    
+    # CamelCase fields for frontend compatibility
+    jobType = serializers.CharField(source='job_type', read_only=True)
+    softwareRequired = serializers.JSONField(source='software_required', read_only=True)
+    
+    # Geolocation fields
     latitude = serializers.SerializerMethodField()
     longitude = serializers.SerializerMethodField()
 
@@ -30,19 +38,26 @@ class MissionSerializer(serializers.ModelSerializer):
             'id',
             'title',
             'description',
-            'price',
             'city',
-            'status',
+            'jobType',
+            'softwareRequired',
+            'company',
             'latitude',
             'longitude',
             'created_at',
         ]
 
+    def _get_location(self, obj):
+        # Guard against missing GeoDjango location field in SQLite dev setups
+        return getattr(obj, 'location', None)
+
     def get_latitude(self, obj):
-        return obj.location.y if obj.location else None
+        location = self._get_location(obj)
+        return location.y if location else None
 
     def get_longitude(self, obj):
-        return obj.location.x if obj.location else None
+        location = self._get_location(obj)
+        return location.x if location else None
 
 class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
