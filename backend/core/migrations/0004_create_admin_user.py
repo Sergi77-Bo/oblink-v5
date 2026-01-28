@@ -27,7 +27,7 @@ def create_demo_user(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('core', '0001_initial'),  # Ajustez selon votre dernière migration
+        ('core', '0003_alter_candidateprofile_software_skills_and_more'),
     ]
 
     operations = [
