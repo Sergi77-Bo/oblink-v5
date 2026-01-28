@@ -21,12 +21,28 @@ class CandidateSerializer(serializers.ModelSerializer):
         fields = ['id', 'email', 'is_diploma_verified', 'software_skills', 'years_experience', 'is_freelance', 'daily_rate']
 
 class MissionSerializer(serializers.ModelSerializer):
-    # On imbrique les infos de l'entreprise pour éviter de faire 2 requêtes
-    company = CompanySerializer(read_only=True)
-    
+    latitude = serializers.SerializerMethodField()
+    longitude = serializers.SerializerMethodField()
+
     class Meta:
         model = Mission
-        fields = '__all__'
+        fields = [
+            'id',
+            'title',
+            'description',
+            'price',
+            'city',
+            'status',
+            'latitude',
+            'longitude',
+            'created_at',
+        ]
+
+    def get_latitude(self, obj):
+        return obj.location.y if obj.location else None
+
+    def get_longitude(self, obj):
+        return obj.location.x if obj.location else None
 
 class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
