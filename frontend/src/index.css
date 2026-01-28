@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* ===== OBLINK GLASSMORPHISM DESIGN SYSTEM ===== */
+
+* {
     font-family: 'Inter', sans-serif;
-    /* Font Secondary par défaut */
 }
 
 h1,
@@ -15,6 +16,139 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
-    /* Font Primary pour les titres */
+    font-family: 'Overpass', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+/* ===== GLASSMORPHISM EFFECTS ===== */
+
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.glass-gradient {
+    background: linear-gradient(135deg,
+            rgba(255, 102, 0, 0.1) 0%,
+            rgba(98, 146, 158, 0.1) 50%,
+            rgba(154, 72, 208, 0.1) 100%);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes liquid-morph {
+
+    0%,
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        transform: translate(20px, -20px) scale(1.05);
+    }
+
+    50% {
+        border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+
+    75% {
+        border-radius: 60% 40% 60% 40% / 70% 30% 50% 60%;
+        transform: translate(-20px, -20px) scale(1.02);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ===== LIQUID GLASS BLOBS ===== */
+
+.liquid-glass-blob {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    filter: blur(60px);
+    opacity: 0.4;
+    animation: liquid-morph 15s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.blob-1 {
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.3), rgba(255, 102, 0, 0.1));
+    top: -100px;
+    left: -50px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    background: linear-gradient(135deg, rgba(98, 146, 158, 0.3), rgba(98, 146, 158, 0.1));
+    top: 50%;
+    right: -100px;
+    animation-delay: 5s;
+    width: 400px;
+    height: 400px;
+}
+
+.blob-3 {
+    background: linear-gradient(135deg, rgba(154, 72, 208, 0.3), rgba(154, 72, 208, 0.1));
+    bottom: -150px;
+    left: 30%;
+    animation-delay: 10s;
+    width: 350px;
+    height: 350px;
 }
