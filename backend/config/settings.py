@@ -50,6 +50,7 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "https://oblink-frontend-production.up.railway.app",
+    "https://oblink-backend-production.up.railway.app",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
